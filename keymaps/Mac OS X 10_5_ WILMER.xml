@@ -1,0 +1,320 @@
+<keymap version="1" name="Mac OS X 10.5+ WILMER" parent="Mac OS X 10.5+">
+  <action id="ActivateDebugToolWindow" />
+  <action id="ActivateFavoritesToolWindow" />
+  <action id="ActivateFindToolWindow" />
+  <action id="ActivateMessagesToolWindow" />
+  <action id="ActivateProjectToolWindow" />
+  <action id="ActivateRunToolWindow" />
+  <action id="ActivateStructureToolWindow" />
+  <action id="ActivateTODOToolWindow" />
+  <action id="ActivateVersionControlToolWindow">
+    <keyboard-shortcut first-keystroke="shift meta 9" />
+  </action>
+  <action id="Arrangement.Alias.Rule.Edit" />
+  <action id="Arrangement.Alias.Rule.Match.Condition.Move.Up" />
+  <action id="Arrangement.Rule.Edit" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Up" />
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta alt left" />
+    <mouse-shortcut keystroke="button4" />
+  </action>
+  <action id="ChangesView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ChangesView.Revert" />
+  <action id="CheckinProject" />
+  <action id="ChooseRunConfiguration" />
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="ctrl space" />
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="CollapseAll">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="meta alt minus" />
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+    <keyboard-shortcut first-keystroke="f11" />
+  </action>
+  <action id="CollapseExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="CollapseRegion" />
+  <action id="CollapseRegionRecursively">
+    <keyboard-shortcut first-keystroke="meta alt subtract" />
+  </action>
+  <action id="CollapseTreeNode">
+    <keyboard-shortcut first-keystroke="subtract" />
+    <keyboard-shortcut first-keystroke="alt up" />
+  </action>
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="meta slash" />
+    <keyboard-shortcut first-keystroke="meta divide" />
+    <keyboard-shortcut first-keystroke="meta 9" />
+    <keyboard-shortcut first-keystroke="f10" />
+  </action>
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.NavigateAction" />
+  <action id="Console.TableResult.NavigateExportedAction">
+    <keyboard-shortcut first-keystroke="alt f7" />
+    <mouse-shortcut keystroke="control alt button1" />
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="CopyElement" />
+  <action id="DSM.OpenInEditor" />
+  <action id="DSM.ZoomIn">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="DatabaseView.CopyTable" />
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="ctrl d" />
+    <keyboard-shortcut first-keystroke="meta alt c" />
+    <keyboard-shortcut first-keystroke="meta 4" />
+  </action>
+  <action id="Debugger.EditArrayFilter" />
+  <action id="Debugger.EditFrameSource" />
+  <action id="DomCollectionControl.Edit" />
+  <action id="DomElementsTreeView.GotoDomElementDeclarationAction" />
+  <action id="DuplicatesForm.SendToLeft" />
+  <action id="DuplicatesForm.SendToRight" />
+  <action id="EditSource" />
+  <action id="EditorSelectWord" />
+  <action id="EditorUnSelectWord" />
+  <action id="ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="meta alt equals" />
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+    <keyboard-shortcut first-keystroke="f12" />
+  </action>
+  <action id="ExpandExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="ExpandRegion" />
+  <action id="ExpandRegionRecursively">
+    <keyboard-shortcut first-keystroke="meta alt add" />
+  </action>
+  <action id="ExternalJavaDoc" />
+  <action id="ExternalSystem.ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="ExternalSystem.OpenConfig" />
+  <action id="ExternalSystem_37febb7fgraph37febb7fgraph [run]">
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
+  <action id="ExternalSystem_6966e010chisto116966e010chisto11 [run]">
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
+  <action id="ExternalSystem_b9a2d073graphb9a2d073graph [run]">
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
+  <action id="FileChooser.GotoHome" />
+  <action id="FileChooser.GotoModule" />
+  <action id="FileChooser.GotoProject" />
+  <action id="FindInPath">
+    <keyboard-shortcut first-keystroke="shift meta f" />
+    <keyboard-shortcut first-keystroke="f6" />
+  </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt f7" />
+    <mouse-shortcut keystroke="control alt button1" />
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta alt right" />
+    <mouse-shortcut keystroke="button5" />
+  </action>
+  <action id="FullyExpandTreeNode">
+    <keyboard-shortcut first-keystroke="multiply" />
+    <keyboard-shortcut first-keystroke="alt down" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="meta n" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+    <keyboard-shortcut first-keystroke="alt altGraph 1" />
+    <keyboard-shortcut first-keystroke="meta #10000a7" />
+  </action>
+  <action id="Git.Reword.Commit">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="GotoAction">
+    <keyboard-shortcut first-keystroke="shift meta a" />
+    <keyboard-shortcut first-keystroke="meta 8" />
+  </action>
+  <action id="GotoNextError" />
+  <action id="GotoNextIncompletePropertyAction" />
+  <action id="GotoPreviousError" />
+  <action id="Graph.Faces.OpenSelectedPages" />
+  <action id="GuiDesigner.EditComponent" />
+  <action id="GuiDesigner.EditGroup" />
+  <action id="GuiDesigner.ExpandSelection" />
+  <action id="GuiDesigner.QuickJavadoc">
+    <keyboard-shortcut first-keystroke="ctrl j" />
+    <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="Images.Editor.ZoomIn">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="InsertLiveTemplate">
+    <keyboard-shortcut first-keystroke="meta j" />
+    <keyboard-shortcut first-keystroke="f1" />
+  </action>
+  <action id="InspectCode">
+    <keyboard-shortcut first-keystroke="meta alt z" />
+    <keyboard-shortcut first-keystroke="meta 2" />
+  </action>
+  <action id="IntroduceConstant" />
+  <action id="JProfiler.ShowJProfiler" />
+  <action id="Jdbc.OpenEditor" />
+  <action id="JindentComponent.formatEditor">
+    <keyboard-shortcut first-keystroke="meta alt k" />
+    <keyboard-shortcut first-keystroke="meta minus" />
+  </action>
+  <action id="JumpToLastWindow" />
+  <action id="Maven.ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="MethodOverloadSwitchDown" />
+  <action id="MethodOverloadSwitchUp" />
+  <action id="MinimizeCurrentWindow" />
+  <action id="ModifyObject">
+    <keyboard-shortcut first-keystroke="meta f6" />
+  </action>
+  <action id="Move" />
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="meta n" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+    <keyboard-shortcut first-keystroke="alt altGraph 2" />
+    <keyboard-shortcut first-keystroke="meta 1" />
+  </action>
+  <action id="NewFromTemplate">
+    <keyboard-shortcut first-keystroke="meta m" />
+  </action>
+  <action id="NextDiff" />
+  <action id="NextProjectWindow" />
+  <action id="OpenModuleSettings" />
+  <action id="QuickJavaDoc">
+    <keyboard-shortcut first-keystroke="ctrl j" />
+    <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="meta alt l" />
+    <keyboard-shortcut first-keystroke="meta 0" />
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
+  <action id="RemoteHost.NewRemoteItem">
+    <keyboard-shortcut first-keystroke="meta n" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+    <keyboard-shortcut first-keystroke="alt altGraph 2" />
+  </action>
+  <action id="RemoteHostView.EditSource" />
+  <action id="RemoteHostView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="shift f6" />
+    <keyboard-shortcut first-keystroke="shift f1" />
+  </action>
+  <action id="ReplaceInPath">
+    <keyboard-shortcut first-keystroke="shift meta r" />
+    <keyboard-shortcut first-keystroke="f7" />
+  </action>
+  <action id="RestoreDefaultLayout">
+    <keyboard-shortcut first-keystroke="shift f12" />
+    <keyboard-shortcut first-keystroke="shift f2" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="meta alt r" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="ctrl r" />
+    <keyboard-shortcut first-keystroke="meta alt x" />
+    <keyboard-shortcut first-keystroke="meta 3" />
+  </action>
+  <action id="RunDashboard.EditConfiguration" />
+  <action id="RunToCursor">
+    <keyboard-shortcut first-keystroke="alt f9" />
+    <keyboard-shortcut first-keystroke="meta 7" />
+  </action>
+  <action id="Scala.ShowImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
+  <action id="SearchEverywhere.NavigateToNextGroup">
+    <keyboard-shortcut first-keystroke="page_down" />
+  </action>
+  <action id="SearchEverywhere.NavigateToPrevGroup">
+    <keyboard-shortcut first-keystroke="page_up" />
+  </action>
+  <action id="SetShortcutAction">
+    <keyboard-shortcut first-keystroke="alt enter" />
+    <keyboard-shortcut first-keystroke="alt altGraph enter" />
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="ShelvedChanges.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ShowIntentionActions">
+    <keyboard-shortcut first-keystroke="alt enter" />
+    <keyboard-shortcut first-keystroke="alt altGraph enter" />
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="ShowNavBar">
+    <keyboard-shortcut first-keystroke="alt home" />
+  </action>
+  <action id="ShowSearchHistory" />
+  <action id="ShowUsages">
+    <keyboard-shortcut first-keystroke="meta alt f7" />
+    <keyboard-shortcut first-keystroke="alt z" />
+  </action>
+  <action id="SmartSelect" />
+  <action id="SmartTypeCompletion">
+    <keyboard-shortcut first-keystroke="shift ctrl space" />
+    <keyboard-shortcut first-keystroke="f2" />
+  </action>
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="meta 6" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="meta 5" />
+  </action>
+  <action id="SurroundWithLiveTemplate">
+    <keyboard-shortcut first-keystroke="meta alt j" />
+    <keyboard-shortcut first-keystroke="meta alt 1" />
+  </action>
+  <action id="TableResult.GrowSelection" />
+  <action id="ToggleBookmark" />
+  <action id="UML.ApplyCurrentLayout" />
+  <action id="Vcs.EditSource" />
+  <action id="Vcs.RollbackChangedLines" />
+  <action id="XDebugger.EditWatch" />
+  <action id="XDebugger.JumpToSource" />
+  <action id="XDebugger.SetValue" />
+  <action id="XPathView.Actions.Evaluate" />
+  <action id="XPathView.Actions.FindByExpression" />
+  <action id="XPathView.Actions.ShowPath" />
+  <action id="codeNavigator.classCloud.zoomOut" />
+  <action id="codeNavigator.uml.diagramZoomOut" />
+  <action id="codeNavigator.zoomOut" />
+  <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnEditor">
+    <keyboard-shortcut first-keystroke="shift meta alt g" />
+    <keyboard-shortcut first-keystroke="meta minus" />
+    <keyboard-shortcut first-keystroke="f9" />
+  </action>
+  <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnProject">
+    <keyboard-shortcut first-keystroke="meta equals" />
+  </action>
+  <action id="me.scana.okgradle.ok">
+    <keyboard-shortcut first-keystroke="meta k" />
+  </action>
+  <action id="refactoring.extract.dependency">
+    <keyboard-shortcut first-keystroke="meta alt m" />
+  </action>
+</keymap>

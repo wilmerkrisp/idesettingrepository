@@ -1,0 +1,9 @@
+#if (${T1} != "")       this.item1 = item1;#end
+#if (${T2} != "")		this.item2 = item2;#end
+#if (${T3} != "")		this.item3 = item3;#end
+#if (${T4} != "")		this.item4 = item4;#end
+#if (${T5} != "")		this.item5 = item5;#end
+#if (${T6} != "")		this.item6 = item6;#end
+#if (${T7} != "")		this.item7 = item7;#end
+#if (${T8} != "")		this.item8 = item8;#end
+#if (${T9} != "")		this.item9 = item9;#end

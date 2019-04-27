@@ -1,0 +1,17 @@
+<templateSet group="PATTERNS_enterprise">
+  <template name="pe_lazy2" value="/**                         LAZY property IMMUTABLE c_var&#10; * &lt;pre&gt;{@code&#10; *&#10; * &#10; * example 1&#10; * &#10; *           this.c_&#10; *&#10; * example 2&#10; *&#10; * &#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;/* private public protected _package_ final =1 */&#10;private final $class$ c_lazy_$c_var$; /*NO INITIALIZATION HERE*/&#10;&#10;public $class$ get$c_var$()&#10;&#9;{&#10;&#9;return f_lazy_$c_var$();&#10;&#9;}&#10;&#10;public void set$c_var$($class$ p_new)&#10;&#9;{&#10;&#9;//f_lazy_().setParams( p_new.getParams() );&#10;&#9;c_lazy_$c_var$=p_new;&#10;&#9;&#10;&#9;}&#10;&#10;/**                         LAZY property method&#10; * &lt;pre&gt;{@code&#10; *&#10; * &#10; * example 1    &#10; * &#10; *              get/set mutable lazy object from outside class&#10; *              $class$.get();&#10; *              $class$.set();&#10; *              &#10; * example 2    &#10; * &#10; *              use property methods inside the class&#10; *              f_lazy_().f_method();&#10; *              &#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;//      private public protected final  &#10;//      throws Exception&#10;private $class$ f_lazy_$c_var$()&#10;{&#10;//log_.debug   (&quot;$class$ f_method: &quot;+p_1);&#10;//super.f_method(p_1);&#10;$END$&#10;&#9;if(c_lazy_$c_var$==null)&#10;&#9;&#9;{&#10;&#9;&#9;c_lazy_$c_var$ = new $class$()&#10;&#9;&#9;}&#10;//&#9;&#10;return c_lazy_$c_var$;&#10;}&#10;" description="lazy load property" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c_var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pe_lazy1" value="if ($VAR$ == null) {&#10;  $VAR$ = new $TYPE$($END$);&#10;}" description="Performs lazy initialization" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="subtypes(typeOfVariable(VAR))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

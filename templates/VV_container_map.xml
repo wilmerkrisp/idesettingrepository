@@ -1,0 +1,139 @@
+<templateSet group="VV_container_map">
+  <template name="newmap TreeMap" value="var $v_col1$ = new TreeMap&lt;$String$ , $two$&gt;( );" description="new tree map / NavigableMap" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap HashMap" value="var $v_col1$ = new HashMap&lt;$String$ , $two$&gt;( );" description="new hash map / Map" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap LinkedHashMap" value="var $v_col1$ = new LinkedHashMap&lt;$String$ , $two$&gt;( );" description="new linked hash map / Map" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap EnumMap" value="//categorize elements of arr&#10;YearMonth[] year_months_arr;&#10;Map&lt; Month, Set&lt; YearMonth &gt; &gt; categorized_result =Arrays.stream( year_months_arr ).collect( groupingBy( p -&gt; p.getMonth() ,&#10;                                                                                                         () -&gt; new EnumMap&lt;&gt;( Month.class ) ,&#10;                                                                                                         toSet() ) );" description="new enum map / EnumMap" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap WeakHashMap" value="var $v_col1$ = new WeakHashMap&lt;$String$ , $two$ &gt;( );" description="new weak hash map / Map" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap IdentityHashMap" value="var $v_col1$ = new IdentityHashMap&lt;$String$ , $two$&gt;( );" description="new identity hash map / Map" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap TreeMap(map)" value="var $v_col1$ = new TreeMap&lt;$k$,$v$&gt;($map$ );" description="MAP AS PARAM / new tree map / NavigableMap" toReformat="false" toShortenFQNames="true">
+    <variable name="map" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap TreeMap(comparator)" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*  &#10;дефолтный компаратор НО указываем по каким свойствам/методам объекта будем сравнивать&#10;Comparator&lt; VV_ &gt; v_comp2 = Comparator.comparing(   p_1 -&gt; p_1.c_prop );&#10;Comparator&lt; VV_ &gt; v_comp2 = Comparator.comparing(  (VV_ p_1) -&gt; p_1.c_prop1 ).thenComparing( (VV_ p_1)-&gt; p_1.c_prop2 );&#10;&#10;указываем не только извлекаемые из объекта свойство для сравнения НО И ФУНКЦИЮ ДЛЯ ИХ СРАВНЕНИЯ&#10;Comparator&lt; VV_ &gt; v_comp2 = Comparator.comparing(   p_1 -&gt; p_1.c_prop , (p_1,p_2) -&gt; p_2.compareTo(p_1)); &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;var $v_col1$ = new TreeMap&lt;$String$ , $two$&gt;( $comp$);" description="COMPARATOR AS PARAM / new tree map / NavigableMap" toReformat="false" toShortenFQNames="true">
+    <variable name="comp" expression="variableOfType(&quot;java.util.Comparator&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="two" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap LinkedHashMap(map)" value="var $v_col1$ = new LinkedHashMap&lt;$k$,$v$&gt; ($map$ );" description="MAP AS PARAM / new linked hash map / Map" toReformat="false" toShortenFQNames="true">
+    <variable name="map" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap Map.entry(key,value)" value="var v_e = Map.&lt;$ktype$,$vtype$&gt;entry($k$,$v$);$END$" description="создать один кортеж" toReformat="false" toShortenFQNames="true">
+    <variable name="ktype" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="vtype" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap . arr-&gt;immut" value="var $v_col1$ = Map.&lt;$k$,$v$&gt;ofEntries($v_arr$);&#10;$END$" description="Map.ofEntries(arr) / получить мапу (немутабельную) из arr или vararg / ЭЛЕМЕНТЫ ТИПА Map.Entry" toReformat="false" toShortenFQNames="true">
+    <variable name="v_arr" expression="arrayVariable()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap Map.of(&quot;1&quot;,&quot;2&quot;) immutable" value="var $v_col1$ = Map.&lt;$k$,$v$&gt;of(1,&quot;1&quot;,2,&quot;2&quot;$END$);" description="получить мапу (немутабельную)  key-value или пустаяМапа" toReformat="false" toShortenFQNames="true">
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap Map.Entry" value="Map.Entry&lt;$key$,$value$&gt; v_e$END$" description="PARAM = создать один кортеж" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="newmap . immut-&gt;mut" value="var $v_col1$ = new HashMap&lt;$k$,$v$&gt;( $coll$ );&#10;$END$" description="Map.ofEntries(arr) / получить мапу (немутабельную) из arr или vararg / ЭЛЕМЕНТЫ ТИПА Map.Entry" toReformat="false" toShortenFQNames="true">
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="coll" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newmap . mut-&gt;immut" value="var $v_col1$ = Map.&lt;$k$,$v$&gt;copyOf( $coll$ );&#10;$END$" description="Map.ofEntries(arr) / получить мапу (немутабельную) из arr или vararg / ЭЛЕМЕНТЫ ТИПА Map.Entry" toReformat="false" toShortenFQNames="true">
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="k" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="coll" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

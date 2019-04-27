@@ -1,0 +1,65 @@
+<templateSet group="VV_container_array">
+  <template name="newarr2" value="new $class$[]{new $class$(&quot;one&quot;$END$), new $class$(&quot;two&quot;) }&#10;" description="PARAM = array  aggregate initialization" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr3" value="var v_$arr$=new String[]{new String(&quot;one&quot;), new String(&quot;two&quot;)};&#10;$END$" description="array with strings  aggregate initialization" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="suggestVariableName()" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr4" value="var v_$arr$=new String[10];&#10;$END$" description="array with size" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="suggestVariableName()" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr5" value="String[] v_$arr$= {&quot;one&quot;,&quot;two&quot;,&quot;three&quot;,&quot;four&quot;}; // {} allowed only here&#10;$END$" description="array with strings" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="suggestVariableName()" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr6" value="String[][] v_arr= {{&quot;1_1&quot;,&quot;1_2&quot;},{&quot;2_1&quot;,&quot;2_2&quot;},{&quot;3_1&quot;,&quot;3_2&quot;},{&quot;4_1&quot;,&quot;4_2&quot;}};&#10;for(int v_y = 0; v_y&lt; v_arr.length;v_y++)&#10;&#9;for (int v_x = 0; v_x &lt; v_arr[v_y].length; v_x++)&#10;&#9;&#9;log.debug   (&quot;$class$ $method$ for&quot;+v_arr[v_y][v_x]);&#10;&#9;&#9;" description="array 2 dimensions" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="forarray2" value="for (var $a$ = 0 ; $a$ &lt; $arr$.length ; $a$++)&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* $str$&#10;&#9; if($a$ == 10) break continue&#10;&#9; log_.debug   (&quot;$class$ $method$ for: &quot;+$a$+&quot;=&quot;+v_a);&#10;&#9; &#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#10;&#9;&#10;&#9;&#10;        var v_a= $arr$[$a$];&#10;        &#10;&#9;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9;$END$&#9;&#10;        }" description="loop for array" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="arrayVariable()" defaultValue="" alwaysStopAt="true" />
+    <variable name="a" expression="suggestIndexName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="str" expression="componentTypeOf(arr)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr1" value="var $arr$ = new $class$[]{new $class$(&quot;one&quot;$END$), new $class$(&quot;two&quot;) }&#10;" description="array  aggregate initialization" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="arr" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newarr7" value="var $v_arr$ = $COLLECTION$.toArray(new $COMPONENT_TYPE$[$COLLECTION$.size()]);&#10;$END$" description="array from collection" toReformat="false" toShortenFQNames="true">
+    <variable name="COLLECTION" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="collection" alwaysStopAt="true" />
+    <variable name="v_arr" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPONENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>

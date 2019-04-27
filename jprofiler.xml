@@ -1,0 +1,14 @@
+<application>
+  <component name="JProfilerPlugin">
+    <option name="openNewWindow" value="true" />
+  </component>
+  <component name="JrePropertiesCache">
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home" arch64Bit="true" />
+    <jre homeDir="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home" arch64Bit="true" />
+  </component>
+</application>

@@ -1,0 +1,21 @@
+<scheme name="_@user_Darcula" version="142" parent_scheme="Darcula">
+  <metaInfo>
+    <property name="created">2017-12-02T11:38:22</property>
+    <property name="ide">idea</property>
+    <property name="ideVersion">2017.2.6.0.0</property>
+    <property name="modified">2018-02-09T22:16:38</property>
+    <property name="originalScheme">Darcula</property>
+  </metaInfo>
+  <attributes>
+    <option name="DEFAULT_BLOCK_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="4e4e4e" />
+      </value>
+    </option>
+    <option name="DEFAULT_LINE_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="4e4e4e" />
+      </value>
+    </option>
+  </attributes>
+</scheme>

@@ -1,0 +1,28 @@
+<templateSet group="VV_optional">
+  <template name="newoptional1 from newobject" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;- альтернатива Optional это аннотация @Nullabble&#10;- запускает обработку на null значениях, классика nullable, те я потом должен буду проверить на null&#10;- если вдруг переменная =null то get вернет иксепшен&#10;&#10;.ifPresent( System.out::println );&#10;.map( (z) -&gt; { System.out.println( z ); return z; } &#10;&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;Optional&lt;$classname$&gt; $var$ = Optional.ofNullable(new $classname$());&#10;&#10;//var1&#10;if ($var$.isPresent())&#10;&#9;System.out.println( $var$.get() );&#10;//var2&#10;var $var$_result = $var$.orElse(&quot;default value&quot;);&#10;&#9;&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newoptional1 from var /FULL" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;- запакуется значение переменной или дефолтное значение&#10;- запускает продолжение обработки на дефолтных значениях, те я потом уже НЕ должен буду проверить на null&#10;&#10;.ifPresent( System.out::println );&#10;.map( (z) -&gt; { System.out.println( z ); return z; } &#10;&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;//var1&#10;var $var$ = Optional&lt;$classname$&gt;.ofNullable($somevar$).orElse(new $classname$());&#10;//var2&#10;var $var$2 = Optional&lt;$classname$&gt;.ofNullable($somevar$).orElseGet(()-&gt;new $classname$());&#10;&#10;var $var$_result = $var$.get();&#10;&#9;&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="somevar" expression="suggestFirstVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newoptional from var" value="var $var$ = Optional&lt;$classname$&gt;.ofNullable($somevar$);&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="somevar" expression="suggestFirstVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
