@@ -1067,9 +1067,6 @@
   <inspection_tool class="PointcutMethodStyleInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="PointlessArithmeticExpressionJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="PointlessBinding" enabled="false" level="WARNING" enabled_by_default="false" />
-  <inspection_tool class="PointlessBitwiseExpressionJS" enabled="false" level="WARNING" enabled_by_default="false">
-    <option name="m_ignoreExpressionsContainingConstants" value="false" />
-  </inspection_tool>
   <inspection_tool class="PointlessBooleanExpressionJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="PointlessIndexOfComparison" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PostfixTemplateDescriptionNotFound" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1104,7 +1101,7 @@
   <inspection_tool class="QuickFixGetFamilyNameViolation" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="RandomDoubleForRandomInteger" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="RawTypeCanBeGeneric" enabled="true" level="ERROR" enabled_by_default="true" />
-  <inspection_tool class="RawUseOfParameterizedType" enabled="true" level="ERROR" enabled_by_default="true">
+  <inspection_tool class="RawUseOfParameterizedType" enabled="false" level="ERROR" enabled_by_default="false">
     <option name="ignoreObjectConstruction" value="false" />
   </inspection_tool>
   <inspection_tool class="ReadObjectAndWriteObjectPrivate" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1385,7 +1382,6 @@
   <inspection_tool class="UnnecessaryLabelOnContinueStatementJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="UnnecessaryLocalVariableJS" enabled="false" level="WARNING" enabled_by_default="false">
     <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
-    <option name="m_ignoreAnnotatedVariables" value="false" />
   </inspection_tool>
   <inspection_tool class="UnnecessaryQualifiedReference" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="UnnecessaryQualifierForThis" enabled="true" level="INFORMATION" enabled_by_default="true" />

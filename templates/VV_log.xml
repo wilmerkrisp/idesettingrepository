@@ -291,4 +291,9 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="check disable warnings" value="@SuppressWarnings(&quot;unchecked&quot;)" description="@SuppressWarnings(&quot;unchecked&quot;)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
