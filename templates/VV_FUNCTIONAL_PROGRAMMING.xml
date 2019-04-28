@@ -1,4 +1,4 @@
-<templateSet group="VV_FUNCT">
+<templateSet group="VV_FUNCTIONAL_PROGRAMMING">
   <template name="fx functions composition" value="//java.util.function.&#10;Function&lt;Integer,Integer&gt; a1 = a -&gt; a * 3;&#10;Function&lt;Integer,Integer&gt; a2 = a -&gt; a * a;&#10;//a1(a2(3)) &#10;a1.compose( a2 ).apply( 3 ) ;" description="a1(a2(3))   == a1.compose( a2 ).apply( 3 )" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />

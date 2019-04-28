@@ -22,7 +22,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="property cashed" value="//using cyclop's lazy load&#10;private static final Supplier&lt; $class$ &gt; $c_var$_ = memoizeSupplier($class$::new) ;" description="property using cyclop's lazy load" toReformat="false" toShortenFQNames="true">
+  <template name="property lazy supplier" value="//using cyclop's lazy load&#10;private static final Supplier&lt; $class$ &gt; $c_var$_ = memoizeSupplier($class$::new) ;" description="property using cyclop's lazy load" toReformat="false" toShortenFQNames="true">
     <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
     <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -32,6 +32,11 @@
   <template name="property private CONSTANT" value="// constant&#10;private static final $class$  $c_var$ = new $class$(&quot;Test string.&quot;);" description="private property for mutable and immutable classes" toReformat="false" toShortenFQNames="true">
     <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
     <variable name="c_var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="property lazy cashed" value="@Getter( lazy=true)&#10;private static final String lazy_ =new String( &quot;test&quot; );" description="static value / lombok" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
