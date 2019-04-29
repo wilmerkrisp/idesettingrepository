@@ -217,28 +217,14 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check argument  /mutable/OPTIONAL" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;if ($VAR$==null || $VAR$.isBlank() || !isConsistent_()  )&#10;&#9;return Optional.empty();" description="Optional  ==null  isBlank()  !isConsistent_()  )" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /mutable/OPTIONAL" value="/**&#10; @return empty value    if input argument empty &#10;                        if one collection's element is empty&#10;                        if object's state inconsistent&#10; */&#10;if ($VAR$==null || $VAR$.isBlank() || !isConsistent()  )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;String param must not ne null or empty. Or object's state inconsistent&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional  ==null  isBlank()  !isConsistent_()  )" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check state/ public method /" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalArgumentException if argument empty (or if one collection's element is empty)&#10; */&#10;notBlank($VAR$);&#10;&#10;$END$" description="notBlank" toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
-    <context>
-      <option name="GROOVY_STATEMENT" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="check argument /mutable/ COLLECTION+OPTIONAL" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;if ( $VAR$==null||$VAR$.isEmpty() || !isConsistent_() )  &#10;&#9;return Optional.empty();" description="Optional ==null isEmpty()  !isConsistent_()" toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
-    <context>
-      <option name="GROOVY_STATEMENT" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="check state / public method / COLLECTION+MUTALBE" value="/**&#10; @throws IllegalStateException if argument nullable&#10; @throws IllegalStateException if argument empty (or if one collection's element is empty)&#10; */&#10;notEmpty($VAR$);&#10;&#10;$END$" description="notEmpty" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /mutable/ COLLECTION+OPTIONAL" value="/**&#10; @return empty value    if input argument null &#10;                        if one collection is empty&#10;                        if object's state inconsistent&#10; */&#10;if ( $VAR$==null||$VAR$.isEmpty() || !isConsistent() )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;Collection param must not ne null or empty. Or object's state inconsistent&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional ==null isEmpty()  !isConsistent_()" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
@@ -250,35 +236,35 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="check argument /mutable/collection" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;notEmpty($VAR$)&#10;checkConsistency_()&#10;" description="notEmpty + checkConsistency_" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /mutable/collection" value="/**&#10; @throws NullPointerException if input argument nullable&#10; @throws IllegalArgumentException if input collection is empty&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;@NonNull   от LOMBOK&#10;notEmpty($VAR$)&#10;checkConsistency()&#10;" description="notEmpty + checkConsistency_" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check argument /mutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;notBlank($VAR$)&#10;checkConsistency_()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /mutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalArgumentException if input argument is blank&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;@NonNull   от LOMBOK&#10;notBlank($VAR$)&#10;checkConsistency()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check argument /immutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;notBlank($VAR$)&#10;" description="notBlank()" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /immutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalArgumentException if input argument is blank&#10; */&#10;@NonNull   от LOMBOK&#10;notBlank($VAR$)&#10;" description="notBlank()" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check argument /immutable/collection" value="/**&#10; @throws NullPointerException if argument nullable&#10; @return empty value if input argument empty (or if one collection's element is empty)&#10; */&#10;notEmpty($VAR$)&#10;" description="notEmpty()" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /immutable/collection" value="/**&#10; @throws NullPointerException if input argument nullable&#10; @throws IllegalArgumentException if input collection is empty&#10; */&#10;@NonNull   от LOMBOK&#10;notEmpty($VAR$)&#10;" description="notEmpty()" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check argument /immutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; */&#10;if ($VAR$ == null) {&#10;throw new NullPointerException();&#10;}" description="=null  -&gt; NullPointerException" toReformat="false" toShortenFQNames="true">
+  <template name="check argument /immutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; */&#10;1) @NonNull   от LOMBOK&#10;2) notNull( $VAR$ );" description="=null  -&gt; NullPointerException" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
     <context>
       <option name="GROOVY_STATEMENT" value="true" />
@@ -294,6 +280,20 @@
   <template name="check disable warnings" value="@SuppressWarnings(&quot;unchecked&quot;)" description="@SuppressWarnings(&quot;unchecked&quot;)" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;1) @NonNull   от LOMBOK&#10;2) nonNull($VAR$)&#10;&#10;checkConsistency()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /immutable/OPTIONAL" value="/**&#10; @return empty value    if input argument empty &#10;                        if one collection's element is empty&#10; */&#10;if ($VAR$==null || $VAR$.isBlank() )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;String param must not ne null or empty.&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional  ==null  isBlank()  !isConsistent_()  )" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
 </templateSet>
