@@ -28,6 +28,7 @@
       <template name="_tuple interface immutable.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple interface mutable.java" reformat="true" live-template-enabled="true" />
       <template name="_VTEST_class_TEST.java" reformat="true" live-template-enabled="true" />
+      <template name="experimental_collectionn MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
       <template name="helper class.java" reformat="true" live-template-enabled="true" />
       <template name="OLD_VA_class_abstract.java" reformat="true" live-template-enabled="true" />
       <template name="OLD_VC_class_mutable [FULL].java" reformat="true" live-template-enabled="true" />
