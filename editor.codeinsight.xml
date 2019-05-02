@@ -4,7 +4,6 @@
     <option name="COLLAPSE_CUSTOM_FOLDING_REGIONS" value="true" />
   </component>
   <component name="CodeInsightSettings">
-    <option name="SHOW_INFERRED_ANNOTATIONS_INLINE" value="true" />
     <option name="USE_INSTANCEOF_ON_EQUALS_PARAMETER" value="true" />
     <option name="USE_ACCESSORS_IN_EQUALS_HASHCODE" value="true" />
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
