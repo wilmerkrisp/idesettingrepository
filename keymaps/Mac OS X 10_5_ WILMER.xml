@@ -115,6 +115,9 @@
   <action id="ExternalSystem_b9a2d073graphb9a2d073graph [run]">
     <keyboard-shortcut first-keystroke="meta back_quote" />
   </action>
+  <action id="ExternalSystem_c6da815experiment2c6da815RUNN">
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
   <action id="FileChooser.GotoHome" />
   <action id="FileChooser.GotoModule" />
   <action id="FileChooser.GotoProject" />
