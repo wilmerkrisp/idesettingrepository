@@ -24,23 +24,23 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx declare self referenced function in variable" value="public static final Function&lt;Integer,Integer&gt; factorial = i-&gt;(i&lt;=1)?1:$class$.factorial.apply(i-1)*i;" description="var+static initializer" toReformat="false" toShortenFQNames="true">
+  <template name="fx function / declare self referenced function in variable" value="public static final Function&lt;Integer,Integer&gt; factorial = i-&gt;(i&lt;=1)?1:$class$.factorial.apply(i-1)*i;" description="var+static initializer" toReformat="false" toShortenFQNames="true">
     <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx switch 1" value="String i   = &quot;john.doe@acme.com&quot;;&#10;String rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                  &quot;one&quot; ) ,&#10;                            Case( $( String::isBlank ) ,&#10;                                  &quot;two&quot; ) ,&#10;                            Case( $( is( &quot;test&quot; ) ) ,&#10;                                  &quot;test&quot; ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch 1" value="String i   = &quot;john.doe@acme.com&quot;;&#10;String rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                  &quot;one&quot; ) ,&#10;                            Case( $( String::isBlank ) ,&#10;                                  &quot;two&quot; ) ,&#10;                            Case( $( is( &quot;test&quot; ) ) ,&#10;                                  &quot;test&quot; ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="VAVR fx pattern matching" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx switch 3" value="Consumer&lt;String&gt; do1 = ( s ) -&gt; System.out.println( &quot;VOVAsuccess &quot; + s );&#10;Consumer&lt;String&gt; do2 = ( s ) -&gt; System.out.println( &quot;VOVAerror &quot; + s );&#10;&#10;//Matching.w&#10;String i = &quot;john.doe@acme.com&quot;;&#10;Result&lt;String&gt; rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                           Result.error( &quot;must not be null&quot; ) ) ,&#10;                                     Case( $( String::isBlank ) ,&#10;                                           Result.error( &quot;must not be blank&quot; ) ) ,&#10;                                     Case( $( is( &quot;test&quot; ) ) ,&#10;                                           Result.error( &quot;must not be test&quot; ) ) ,&#10;                                     Case( $() ,&#10;                                           Result.success( &quot;all is success&quot; ) ) );&#10;rez.onSuccess( do1 ).onError( do2 );" description="fx pattern matching / RETURN result.success result.error" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch 3" value="Consumer&lt;String&gt; do1 = ( s ) -&gt; System.out.println( &quot;VOVAsuccess &quot; + s );&#10;Consumer&lt;String&gt; do2 = ( s ) -&gt; System.out.println( &quot;VOVAerror &quot; + s );&#10;&#10;//Matching.w&#10;String i = &quot;john.doe@acme.com&quot;;&#10;Result&lt;String&gt; rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                           Result.error( &quot;must not be null&quot; ) ) ,&#10;                                     Case( $( String::isBlank ) ,&#10;                                           Result.error( &quot;must not be blank&quot; ) ) ,&#10;                                     Case( $( is( &quot;test&quot; ) ) ,&#10;                                           Result.error( &quot;must not be test&quot; ) ) ,&#10;                                     Case( $() ,&#10;                                           Result.success( &quot;all is success&quot; ) ) );&#10;rez.onSuccess( do1 ).onError( do2 );" description="VAVR fx pattern matching / RETURN result.success result.error" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx switch 2" value="Function&lt;String,Function&lt;String,Void&gt;&gt; yes = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; no  = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Predicate&lt;String&gt; checkNoEmail = e -&gt; !emailPattern.matcher( e ).matches();&#10;&#10;java.util.function.Consumer&lt;String&gt; emailChecker = ( e ) -&gt; Match( e ).of( Case( $( isNull() ) ,&#10;                                                                                 no.apply( &quot;email must not be null.&quot; ) ) ,&#10;                                                                           Case( $( String::isBlank ) ,&#10;                                                                                 no.apply( &quot;email must not be empty.&quot; ) ) ,&#10;                                                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                                                 no.apply( &quot;must not be test&quot; ) ) ,&#10;                                                                           Case( $( checkNoEmail ) ,&#10;                                                                                 no.apply( &quot;email &quot; + e + &quot; is invalid.&quot; ) ) ,&#10;                                                                           Case( $() ,&#10;                                                                                 yes.apply( e ) )) ;" description="fx pattern matching / RUN" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch 2" value="Function&lt;String,Function&lt;String,Void&gt;&gt; yes = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; no  = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Predicate&lt;String&gt; checkNoEmail = e -&gt; !emailPattern.matcher( e ).matches();&#10;&#10;java.util.function.Consumer&lt;String&gt; emailChecker = ( e ) -&gt; Match( e ).of( Case( $( isNull() ) ,&#10;                                                                                 no.apply( &quot;email must not be null.&quot; ) ) ,&#10;                                                                           Case( $( String::isBlank ) ,&#10;                                                                                 no.apply( &quot;email must not be empty.&quot; ) ) ,&#10;                                                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                                                 no.apply( &quot;must not be test&quot; ) ) ,&#10;                                                                           Case( $( checkNoEmail ) ,&#10;                                                                                 no.apply( &quot;email &quot; + e + &quot; is invalid.&quot; ) ) ,&#10;                                                                           Case( $() ,&#10;                                                                                 yes.apply( e ) )) ;" description="VAVR fx pattern matching / RUN" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -48,6 +48,31 @@
   <template name="fx if check and return" value="return Optional.ofNullable(monetaryRoundingsSingletonSpi()).orElseThrow(&#10;&#9;() -&gt; new MonetaryException(&quot;No MonetaryRoundingsSpi loaded, query functionality is not available.&quot;))&#10;        .getDefaultRounding();" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx functions currying MINI  Function1=Function2" value="// Создаем базовую функцию&#10;Function2&lt;String, String, String&gt; combineName =&#10;&#9;(lastName, firstName) -&gt; firstName + &quot; &quot; + lastName;&#10;// На основе базовой строим новую функцию с одним переданным элементом&#10;var makeGriffinName = combineName&#10;&#9;                                            .curried()&#10;&#9;                                            .apply(&quot;Griffin&quot;);&#10;// Работаем как с полноценной функцией&#10;System.out.println(makeGriffinName.apply(&quot;Peter&quot;)); // Peter Griffin&#10;System.out.println(makeGriffinName.apply(&quot;Lois&quot;)); // Lois Griffin" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx coll queue" value="System.out.println(queue); // Queue(1, 2, 3, 4, 5)&#10;Tuple2&lt;Integer, Queue&lt;Integer&gt;&gt; tuple2 = queue.dequeue();&#10;System.out.println(tuple2._1); // 1&#10;System.out.println(tuple2._2); // Queue(2, 3, 4, 5)" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx function0 memoized" value="var hashCache =&#10;&#9;Function0.of(Math::random).memoized();&#10;&#10;double randomValue1 = hashCache.apply();" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx function wrap exception" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx function from method reference" value="var sum = Function2.of( Math::pow );&#10;Double summed = sum.apply(5.0, 6.0);" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
 </templateSet>
