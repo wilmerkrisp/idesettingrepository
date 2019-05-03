@@ -203,6 +203,7 @@
   <action id="NextDiff" />
   <action id="NextProjectWindow" />
   <action id="OpenModuleSettings" />
+  <action id="ProjectViewChangeView" />
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="ctrl j" />
     <mouse-shortcut keystroke="control button2" />
@@ -256,6 +257,7 @@
   <action id="SearchEverywhere.NavigateToPrevGroup">
     <keyboard-shortcut first-keystroke="page_up" />
   </action>
+  <action id="SelectIn" />
   <action id="SetShortcutAction">
     <keyboard-shortcut first-keystroke="alt enter" />
     <keyboard-shortcut first-keystroke="alt altGraph enter" />
@@ -291,6 +293,7 @@
   <action id="SurroundWithLiveTemplate">
     <keyboard-shortcut first-keystroke="meta alt j" />
     <keyboard-shortcut first-keystroke="meta alt 1" />
+    <keyboard-shortcut first-keystroke="alt f1" />
   </action>
   <action id="TableResult.GrowSelection" />
   <action id="ToggleBookmark" />
