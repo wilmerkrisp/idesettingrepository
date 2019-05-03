@@ -75,4 +75,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx function wrap exception Failure-&gt;Success" value="var v=Try.of( () -&gt; 4 / 0 )&#10;         .onFailure( System.out::println )&#10;         .onSuccess( System.out::println )&#10;         .recover( r -&gt; Match( r ).of( Case( $(instanceOf( ArithmeticException.class )) , -1  ) )); //Success с дефолтным значением -1" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
