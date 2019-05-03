@@ -181,7 +181,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="if switch" value="var $result$=switch ($switchCondition$)&#10;    {&#10;    case 1,2-&gt; 3;&#10;    default -&gt; 4;&#10;    };" description="switch assignment" toReformat="false" toShortenFQNames="true">
+  <template name="if switch" value="var $result$=switch ($switchCondition$)&#10;    {&#10;    case 1,2-&gt; 3;&#10;    default -&gt; 4;&#10;    };" description="JAVA12 switch assignment" toReformat="false" toShortenFQNames="true">
     <variable name="result" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="switchCondition" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -189,7 +189,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="if switch return" value="return switch ($switchCondition$)&#10;    {&#10;    case 1,2-&gt; 3;&#10;    default -&gt; 4;&#10;    };" description="switch assignment" toReformat="false" toShortenFQNames="true">
+  <template name="if switch return" value="return switch ($switchCondition$)&#10;    {&#10;    case 1,2-&gt; 3;&#10;    default -&gt; 4;&#10;    };" description="java12 switch assignment" toReformat="false" toShortenFQNames="true">
     <variable name="switchCondition" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />

@@ -45,4 +45,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx if check and return" value="return Optional.ofNullable(monetaryRoundingsSingletonSpi()).orElseThrow(&#10;&#9;() -&gt; new MonetaryException(&quot;No MonetaryRoundingsSpi loaded, query functionality is not available.&quot;))&#10;        .getDefaultRounding();" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
