@@ -24,7 +24,7 @@
   </template>
   <template name="property lazy supplier" value="//using cyclop's lazy load&#10;private static final Supplier&lt; $class$ &gt; $c_var$_ = memoizeSupplier($class$::new) ;" description="property using cyclop's lazy load" toReformat="false" toShortenFQNames="true">
     <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
-    <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="true" />
+    <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
@@ -36,7 +36,10 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="property lazy cashed" value="@Getter( lazy=true)&#10;private static final String lazy_ =new String( &quot;test&quot; );" description="static value / lombok" toReformat="false" toShortenFQNames="true">
+  <template name="property lazy cashed" value="&#10;@Getter( lazy=true)&#10;private static final $class$ $c_var$_ =new $class$(  );&#10;//для доступа к переменной используйте только ГЕТТЕР&#10;var o=get$s_var$_();" description="static value / lombok" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="false" />
+    <variable name="s_var" expression="capitalize(c_var)" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
