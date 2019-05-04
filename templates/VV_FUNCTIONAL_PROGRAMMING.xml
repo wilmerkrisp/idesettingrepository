@@ -140,4 +140,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx switch PATTERN MATCHING" value="var m = Man.of( &quot;vova&quot; ,&#10;                &quot;12&quot; );&#10;&#10;String rez = Match( m ).of( Case( $Man( $( &quot;vova&quot; ) ,&#10;                                        $() ) ,&#10;                                  ( x , y ) -&gt; &quot;man &quot; + x + y ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
