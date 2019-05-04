@@ -115,4 +115,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx err SWITCH" value="var c = Match( v ).of( Case( $Success($()) ,&#10;                             &quot;OK&quot; ) ,&#10;                       Case( $Failure($()) ,&#10;                             &quot;ERR&quot; ) );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
