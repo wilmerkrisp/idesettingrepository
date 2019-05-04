@@ -40,7 +40,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx switch 2" value="Function&lt;String,Function&lt;String,Void&gt;&gt; yes = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; no  = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Predicate&lt;String&gt; checkNoEmail = e -&gt; !emailPattern.matcher( e ).matches();&#10;&#10;java.util.function.Consumer&lt;String&gt; emailChecker = ( e ) -&gt; Match( e ).of( Case( $( isNull() ) ,&#10;                                                                                 no.apply( &quot;email must not be null.&quot; ) ) ,&#10;                                                                           Case( $( String::isBlank ) ,&#10;                                                                                 no.apply( &quot;email must not be empty.&quot; ) ) ,&#10;                                                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                                                 no.apply( &quot;must not be test&quot; ) ) ,&#10;                                                                           Case( $( checkNoEmail ) ,&#10;                                                                                 no.apply( &quot;email &quot; + e + &quot; is invalid.&quot; ) ) ,&#10;                                                                           Case( $() ,&#10;                                                                                 yes.apply( e ) )) ;" description="VAVR fx pattern matching / RUN" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch 2 RUN" value="Function&lt;String,Function&lt;String,Void&gt;&gt; yes = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; no  = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Predicate&lt;String&gt; checkNoEmail = e -&gt; !emailPattern.matcher( e ).matches();&#10;&#10;java.util.function.Consumer&lt;String&gt; emailChecker = ( e ) -&gt; Match( e ).of( Case( $( isNull() ) ,&#10;                                                                                 no.apply( &quot;email must not be null.&quot; ) ) ,&#10;                                                                           Case( $( String::isBlank ) ,&#10;                                                                                 no.apply( &quot;email must not be empty.&quot; ) ) ,&#10;                                                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                                                 no.apply( &quot;must not be test&quot; ) ) ,&#10;                                                                           Case( $( checkNoEmail ) ,&#10;                                                                                 no.apply( &quot;email &quot; + e + &quot; is invalid.&quot; ) ) ,&#10;                                                                           Case( $() ,&#10;                                                                                 yes.apply( e ) )) ;" description="VAVR fx pattern matching / RUN" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -65,7 +65,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx err" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* - map() мапинг работает только на положительном результате&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx IO assign checked-&gt;unchecked" value="CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;f.unchecked();//обертка, которая checked-&gt;unchecked" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -141,6 +141,11 @@
     </context>
   </template>
   <template name="fx switch PATTERN MATCHING" value="var m = Man.of( &quot;vova&quot; ,&#10;                &quot;12&quot; );&#10;&#10;String rez = Match( m ).of( Case( $Man( $( &quot;vova&quot; ) ,&#10;                                        $() ) ,&#10;                                  ( x , y ) -&gt; &quot;man &quot; + x + y ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx IO wrap checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;x=unchecked(i -&gt; readFromFile(i));" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
