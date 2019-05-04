@@ -120,4 +120,24 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx switch 3 Optional" value="int i = 10; &#10;Option&lt;String&gt; s = Match(i) .option(Case($(0), &quot;zero&quot;));" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch AND" value="Case($(allOf(isNotNull(),isIn(1,2,3,null))), &quot;Number found&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch OR" value="Case($(anyOf(isIn(1990, 1991, 1992), is(1986))), &quot;Age match&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch NONEOF" value="Case($(noneOf(isIn(1990, 1991, 1992), is(1986))), &quot;Age match&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
