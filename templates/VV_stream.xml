@@ -1,0 +1,43 @@
+<templateSet group="VV_stream">
+  <template name="stream parall-&gt;nonparall" value=".sequental().ordered()." description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="forstream1 optimized" value="$arr$.forEachOrdered( System.out::println); &#10;$END$" description="loop forEach STREAM" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="variableOfType(&quot;java.util.stream.Stream&quot;)" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="stream nonparall-&gt;parall" value=".parallel().unordered()." description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newstream Stream.of(&quot;1&quot;,&quot;2&quot;)" value="var $v_col1$ = Stream.&lt;$String$&gt;of(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;$END$);" description="получить стрим  из vararg или пустойСписок" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="forstream1 debug" value="$arr$.peek( System.out::println); &#10;$END$" description="loop forEach STREAM" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="variableOfType(&quot;java.util.stream.Stream&quot;)" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="stream to arr" value="$arr$.toArray(MyClass[]::new); &#10;$END$" description="loop forEach STREAM" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="variableOfType(&quot;java.util.stream.Stream&quot;)" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

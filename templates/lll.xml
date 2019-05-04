@@ -1,0 +1,7 @@
+<templateSet group="lll">
+  <template name="&lt;abbreviation&gt;" value=",," description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

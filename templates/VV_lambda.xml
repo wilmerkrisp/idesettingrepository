@@ -1,0 +1,244 @@
+<templateSet group="VV_lambda">
+  <template name="newlambda EXPR" value="$classname$ l_$var$ = (p_1)-&gt;( $SELECTION$ p_1+&quot; no &quot;);&#10;$END$" description="new lambda expression" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda BLOCK" value="$classname$ l_$var$ = (p_1)-&gt;&#10;&#9;&#9;{&#10;&#9;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;&#9;/*&#10;&#9;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;&#9;p_1; &#9; &#10;&#9;&#9; &#10;&#9;&#9; locals OUTER class FINAL variables is avialable&#10;&#9;&#9; &#10;&#9;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9;&#9; */&#10;&#9;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#9;&#10;&#9;&#9;&#10;                &#10;&#9;&#9;&#10;&#9;&#9;$SELECTION$&#10;&#9;&#9;&#9;&#10;&#9;&#9;return p_1+&quot; no &quot;;&#10;&#9;&#9;&#10;&#9;&#9;};&#10;$END$" description="new lambda block" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda Function&lt;T, R&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;Function&lt;T, R&gt;&#10;R apply(T t) &#10;&#10;*) ссылка на любой нестатический метод-класса без параметров возвращающий R = x-&gt;x.someMethod()&#10;&#10; &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.apply(null));&#10;&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;Function&lt; $c1$, $c2$&gt; $var$= (value)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);     //THIS of OUTER class is avialable&#10;&#9;p_1;                                                          //locals OUTER class FINAL variables is avialable&#10;&#9; &#10;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;                                                                 &#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return null;&#10;&#9;&#10;&#9;};&#10;&#10;" description="new lambda / R apply(T t)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c2" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda BiFunction&lt;T, U, R&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;BiFunction&lt;T, U, R&gt;&#10;R apply(T t, U u)&#10;&#10;*) ссылка на любой нестатический метод-класса c 1им параметром возвращающий R = x,y-&gt;x.someMethod(y)&#10;&#10;  &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.apply(null,null));  &#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;BiFunction&lt; $c1$, $c2$ , $c3$&gt; $var$= (left,right)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#9; &#10;&#9;ALSO RETURN CALLBACK TO THE OUTER OBJECT &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return null;&#10;&#9;&#10;&#9;};&#10;&#10;" description="new lambda / R apply(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c2" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c3" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda Supplier&lt;T&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;Supplier&lt;T&gt;&#10;T get() &#10;&#10;*) ссылка на любой нестатический метод-класса без параметров и с одним возвращаемым значением  T = x-&gt;?.someMethod()&#10;* для потоков неприменим тк не имеет параметров&#10;&#10;*) подходит для генерации объектов класса Some::new&#10;&#10;&#10;log_.debug( &quot;exec lambda :&quot;+ $var$.get());&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;Supplier&lt; $c1$&gt; $var$= ()-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#9; &#10;&#9;ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return null;&#10;&#9;&#10;&#9;};&#10;&#10;" description="new lambda / T get()" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda Consumer&lt;T&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;Consumer&lt;T&gt;&#10;void accept(T t)&#10;&#10;*) ссылка на любой нестатический метод-класса без параметров и без возвращаемых значений  = x -&gt;x.someMethod()&#10;* для потоков неприменим тк не возвращает значения&#10; &#10;$var$.accept(null);&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;Consumer&lt; $c1$&gt; $var$= (value)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10; &#10;&#9;ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9;*/&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return;&#10;&#9;&#10;&#9;};&#10;&#10;" description="new lambda / void accept(T t)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda Predicate&lt;T&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;Predicate&lt;T&gt;&#10;test(T t)&#10; &#10; *) ссылка на любой нестатический метод-класса без параметров возвращающий bool =x-&gt;x.boolMethod()&#10; &#10; &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.test(null));&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;Predicate&lt; $c1$&gt; $var$= (value)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#10;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return true;&#10;&#9;//&#10;&#9;};&#10;&#10;" description="new lambda / test(T t)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda BinaryOperator&lt;T&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;BinaryOperator&lt;T&gt;&#10;T apply(T t, T u)&#10;&#10;*) ссылка на любой нестатический метод-класса c 1им параметром возвращающий R = x,y-&gt;x.someMethod(y)&#10;&#10; &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.apply(null,null));&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;BinaryOperator&lt; $c1$&gt; $var$= (left,right)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#9; &#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#9; &#10;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return null;&#10;&#9;};&#10;&#10;" description="new lambda / T apply(T t, T u)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda UnaryOperator&lt;T&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;UnaryOperator&lt;T&gt;&#10;T apply(T t)&#10;&#10;*) ссылка на любой нестатический метод-класса без параметров возвращающий R = x-&gt;x.someMethod()&#10;&#10; &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.apply(null));&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;UnaryOperator&lt; $c1$&gt; $var$= (value)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#9; &#10;&#9; &#10;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return null;&#10;&#9;};&#10;&#10;" description="new lambda / T apply(T t)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{}" value="(p_1)-&gt;{return null;$END$}" description="PARAM = new lambda BLOCK" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ((returntype)()-())" value="((returntype)(p_1,p_2)-&gt;{return null;$END$})." description="PARAM = new lambda BLOCK" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-()" value="p_1-&gt; 'yes'$END$" description="PARAM = new lambda EXP" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} BiFunction&lt;T, U, R&gt;" value="(left,right)-&gt; {/*R apply(T t, U u)*/ $END$ return R; }" description="PARAM = new lambda / R apply(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} BinaryOperator&lt;T&gt;" value="(left,right)-&gt;{/*T apply(T t, T u)*/ $END$ return left+right;}" description="PARAM = new lambda / T apply(T t, T u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} Consumer&lt;T&gt;" value="(value)-&gt;{/*void accept(T t)*/ $END$ return;}" description="PARAM = new lambda / void accept(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} Function&lt;T, R&gt;" value="(value)-&gt; {/*R apply(T t) */ $END$ return R; }" description="PARAM = new lambda / R apply(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} Predicate&lt;T&gt;" value="(value)-&gt; {/*bool test(T t)*/ $END$ return true; }" description="PARAM = new lambda / test(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} Supplier&lt;T&gt;" value="()-&gt; {/*T get() */ $END$ return T; }" description="PARAM = new lambda / T get()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} UnaryOperator&lt;T&gt;" value="(value)-&gt; {/*T apply(T t)*/ $END$ return value; }" description="PARAM = new lambda / T apply(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() BiFunction&lt;T, U, R&gt;" value="(left,right)-&gt; (/*R apply(T t, U u)*/ R $END$)" description="PARAM = EXPR new lambda / R apply(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() BinaryOperator&lt;T&gt;" value="(left,right)-&gt;(/*T apply(T t, T u)*/ left+right $END$)" description="PARAM = EXPR new lambda / T apply(T t, T u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() Consumer&lt;T&gt;" value="(value)-&gt;System.out.print(&quot;,&quot;+ value )$END$/*void accept(T t)*/" description="PARAM = EXPR new lambda / void accept(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() Function&lt;T, R&gt;" value="(value)-&gt; (/*R apply(T t) */ R $END$)" description="PARAM = EXPR new lambda / R apply(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() Predicate&lt;T&gt;" value="(value)-&gt; (/*bool test(T t)*/ true $END$)" description="PARAM = EXPR new lambda / test(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() Supplier&lt;T&gt;" value="()-&gt; (/*T get() */ T $END$ )" description="PARAM = EXPR new lambda / T get()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() UnaryOperator&lt;T&gt;" value="(value)-&gt; (/*T apply(T t)*/ value $END$ )" description="PARAM = EXPR new lambda / T apply(T t)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda BiPredicate&lt;T, U&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;BiPredicate&lt;T, U&gt;&#10;test(T t, U u)&#10; &#10; *) ссылка на любой нестатический метод-класса без параметров возвращающий bool =x-&gt;x.boolMethod()&#10; &#10; &#10;log_.debug( &quot;exec lambda :&quot;+ $var$.test(null));&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;BiPredicate&lt; $c1$,$c2$&gt; $var$= (value1,value2)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10;&#10;&#9; ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return true;&#10;&#9;//&#10;&#9;};&#10;&#10;" description="new lambda / test(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c2" expression="classNameComplete" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda BiConsumer&lt;T, U&gt;" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;BiConsumer&lt;T, U&gt; &#10;void accept(T t, U u)&#10;&#10;*) ссылка на любой нестатический метод-класса с 1им параметром и без возвращаемого значения ? = x-&gt;x.someMethod()&#10;* для потоков неприменим тк не возвращает значения&#10; &#10;$var$.accept(null);&#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;BiConsumer&lt; $c1$,$c2$&gt; $var$= (value1, value1)-&gt;&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;throw new Exception( &quot;vError&quot; );&#10;&#9;$outerclass$.this.f_method(&quot;test&quot;);  or f_method(&quot;test&quot;);             //THIS of OUTER class is avialable&#10;&#9;p_1;                                                                  //locals OUTER class FINAL variables is avialable&#10; &#10;&#9;ALSO RETURN CALLBACK TO THE OUTER OBJECT&#10;&#9;*/&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#10;&#9;return;&#10;&#9;&#10;&#9;};&#10;&#10;" description="new lambda / void accept(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <variable name="c1" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c2" expression="classNameComplete" defaultValue="" alwaysStopAt="true" />
+    <variable name="outerclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} BiConsumer&lt;T, U&gt;" value="(left,right)-&gt;{/*void accept(T t, U u)*/ $END$ return;}" description="PARAM = new lambda / void accept(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-{} BiPredicate&lt;T, U&gt;" value="(left,right)-&gt; {/*bool test(T t, U u)*/ $END$ return true; }" description="PARAM = new lambda / test(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() BiConsumer&lt;T, U&gt;" value="(left,right)-&gt; System.out.print(&quot;,&quot;+ left+right )$END$ /*void accept(T t, U u)*/" description="PARAM = new lambda / void accept(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda ()-() BiPredicate&lt;T, U&gt;" value="(left,right)-&gt; (/*bool test(T t, U u)*/ true $END$)" description="PARAM = new lambda / test(T t, U u)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda (X)-(X) Function" value="Function.identity()" description="PARAM = EXPR new lambda / R apply(T t) / RETURN ARGUMENT" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newlambda (X)-(X==Y) Predicate" value="Predicate.isEqual($Y$)" description="PARAM = EXPR new lambda / test(T t) / RETURN IF EQUAL SOME OBJECT" toReformat="false" toShortenFQNames="true">
+    <variable name="Y" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
