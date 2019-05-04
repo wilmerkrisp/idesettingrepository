@@ -45,7 +45,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx if check and return" value="return Optional.ofNullable(monetaryRoundingsSingletonSpi()).orElseThrow(&#10;&#9;() -&gt; new MonetaryException(&quot;No MonetaryRoundingsSpi loaded, query functionality is not available.&quot;))&#10;        .getDefaultRounding();" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
+  <template name="fx if check and return" value="return Optional.ofNullable(monetaryRoundingsSingletonSpi())&#10;&#9;        .orElseThrow( () -&gt; new MonetaryException(&quot;No MonetaryRoundingsSpi loaded, query functionality is not available.&quot;))&#10;                .getDefaultRounding();" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -65,7 +65,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* - map() мапинг работает только на положительном результате&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* - map() мапинг работает только на положительном результате&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -75,12 +75,12 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception Failure-&gt;Success" value="var v=Try.of( () -&gt; 4 / 0 )&#10;         .onFailure( System.out::println )&#10;         .onSuccess( System.out::println )&#10;         .recover( r -&gt; Match( r ).of( Case( $(instanceOf( ArithmeticException.class )) , -1  ) )); //Success с дефолтным значением -1" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err Failure-&gt;Success" value="var v=Try.of( () -&gt; 4 / 0 )&#10;         .onFailure( System.out::println )&#10;         .onSuccess( System.out::println )&#10;         .recover( ArithmeticException.class  , -1 ); //Success с дефолтным значением -1&#10;         //.recover( r -&gt; Match( r ).of( Case( $(instanceOf( ArithmeticException.class )) , -1  ) )); //Success с дефолтным значением -1&#10;&#10; " description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception THROW&amp;GET" value=".getOrElseThrow(err -&gt; { throw new RuntimeException(err); });&#10;//.getOrElseThrow( (Function&lt;Throwable,RuntimeException&gt;) RuntimeException::new );" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err THROW&amp;GET" value=".getOrElseThrow(err -&gt; { throw new RuntimeException(err); });&#10;//.getOrElseThrow( (Function&lt;Throwable,RuntimeException&gt;) RuntimeException::new );" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -100,7 +100,17 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception THROW" value=".onFailure( err -&gt; { throw new RuntimeException(err); })" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err THROW" value=".onFailure( err -&gt; { throw new RuntimeException(err); })" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx if check and return ELSEIF" value="return Try.of(() -&gt; getFromGoogle(searchString))&#10;          .recover(NoSuchElementException.class, emptyList())&#10;          .recover(NSAForbiddenException.class, emptyList())&#10;          .orElse(() -&gt; Try.of(() -&gt; getFromDuckDuckGo(searchString)));" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err+err" value=".flatMap(x -&gt; Try.of(x::openStream))" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
