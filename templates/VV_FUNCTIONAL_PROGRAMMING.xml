@@ -80,7 +80,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception THROW&amp;GET" value=".getOrElseThrow(err -&gt; { throw new RuntimeException(err); });" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx function wrap exception THROW&amp;GET" value=".getOrElseThrow(err -&gt; { throw new RuntimeException(err); });&#10;//.getOrElseThrow( (Function&lt;Throwable,RuntimeException&gt;) RuntimeException::new );" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
