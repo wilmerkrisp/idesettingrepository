@@ -65,7 +65,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx function wrap exception" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx function wrap exception" value="/*&#10;* - на вход: Function, Runnable, Consumer, Supplier&#10;* - map() мапинг работает только на положительном результате&#10;* .getOrElse(-1)&#10;* .getOrElseThrow (ArithmeticException::new)&#10;* */&#10;Try.of(() -&gt; 4 / 0)&#10;   .onFailure(System.out::println)&#10;   .onSuccess(System.out::println);" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
