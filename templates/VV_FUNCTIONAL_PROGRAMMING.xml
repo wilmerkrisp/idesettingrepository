@@ -65,7 +65,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx IO assign checked-&gt;unchecked" value="CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;f.unchecked();//обертка, которая checked-&gt;unchecked" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-exc assign checked-&gt;unchecked" value="CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;f.unchecked();//обертка, которая checked-&gt;unchecked" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -145,7 +145,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx IO wrap checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;x=unchecked(i -&gt; readFromFile(i));" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-exc checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;x=unchecked(i -&gt; readFromFile(i));" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
