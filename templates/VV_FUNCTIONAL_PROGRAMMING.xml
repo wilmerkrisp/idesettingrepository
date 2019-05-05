@@ -200,4 +200,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx err-opt function-&gt;optional StreamAPI" value="List&lt;Integer&gt; integers = List.of( 3 ,&#10;                                  9 ,&#10;                                  7 ,&#10;                                  0 ,&#10;                                  10 ,&#10;                                  20 );&#10;integers.stream().map( CheckedFunction1.lift( App::readFromFile )).map( o-&gt;o.getOrElse( -1 ) ).forEach( System.out::println );&#10;&#9;&#9;" description="VAVR function-&gt;optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
