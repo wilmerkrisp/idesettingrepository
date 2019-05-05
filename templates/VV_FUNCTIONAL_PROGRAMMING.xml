@@ -110,7 +110,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx err-try +err" value=".flatMap(x -&gt; Try.of(x::openStream))" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-try +err" value=".flatMap(x -&gt; Try(x::openStream))" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
