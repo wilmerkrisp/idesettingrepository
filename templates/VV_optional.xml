@@ -49,4 +49,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="optional INFORMATION" value="of&#9;&#9;&#9;Returns an Optional wrapping the given value or throws a NullPointerException if this value is null&#10;ofNullable&#9;&#9;Returns an Optional wrapping the given value or the empty Optional if this value is null&#10;empty &#9;&#9;&#9;Returns an empty Optional instance&#10;filter&#9;&#9;&#9;If the value is present and matches the given predicate, returns this Optional; otherwise, returns the empty one&#10;map&#9;&#9;&#9;If a value is present, applies the provided mapping function to it&#10;flatMap&#9;&#9;&#9;If a value is present, returns the Optional resulting from the application of the provided mapping function to it; otherwise, returns the empty Optional&#10;get&#9;&#9;&#9;Returns the value wrapped by this Optional if present; otherwise, throws a NoSuchElementException&#10;ifPresent&#9;&#9;If a value is present, invokes the specified consumer with the value; otherwise, does nothing&#10;ifPresentOrElse&#9;&#9;If a value is present, performs an action with the value as input; otherwise, performs a different action with no input&#10;isPresent&#9;&#9;Returns true if a value is present; otherwise, returns false&#10;or&#9;&#9;&#9;If the value is present, returns the same Optional; otherwise, returns another Optional produced by the supplying function&#10;orElse&#9;&#9;&#9;Returns the value if present; otherwise, returns the given default value&#10;orElseGet&#9;&#9;Returns the value if present; otherwise, returns the one provided by the given Supplier&#10;orElseThrow&#9;&#9;Returns the value if present; otherwise, throws the exception created by the given Supplier&#10;stream&#9;&#9;&#9;If a value is present, returns a Stream containing only it; otherwise, returns an empty Stream" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
