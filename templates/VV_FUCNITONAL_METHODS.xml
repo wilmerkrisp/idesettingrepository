@@ -1,0 +1,7 @@
+<templateSet group="VV_FUCNITONAL_METHODS">
+  <template name="fx err-try method" value="// = Success(result) or Failure(exception) &#10;public Try&lt;Integer&gt; divide(Integer dividend, Integer divisor) &#10;&#9;{&#10;&#9;return Try.of(() -&gt; dividend / divisor); &#10;&#9;}" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>
