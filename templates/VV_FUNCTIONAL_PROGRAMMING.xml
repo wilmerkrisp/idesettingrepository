@@ -60,17 +60,17 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function0 memoized" value="var hashCache =&#10;&#9;Function0.of(Math::random).memoized();&#10;&#10;double randomValue1 = hashCache.apply();" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx function0 memoized" value="//var hashCache = Function0.of(Math::random).memoized();&#10;var hashCache = Function(Math::random).memoized();&#10;double randomValue1 = hashCache.apply();" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="fx err-exc assign checked-&gt;unchecked" value="CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;f.unchecked();//обертка, которая checked-&gt;unchecked" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-exc checked-&gt;checked" value="//CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;//f.unchecked();//обертка, которая checked-&gt;unchecked&#10;var f = CheckedFunction(i -&gt; readFromFile(i));&#10;" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx function from method reference" value="var sum = Function2.of( Math::pow );&#10;Double summed = sum.apply(5.0, 6.0);" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx function from method reference" value="//var sum = Function2.of( Math::pow );&#10;var sum = Function( Math::pow );&#10;Double summed = sum.apply(5.0, 6.0);" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -145,7 +145,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx err-exc checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;x=unchecked(i -&gt; readFromFile(i));" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-exc checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;//x=unchecked(i -&gt; readFromFile(i));&#10;var rez_=CheckedFunction( ( x , y ) -&gt;&quot;&quot;+x+y ).unchecked().apply( 12,13 );" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -155,12 +155,17 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx err-try WRAP function" value="var try_=CheckedFunction2.liftTry( ( x , y ) -&gt;&quot;&quot;+x+y ).apply( 12,13 );" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-try WRAP function" value="var try_=       Function2.liftTry( ( x , y ) -&gt;&quot;&quot;+x+y       ).apply( 12,13 );&#10;var try_=CheckedFunction2.liftTry( ( x , y ) -&gt;&quot;io exc&quot;+x+y ).apply( 12,13 );" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx err-opt WRAP function" value="var opt_=CheckedFunction2.lift( ( x , y ) -&gt;&quot;&quot;+x+y ).apply( 12,13 );" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-opt WRAP function" value="var opt_=       Function2.lift( ( x , y ) -&gt;&quot;&quot;+x+y       ).apply( 12,13 );&#10;var opt_=CheckedFunction2.lift( ( x , y ) -&gt;&quot;io exc&quot;+x+y ).apply( 12,13 );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx tuple" value="var t= Tuple(1,2,3);" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
