@@ -1,0 +1,7 @@
+<templateSet group="VV_REACTIVE_METHODS">
+  <template name="rx method" value="d" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
