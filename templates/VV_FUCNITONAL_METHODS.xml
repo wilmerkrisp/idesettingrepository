@@ -1,7 +1,14 @@
 <templateSet group="VV_FUCNITONAL_METHODS">
-  <template name="fx err-try method" value="// = Success(result) or Failure(exception) &#10;public Try&lt;Integer&gt; divide(Integer dividend, Integer divisor) &#10;&#9;{&#10;&#9;return Try.of(() -&gt; dividend / divisor); &#10;&#9;}" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+  <template name="fx method try" value="// = Success(result) or Failure(exception) &#10;public Try&lt;Integer&gt; divide(Integer dividend, Integer divisor) &#10;&#9;{&#10;&#9;return Try.of(() -&gt; dividend / divisor); &#10;&#9;}" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx method option" value="public Option&lt;String&gt; $method$( final String string )&#10;&#9;{&#10;&#9;return Option( string ).filter( StringUtils::isNotBlank )&#10;&#9;                       .onEmpty( logAtWarningRunnable( &quot;$class$.$method$(empty argument)&quot; ) )&#10;&#9;                       .map( logAtDebugUnaryOperator( &quot;$class$.$method$&quot; ) )&#10;&#9;                       .flatMap( this::$method$_ );&#10;&#9;}&#10;&#10;&#10;&#10;public Option&lt;String&gt; $method$_( final String string )&#10;&#9;{&#10;&#9;return Option( &quot;otvet+&quot; + string );&#10;&#9;}" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
 </templateSet>
