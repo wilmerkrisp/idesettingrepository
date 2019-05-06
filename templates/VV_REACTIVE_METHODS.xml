@@ -1,5 +1,14 @@
 <templateSet group="VV_REACTIVE_METHODS">
-  <template name="rx method" value="d" description="" toReformat="false" toShortenFQNames="true">
+  <template name="fx method Mono+try" value="public Mono&lt;String&gt; $method$( final String string )&#10;{&#10;return Mono.justOrEmpty( string )&#10;           .filter( StringUtils::isNotBlank )&#10;           .single()&#10;           .onErrorResume( logAtWarningFunction( &quot;$class$.$method$(empty argument)&quot; , never() ) )&#10;           .map( logAtDebugUnaryOperator( &quot;$class$.$method$&quot; ) )&#10;           .map( this::$method$_ )&#10;           .onErrorContinue( logAtErrorBiConsumer( &quot;$class$.$method$&quot; ) );&#10;}&#10;&#10;&#10;public String $method$_( final String string )&#10;{&#10;//throw new RuntimeException( &quot; cause &quot; );&#10;return &quot;otvet+&quot; + string;&#10;}&#10;" description="REACTOR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx method Mono" value="public Mono&lt;String&gt; $method$( final String string )&#10;{&#10;return Mono.justOrEmpty( string )&#10;           .filter( StringUtils::isNotBlank )&#10;           .single()&#10;           .onErrorResume( logAtWarningFunction( &quot;$class$.$method$(empty argument)&quot; , never() ) )&#10;           .map( logAtDebugUnaryOperator( &quot;$class$.$method$&quot; ) )&#10;           .flatMap( this::method2_ );&#10;}&#10;&#10;&#10;public Mono&lt;String&gt; $method$_( final String string )&#10;{&#10;//throw new RuntimeException( &quot; cause &quot; );&#10;return Mono.justOrEmpty(&quot;otvet+&quot; + string);&#10;}&#10;" description="REACTOR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
