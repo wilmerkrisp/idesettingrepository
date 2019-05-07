@@ -23,4 +23,10 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="fx method trampoline" value="//System.out.println( &quot;TRAMPOLINE=&quot; + new App().sum( List.of( 1L , 2L , 3L , 4L ) ) );&#10;&#10;public $Long$ sum( List&lt;$Long$&gt; list )&#10;&#9;{&#10;&#9;return sum( 0L , list ).get();&#10;&#9;}&#10;&#10;&#10;&#10;public Trampoline&lt;$Long$&gt; sum( $Long$ acc ,&#10;&#9;                                  List&lt;$Long$&gt; cnt )&#10;&#9;{&#10;&#9;return cnt.isEmpty() ? done( acc ) : more( () -&gt; sum( acc + cnt.head() , cnt.tail() ) );&#10;&#9;}" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="Long" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
