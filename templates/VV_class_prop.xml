@@ -22,7 +22,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="property lazy supplier" value="//using cyclop's lazy load&#10;private static final Supplier&lt; $class$ &gt; $c_var$_ = memoizeSupplier($class$::new) ;" description="property using cyclop's lazy load" toReformat="false" toShortenFQNames="true">
+  <template name="property lazy supplier" value="//using cyclop's lazy load&#10;private static final Supplier&lt; $class$ &gt; $c_var$_ = memoizeSupplier($class$::new) ;&#10;&#10;property lazy supplier" description="property using cyclop's lazy load" toReformat="false" toShortenFQNames="true">
     <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
     <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="false" />
     <context>
@@ -40,6 +40,13 @@
     <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
     <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="false" />
     <variable name="s_var" expression="capitalize(c_var)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="property lazy supplier Mono" value="//using cyclop's lazy load&#10;private static final Mono&lt; $class$ &gt; $c_var$_ = Mono.fromSupplier(  $class$ ::new ).cache();&#10;" description="property using Reactor lazy load" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="c_var" expression="decapitalize(class)" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
