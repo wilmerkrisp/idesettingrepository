@@ -77,7 +77,7 @@
       <option name="JAVA_STRING" value="false" />
     </context>
   </template>
-  <template name="optional паттерн обработки null" value=".flatMap(s -&gt; Optional.ofNullable( s ) )" description="new -&gt;func-&gt;null-&gt;" toReformat="false" toShortenFQNames="true">
+  <template name="option паттерн обработки null" value="/*&#10;  Option.of( &quot;a&quot; ).map( a -&gt; null ) - в итоге будет Some(null) А НЕ NONE!!&#10;Optional.of( &quot;a&quot; ).map( a -&gt; null ) - в итоге будет Option.none&#10; */&#10;.flatMap(s -&gt; Optional.ofNullable( s ) )" description="new -&gt;func-&gt;null-&gt;" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
