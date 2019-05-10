@@ -4,7 +4,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rx subscribe" value="o.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtInfoConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+  <template name="rx subscribe" value="o.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtErrorConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -115,6 +115,11 @@
     </context>
   </template>
   <template name="rx pattern queue1" value="var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i )&#10;            .doOnNext( logAtInfoConsumer( &quot;GENERATEE&quot; ) );&#10;&#10;&#10;var b = o.publishOn( parallel() )&#10;         .map( delayUnaryOperator( &quot;WORKK&quot; , 3 ) );&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="publish on" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx subscribe Print" value="b.subscribe( printConsumer( &quot;NEXT&quot; ) , printConsumer( &quot;ERROR&quot; ) , printRunnable( &quot;COMPLETE&quot; ) );" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
