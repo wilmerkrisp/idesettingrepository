@@ -66,6 +66,7 @@
     <mouse-shortcut keystroke="control alt button1" />
     <keyboard-shortcut first-keystroke="f5" />
   </action>
+  <action id="Console.TableResult.NextPage" />
   <action id="CopyElement" />
   <action id="DSM.OpenInEditor" />
   <action id="DSM.ZoomIn">
@@ -203,6 +204,7 @@
     <keyboard-shortcut first-keystroke="meta m" />
   </action>
   <action id="NextDiff" />
+  <action id="NextOccurence" />
   <action id="NextProjectWindow" />
   <action id="OpenModuleSettings" />
   <action id="ProjectViewChangeView" />
@@ -248,6 +250,10 @@
     <keyboard-shortcut first-keystroke="meta alt x" />
     <keyboard-shortcut first-keystroke="meta 3" />
     <keyboard-shortcut first-keystroke="meta down" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift ctrl r" />
+    <keyboard-shortcut first-keystroke="meta alt down" />
   </action>
   <action id="RunDashboard.EditConfiguration" />
   <action id="RunToCursor">
