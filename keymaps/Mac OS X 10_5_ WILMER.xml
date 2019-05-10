@@ -173,6 +173,7 @@
   <action id="InspectCode">
     <keyboard-shortcut first-keystroke="meta alt z" />
     <keyboard-shortcut first-keystroke="meta 2" />
+    <keyboard-shortcut first-keystroke="meta up" />
   </action>
   <action id="IntroduceConstant" />
   <action id="JProfiler.ShowJProfiler" />
@@ -246,6 +247,7 @@
     <keyboard-shortcut first-keystroke="ctrl r" />
     <keyboard-shortcut first-keystroke="meta alt x" />
     <keyboard-shortcut first-keystroke="meta 3" />
+    <keyboard-shortcut first-keystroke="meta down" />
   </action>
   <action id="RunDashboard.EditConfiguration" />
   <action id="RunToCursor">
