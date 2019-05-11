@@ -1,0 +1,299 @@
+<templateSet group="VV_log">
+  <template name="try catch2" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;catch NO ALL EXCEPTIONS only that I can RESOLVE HERE&#10;catch (final 1Exception | 2Exception  p_exception)  &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;try&#10;&#9;{&#10;&#9;//throw new VX_exception( &quot;vError&quot; );&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#10;&#9;}&#10;catch(final VX_exception p_exception ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9;log_.error(&quot;RESOLVE:&quot;+p_exception, p_exception );&#10;&#9;&#10;&#9;COMPENSATE BRUNCH  NEDD RESTORE SYSTEM HERE &#10;&#9;*/&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#10;&#9;}&#10;" description="try catch RESOLVE+LOG STRATEGY" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch finally example" value="String v_someobject=null;&#10;try&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9; throw new VX_exception( &quot;vError&quot; );&#10;&#9; &#10;&#9; log_.debug   (&quot;$class$ $method$ try: &quot;);&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;v_someobject= new String(&quot;open some data&quot;);&#10; &#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#10;&#9;return;&#10;&#9;}&#10;catch(final Exception p_exception ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9; (final 1Exception | 2Exception  p_exception) &#10;&#9; log_.error(&quot;$class$ $method$ catch: &quot;,p_exception);&#10;&#9; throw new VX_exception( &quot;Chain exception&quot;, p_exception);&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;}&#10;finally&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* &#10;&#9;called even after throwed EXCEPTION inside try{} block&#10;&#9;called even after RETURN            inside try{} block&#10;&#9;&#10;&#9;safety close resources OR use TRY(with resources)&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;try &#10;&#9;    {&#10;&#9;    if (v_someobject!=null)&#10;&#9;        v_someobject.close();&#10;&#9;    }&#10;&#9;catch (final Exception p_close_exception )&#10;&#9;    {&#10;&#9;    log_.error(&quot;$class$ $method$ finally: &quot;,p_close_exception);&#10;&#9;    }&#10;&#9;}&#10;&#10;" description="try catch finally / close resource" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch" value="catch(final VX_exception p_exception )&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*&#10;&#9; log_.error(&quot;RESOLVE:&quot;+p_exception, p_exception );&#10;&#9;&#10;&#9; COMPENSATE BRUNCH  NEDD RESTORE SYSTEM HERE&#10;&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;}&#10;&#10;" description="try CATCH ONLY" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception3" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* exception&#10;&#10; need  THROWS or need outer TRY-CATCH block&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;throw new Exception( &quot; cause $END$&quot; );&#10;" description="throw generate exception CHECKED" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log debug1" value="log_.debug(&quot;$class$ $method$ &quot;+$v$$END$);&#10;&#10;" description="log4j debug" toReformat="false" toShortenFQNames="true">
+    <variable name="v" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log debug2" value="log_.debug(&quot;$class$ $method$ $END$&quot;+$var$);" description="log4j debug + variable" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="var" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log debug3" value="log_.debug(this.getClass( ).getName( )+&quot;$method$ : $END$&quot;);" description="log4j debug GETCALSSNAME +classname {EXAMPLE}" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log error1" value="log_.error(&quot;$class$ $method$ $END$&quot;);" description="log4j error" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log info" value="log_.info(&quot;$class$ $method$ $END$&quot;);" description="log4j info" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try finally" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; called even after throwed EXCEPTION inside try{} block&#10;called even after RETURN            inside try{} block&#10;&lt;editor-fold desc=&quot;.&quot;&gt;&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;finally &#10;&#9;{&#10;&#9;//log_.debug   (&quot;$class$ $method$ finally: &quot;);&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;}&#10;&#10;" description="try FINALLY ONLY" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log0" value="private static final Logger log_ = LogManager.getLogger( $mainclass$.class );" description="log4j add logger variable to the class" toReformat="false" toShortenFQNames="true">
+    <variable name="mainclass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="log print" value="System.out.println(&quot;$class$ $method$ &quot; $END$);" description="print" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception2" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* exception&#10; &#10;stacktrace attached to new exception&#10;for runtime exception you NO need  THROWS or NO need outer try-catch  block&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;throw new VX_box_exception( &quot; cause $END$&quot;,$exc$ );" description="rethrow / throw generate exception RUNTIME" toReformat="false" toShortenFQNames="true">
+    <variable name="exc" expression="variableOfType(&quot;java.lang.Exception&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch1" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10;CATCH ALL EXCEPTIONS &amp; RETHROW: checked &amp; unchecked&#10;stacktrace attached to new exception&#10;for runtime exception you NO need  THROWS or NO need outer try-catch  block&#10;catch (final 1Exception | 2Exception  p_exception) &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;try&#10;&#9;{&#10;&#9;//throw new VX_exception( &quot;vError&quot; );&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#10;&#9;}&#10;catch( final RuntimeException p_exception )&#10;&#9;{&#10;&#9;throw p_exception;&#10;&#9;}&#10;catch( final Exception p_exception )&#10;&#9;{&#10;&#9;throw new VX_box_exception( &quot; cause &quot; , p_exception );&#10;&#9;}" description="try catch EXC UP STRATEGY" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="OLD log error2" value="log_.error(&quot;RESOLVE:&quot;+p_exception, p_exception );" description="log4j error + exception stack trace" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception4" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; * example 1&#10; *&#10; *              throw new ${NAME}(  );&#10; *              throw new ${NAME}(&quot; my exception data&quot;  );&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;/**&#10; *      my exception class&#10; *      !CHANGE_ME_DESCRIPTION!&#10; *      &#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10;&#10; *&#10; *&#10; * example 2&#10; *&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;class $VX_m$ extends RuntimeException{}" description="throw generate exception CLASS {EXPERIMENTAL}" toReformat="false" toShortenFQNames="true">
+    <variable name="VX_m" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="try7" value="try&#10;&#9;{&#10;&#9;$SELECTION$&#10;&#9;$END$&#9;&#10;&#9;}&#10;catch( final UnsupportedOperationException p_exception )&#10;&#9;{&#10;&#9;//нужна ре-архитектура&#10;&#9;log_.error( &quot;Immutable collection or method not present &quot; ,p_exception );&#10;&#9;}&#10;catch( final ClassCastException p_exception )&#10;&#9;{&#10;&#9;//попросить пользователя выбрать другой тип&#10;&#9;log_.error( &quot;Collection type != element type &quot; ,p_exception );&#10;&#9;}&#10;catch( final NullPointerException p_exception )&#10;&#9;{&#10;&#9;//кинуть на уровень выше, чтобы элемент создать еще раз&#10;&#9;log_.error( &quot;Collection does not allow NULL elements &quot; ,p_exception );&#10;&#9;}&#10;catch( final IllegalArgumentException p_exception )&#10;&#9;{&#10;&#9;//нужна ре-архитектура&#10;&#9;log_.error( &quot;Wrong method argument  &quot; ,p_exception );&#10;&#9;}&#10;catch( final IllegalStateException p_exception )&#10;&#9;{&#10;&#9;//нужна ре-архитектура&#10;&#9;log_.error( &quot;Collection is full  &quot; ,p_exception );&#10;&#9;}&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; catch( final Exception p_exception ) /* (final 1Exception | 2Exception  p_exception) &#10;{&#10;log_.error( &quot;Unknown collection exception&quot; ,p_exception );&#10;&#9;&#9;&#9;COMPENSATE BRUNCH&#10;&#9;&#9;&#9;NEDD RESTORE SYSTEM HERE&#10;}&#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;&#10;" description="try catch COLLECTIONS" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception1" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* exception&#10; &#10;stacktrace attached to new exception&#10;for runtime exception you NO need  THROWS or NO need outer try-catch  block&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;throw new VX_exception( &quot; cause $END$&quot;);" description="throw generate exception RUNTIME" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try8" value="try&#10;&#9;{&#10;&#9;$SELECTION$&#10;&#9;$END$&#9;&#10;&#9;}&#10;catch( final RuntimeException p_exception )&#10;&#9;{&#10;&#9;switch( p_exception.getClass( )&#10;&#9;                   .getSimpleName( ) )&#10;&#9;&#9;{&#10;&#9;&#9;case &quot;UnsupportedOperationException&quot;:&#10;&#9;&#9;&#9;//нужна ре-архитектура&#10;&#9;&#9;&#9;log_.error( &quot;Immutable collection or method not present &quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;case &quot;ClassCastException&quot;:&#10;&#9;&#9;&#9;//попросить пользователя выбрать другой тип&#10;&#9;&#9;&#9;log_.error( &quot;Collection type != element type &quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;case &quot;NullPointerException&quot;:&#10;&#9;&#9;&#9;//кинуть на уровень выше, чтобы элемент создать еще раз&#10;&#9;&#9;&#9;log_.error( &quot;Collection does not allow NULL elements &quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;case &quot;IllegalArgumentException&quot;:&#10;&#9;&#9;&#9;//нужна ре-архитектура&#10;&#9;&#9;&#9;log_.error( &quot;Wrong method argument  &quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;case &quot;IllegalStateException&quot;:&#10;&#9;&#9;&#9;//нужна ре-архитектура&#10;&#9;&#9;&#9;log_.error( &quot;Collection is full  &quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;default:&#10;&#9;&#9;&#9;log_.error( &quot;Unknown collection exception&quot; ,&#10;&#9;&#9;&#9;           p_exception );&#10;&#9;&#9;}&#10;&#9;}" description="try catch COLLECTIONS byname {EXPERIMENTAL}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch4" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;resolve some BOXED exceptions&#10;catch NO ALL EXCEPTIONS only that I can RESOLVE HERE&#10;catch (final 1Exception | 2Exception  p_exception)  &#10;*/&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;try&#10;&#9;{&#10;&#9;//throw new VX_exception( &quot;vError&quot; );&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#10;&#9;}&#10;&#10;catch(final VX_box_exception p_exception ) &#10;&#9;{&#10;&#9;log_.error(&quot;RESOLVE:&quot;+p_exception, p_exception );&#10;&#10;&#9;$SELECTION$&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;// UNPACK EXCEPTION  runtime-&gt;NOTruntime&#10;&#9;if(p_exception.getCause() != null)&#10;&#9;&#9;{&#10;&#9;&#9;try&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;throw p_exception.getCause();&#10;&#9;&#9;&#9;}&#10;&#9;&#9;catch( final RuntimeException1 p_exception )&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;// COMPENSATE BRUNCH  NEDD RESTORE SYSTEM HERE&#10;&#9;&#9;&#9;}&#10;&#9;&#9;catch( final RuntimeException2 p_exception )&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;// COMPENSATE BRUNCH  NEDD RESTORE SYSTEM HERE&#10;&#9;&#9;&#9;}&#10;&#9;&#9;catch( final Exception p_exception )&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;//RESOLVE OR RETHROW&#10;&#9;&#9;&#9;throw p_exception ;&#10;&#9;&#9;&#9;}&#10;&#9;&#9;}&#10;&#9;else&#10;&#9;&#9;{&#10;&#9;&#9;log_.error( &quot;BOXED exception does not have CAUSE!&quot; );&#10;&#9;&#9;}&#10;&#9;&#10;&#9;}&#10;catch(final VX_exception p_exception )&#10;&#9;{&#10;&#9;log_.error( &quot;RESOLVE:&quot; +p_exception, p_exception );&#10;&#9;// COMPENSATE BRUNCH  NEDD RESTORE SYSTEM HERE&#10;&#9;&#10;&#9;}&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; RESOLVE OR RETHROW &#9;&#10;catch(final RuntimeException p_exception )&#10;&#9;{&#10;&#9;throw new VX_box_exception( &quot; cause &quot; , p_exception );&#10;&#9;}&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;" description="try catch EXC UP RESOLVE" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch5" value="//три попытки выполнить код&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;for( var v_i=1;v_i&lt;=3 ;v_i++ )&#10;&#9;{&#10;&#9;try&#10;&#9;&#9;{&#10;&#9;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;&#9;/*&#10;&#9;&#9; здесь код который может вызвать исключение&#10;&#9;&#10;&#9;&#9;при нормальном выполнении выйдем из цикла &#10;&#9;&#9; */&#10;&#9;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#9;&#10;&#9;&#9;&#10;&#10;&#9;&#9;break;&#10;&#9;&#9;}&#10;&#9;catch( final VX_exception p_exception )&#10;&#9;&#9;{&#10;&#9;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;&#9;/*&#10;&#9;&#9; здесь мы должны чтонибудь исправить чтобы код выполнился нормально&#10;&#9;&#9; */&#10;&#9;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#9;&#10;&#9;&#9;&#10;&#9;&#9;&#10;&#9;&#9;}&#10;&#9;}&#10;" description="try catch RESOLVE LOOP" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try catch3" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;no exception, return o&#10;&#10;?Person personNew = person.orElse(new Person());&#10;?v_obj.f_method(&quot;test&quot;)&#10;&#10;Возвращает опциональный тип, который может быть пустым, в случае провала метода; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$SELECTION$&#10;&#9;&#9;&#10;$END$&#10;&#9;&#10;&#10;return Optional.ofNullable( p_1 );&#10;" description="try catch OPT STRATEGY" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception unsupportedOperation" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* unsuppirted exception method&#10;&#10; *       helper method fo exceprion&#10; *       throw exception_();&#10; *&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;private static final UnsupportedOperationException exception_()&#10;{&#10;return new UnsupportedOperationException( &quot;The collection is immutable. Don't use CrUD methods.&quot; );&#10;}&#10;" description="create method for exception unsupportedOperation" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="OLD checkmethods" value="&#9;//////////////////////////////////////////////////////////////////////////////////&#10;&#9;//  check methods&#10;&#9;//////////////////////////////////////////////////////////////////////////////////&#10;&#9;&#10;&#9;&#10;&#9;/**&#10;&#9; * Check properties of object for null value&#10;&#9; * return true if object is valid and properties is NOT null&#10;&#9; *&#10;&#9; * &lt;pre&gt;{@code&#10;&#9; *&#10;&#9; *&#10;&#9; * }&lt;/pre&gt;&#10;&#9; */&#10;&#9;public boolean checkForNullProperties(   )&#10;&#9;&#9;{&#10;&#9;&#9;assertForNullProperties_( this );&#10;&#9;&#9;return true;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;/**&#10;&#9; * Check properties of object for valid value&#10;&#9; * return true if object is valid and properties is valid&#10;&#9; *&#10;&#9; * &lt;pre&gt;{@code&#10;&#9; *&#10;&#9; *&#10;&#9; * }&lt;/pre&gt;&#10;&#9; */&#10;&#9;public boolean checkForValidProperties(   )&#10;&#9;&#9;{&#10;&#9;&#9;assertForValidProperties_( this );&#10;&#9;&#9;return true;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;/**&#10;&#9; * Check consistency of properties of object&#10;&#9; * return true if object is valid&#10;&#9; *&#10;&#9; * &lt;pre&gt;{@code&#10;&#9; *&#10;&#9; *&#10;&#9; * }&lt;/pre&gt;&#10;&#9; */&#10;&#9;public boolean checkConsistencyProperties( )&#10;&#9;&#9;{&#10;&#9;&#9;assertForConsistencyProperties_( this );&#10;&#9;&#9;return true;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* Check properties of object for null value&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}  assertForNullProperties_( ${NAME}  object )&#10;&#9;&#9;{&#10;&#9;&#9;Objects.requireNonNull( object );&#10;&#9;&#9;Objects.requireNonNull( object.item1 );&#10;&#9;        Objects.requireNonNull( object.item2 );&#10;&#9;        Objects.requireNonNull( object.item3 );&#10;&#9;        Objects.requireNonNull( object.item4 );&#10;&#9;        Objects.requireNonNull( object.item5 );&#10;&#9;        Objects.requireNonNull( object.item6 );&#10;&#9;        Objects.requireNonNull( object.item7 );&#10;&#9;        Objects.requireNonNull( object.item8 );&#10;&#9;        Objects.requireNonNull( object.item9 );&#10;&#9;        Objects.requireNonNull( object.item10 );&#10;&#9;&#9;&#10;&#9;&#9;return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* Check properties of object for valid value&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}   assertForValidProperties_( ${NAME}   object )&#10;&#9;&#9;{&#10;&#9;&#9;if( object.item1 == &quot;&quot; || object.item2 == &quot;&quot;  || object.item3 == &quot;&quot;|| object.item4 == &quot;&quot;|| object.item5 == &quot;&quot;|| object.item6 == &quot;&quot;|| object.item7 == &quot;&quot;|| object.item8 == &quot;&quot;|| object.item9 == &quot;&quot;|| object.item10 == &quot;&quot;)&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;throw new IllegalArgumentException( object.toString());&#10;&#9;&#9;&#9;}&#10;&#9;&#9;&#10; &#9;        return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* Check consistency of properties of object&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}  assertForConsistencyProperties_( ${NAME}   object )&#10;&#9;&#9;{&#10;&#10;&#9;&#9;//throw new IllegalStateException( &quot;Collection should not be empty.&quot; );&#10;&#9;&#9;&#10;&#9;&#9;return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* log if object is invalid and properties is null&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}   logForNullProperties_( ${NAME}   object )&#10;&#9;&#9;{&#10;&#10;&#9;&#9;&#10;&#9;&#9;if( object == null )&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;log_.info( &quot;Input object is null.&quot; );&#10;&#9;&#9;&#9;}&#10;&#9;&#9;&#10;&#9;&#9;if( object.item1 == null || object.item2 == null  || object.item3 == null || object.item4 == null || object.item5 == null || object.item6 == null || object.item7 == null || object.item8 == null || object.item9 == null || object.item10 == null  )&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;log_.info( &quot;Parameter is null.&quot; );&#10;&#9;&#9;&#9;}&#10;&#9;&#9;&#10;&#9;&#9;return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* log if object is invalid and properties values is invalid&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}   logForValidProperties_( ${NAME}   object )&#10;&#9;&#9;{&#10;&#9;&#9;&#10;&#9;&#9;if( object.item1 == &quot;&quot; || object.item2 == &quot;&quot;  || object.item3 == &quot;&quot;|| object.item4 == &quot;&quot;|| object.item5 == &quot;&quot;|| object.item6 == &quot;&quot;|| object.item7 == &quot;&quot;|| object.item8 == &quot;&quot;|| object.item9 == &quot;&quot;|| object.item10 == &quot;&quot;)&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;log_.info( &quot;Parameter is empty.&quot; + object.toString() );&#10;&#9;&#9;&#9;}&#10;&#9;&#9;&#10;&#9;&#9;return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* log if objects in inconsistency state&#10;&#9; &#10;&#9; &#10;&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;private ${NAME}   logForConsistencyProperties_( ${NAME}   object )&#10;&#9;&#9;{&#10; &#10;&#9;&#9;//log_.info( &quot;Object inconsistent.&quot; );&#10; &#10;&#9;&#9;return object;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;" description="checking group of methods" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="OLD checkmethods generic" value="//////////////////////////////////////////////////////////////////////////////////&#10;//  check methods&#10;//////////////////////////////////////////////////////////////////////////////////&#10;&#10;&#10;/**&#10; * Check properties of object for null value&#10; * return true if object is valid and properties is NOT null&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkForNullProperties(   )&#10;{&#10;assertForNullProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;&#10;/**&#10; * Check properties of object for valid value&#10; * return true if object is valid and properties is valid&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkForValidProperties(   )&#10;{&#10;assertForValidProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;&#10;/**&#10; * Check consistency of properties of object&#10; * return true if object is valid&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkConsistencyProperties( )&#10;{&#10;assertForConsistencyProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check properties of object for null value&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  assertForNullProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;Objects.requireNonNull( object );&#10;Objects.requireNonNull( object.item1 );&#10;Objects.requireNonNull( object.item2 );&#10;Objects.requireNonNull( object.item3 );&#10;Objects.requireNonNull( object.item4 );&#10;Objects.requireNonNull( object.item5 );&#10;Objects.requireNonNull( object.item6 );&#10;Objects.requireNonNull( object.item7 );&#10;Objects.requireNonNull( object.item8 );&#10;Objects.requireNonNull( object.item9 );&#10;Objects.requireNonNull( object.item10 );&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check properties of object for valid value&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  assertForValidProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;if( object.item1 == &quot;&quot; || object.item2 == &quot;&quot;  || object.item3 == &quot;&quot;|| object.item4 == &quot;&quot;|| object.item5 == &quot;&quot;|| object.item6 == &quot;&quot;|| object.item7 == &quot;&quot;|| object.item8 == &quot;&quot;|| object.item9 == &quot;&quot;|| object.item10 == &quot;&quot;)&#10;&#9;{&#10;&#9;throw new IllegalArgumentException( object.toString() );&#10;&#9;}&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check consistency of properties of object&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  assertForConsistencyProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;&#10;//throw new IllegalStateException( &quot;Collection should not be empty.&quot; );&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if object is invalid and properties is null&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  logForNullProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;&#10;&#10;if( object == null )&#10;&#9;{&#10;&#9;log_.info( &quot;Input object is null.&quot; );&#10;&#9;}&#10;&#10;if( object.item1 == null || object.item2 == null  || object.item3 == null || object.item4 == null || object.item5 == null || object.item6 == null || object.item7 == null || object.item8 == null || object.item9 == null || object.item10 == null  )&#10;&#9;{&#10;&#9;log_.info( &quot;Parameter is null.&quot; );&#10;&#9;}&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if object is invalid and properties values is invalid&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  logForValidProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;&#10;if( object.item1 == &quot;&quot; || object.item2 == &quot;&quot;  || object.item3 == &quot;&quot;|| object.item4 == &quot;&quot;|| object.item5 == &quot;&quot;|| object.item6 == &quot;&quot;|| object.item7 == &quot;&quot;|| object.item8 == &quot;&quot;|| object.item9 == &quot;&quot;|| object.item10 == &quot;&quot;)&#10;&#9;{&#10;&#9;log_.info( &quot;Parameter is empty.&quot; +object.toString() );&#10;&#9;}&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if objects in inconsistency state&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  logForConsistencyProperties_( ${NAME}&lt; T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt;  object )&#10;{&#10;&#10;//log_.info( &quot;Object inconsistent.&quot; );&#10;&#10;return object;&#10;}&#10;&#9;&#10;&#9;" description="checking group of methods" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="OLD checkmethods collection" value="//////////////////////////////////////////////////////////////////////////////////&#10;//  check methods&#10;//////////////////////////////////////////////////////////////////////////////////&#10;&#10;&#10;&#10;/**&#10; * Check properties of object for null value&#10; * return true if object is valid and properties is NOT null&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkForNullProperties()&#10;{&#10;assertForNullProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;&#10;/**&#10; * Check properties of object for valid value&#10; * return true if object is valid and properties is valid&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkForValidProperties()&#10;{&#10;assertForValidProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;&#10;/**&#10; * Check consistency of properties of object&#10; * return true if object is valid&#10; *&#10; * &lt;pre&gt;{@code&#10; *&#10; *&#10; * }&lt;/pre&gt;&#10; */&#10;public boolean checkConsistencyProperties()&#10;{&#10;assertForConsistencyProperties_( this );&#10;return true;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check properties of object for null value&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap assertForNullProperties_( MyImmutableEntryMap object )&#10;{&#10;Objects.requireNonNull( object );&#10;for( var i : object.entrySet() )&#10;&#9;{&#10;&#9;Objects.requireNonNull( i.getKey() );&#10;&#9;Objects.requireNonNull( i.getValue() );&#10;&#9;}&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check properties of object for valid value&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap assertForValidProperties_( MyImmutableEntryMap object )&#10;{&#10;for( var i : object.entrySet() )&#10;&#9;{&#10;&#9;if( i.getValue() == &quot;&quot; )&#10;&#9;&#9;{&#10;&#9;&#9;throw new IllegalArgumentException(  i.toString() );&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#10;&#10;return object;&#10;&#9;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* Check consistency of properties of object&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap assertForConsistencyProperties_( MyImmutableEntryMap object )&#10;{&#10;if( object.size() == 0 )&#10;&#9;{&#10;&#9;throw new IllegalStateException( &quot;Map should not be empty.&quot; );&#10;&#9;}&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if object is invalid and properties is null&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap logForNullProperties_( MyImmutableEntryMap object )&#10;{&#10;if( object == null )&#10;&#9;{&#10;&#9;log_.info( &quot;Input object is null.&quot; );&#10;&#9;}&#10;&#10;for( var i : object.entrySet() )&#10;&#9;{&#10;&#9;if( i.getKey() == null || i.getValue() == null )&#10;&#9;&#9;{&#10;&#9;&#9;log_.info( &quot;Parameter is null:&quot; + i);&#10;&#9;&#9;}&#10;&#9;}&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if object is invalid and properties values is invalid&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap logForValidProperties_( MyImmutableEntryMap object )&#10;{&#10;for( var i : object.entrySet() )&#10;&#9;{&#10;&#9;if(   i.getValue() == &quot;&quot; )&#10;&#9;&#9;{&#10;&#9;&#9;log_.info( &quot;Parameter is empty:&quot;+i );&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;return object;&#10;}&#10;&#10;&#10;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* log if objects in inconsistency state&#10; &#10; &#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;&#10;private MyImmutableEntryMap logForConsistencyProperties_( MyImmutableEntryMap object )&#10;{&#10;if( object.size() == 0 )&#10;&#9;{&#10;&#9;log_.info( &quot;Collection should not be empty.&quot; );&#10;&#9;}&#10;return object;&#10;}&#10;&#9;" description="checking group of methods" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="log pring ::reference" value="System.out::println" description="System.out::println" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="assert simple" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* &#10;&#10;&#10;- use assertions:&#10;&#9;- in private methods&#10;&#9;- for situations that can never occur&#10;&#10;- if FALSE then assert FIRE&#10;&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;assert false:&quot;Assert message&quot;;&#10;" description="make assertion" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="log_" value="private static final FluentLogger logger_ = FluentLogger.forEnclosingClass();" description="flogger add logger variable to the class" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="log_ debug" value="logger_.atFine().log(&quot;$END$&quot;);" description="flogger debug" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="log_ info" value="logger_.atInfo().log(&quot; $END$&quot;);" description="flogger info" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="log_ error" value="logger_.atSevere().log(&quot;$END$&quot;);" description="flogger error" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="assert argument /private method/string" value="assert $VAR$!=null&amp;&amp; !$VAR$.isBlank() : &quot;Argument should not be empty.&quot; );&#10;&#10;$END$&#10;&#10;" description="assert !=null  !isBlank" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="assert argument /private method/collection" value="assert $VAR$!=null&amp;&amp; !$VAR$.isEmpty() : &quot;Collection should not be empty.&quot; ;&#10;&#10;$END$" description="assert !=null  !isEmpty()" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/OPTIONAL" value="/**&#10; @return empty value    if input argument empty &#10;                        if one collection's element is empty&#10;                        if object's state inconsistent&#10; */&#10;if ($VAR$==null || $VAR$.isBlank() || !isConsistent()  )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;String param must not ne null or empty. Or object's state inconsistent&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional  ==null  isBlank()  !isConsistent_()  )" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/ COLLECTION+OPTIONAL" value="/**&#10; @return empty value    if input argument null &#10;                        if one collection is empty&#10;                        if object's state inconsistent&#10; */&#10;if ( $VAR$==null||$VAR$.isEmpty() || !isConsistent() )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;Collection param must not ne null or empty. Or object's state inconsistent&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional ==null isEmpty()  !isConsistent_()" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exception4 dontuse" value="&#10;throw new UnsupportedOperationException( &quot;Dont use this PRIVATE constructor.Please use constructor with parameters.&quot; );&#10;" description="throw generate exception CLASS {EXPERIMENTAL}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/collection" value="/**&#10; @throws NullPointerException if input argument nullable&#10; @throws IllegalArgumentException if input collection is empty&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;@NonNull   от LOMBOK&#10;notEmpty($VAR$)&#10;checkConsistency()&#10;" description="notEmpty + checkConsistency_" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalArgumentException if input argument is blank&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;@NonNull   от LOMBOK&#10;notBlank($VAR$)&#10;checkConsistency()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /immutable/string" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalArgumentException if input argument is blank&#10; */&#10;@NonNull   от LOMBOK&#10;notBlank($VAR$)&#10;" description="notBlank()" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /immutable/collection" value="/**&#10; @throws NullPointerException if input argument nullable&#10; @throws IllegalArgumentException if input collection is empty&#10; */&#10;@NonNull   от LOMBOK&#10;notEmpty($VAR$)&#10;" description="notEmpty()" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /immutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; */&#10;1) @NonNull   от LOMBOK&#10;2) notNull( $VAR$ );" description="=null  -&gt; NullPointerException" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="log  log::reference" value="logger_.atInfo()::log" description="logger_.atInfo()::log" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check disable warnings" value="@SuppressWarnings(&quot;unchecked&quot;)" description="@SuppressWarnings(&quot;unchecked&quot;)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="check argument /mutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;1) @NonNull   от LOMBOK&#10;2) nonNull($VAR$)&#10;&#10;checkConsistency()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="check argument /immutable/OPTIONAL" value="/**&#10; @return empty value    if input argument empty &#10;                        if one collection's element is empty&#10; */&#10;if ($VAR$==null || $VAR$.isBlank() )&#10;&#9;{&#10;&#9;logAtWarning_( &quot;String param must not ne null or empty.&quot; );&#10;&#9;return Optional.empty();&#10;&#9;}&#10;&#10;log_( &quot;compute({})&quot;,string );&#10;&#10;return Optional.ofNullable( string );" description="Optional  ==null  isBlank()  !isConsistent_()  )" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

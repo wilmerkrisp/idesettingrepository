@@ -1,0 +1,1112 @@
+<templateSet group="VV_container_METHODS">
+  <template name="cc   toArray(arr)" value="toArray(arr);" description="получить немутабельный массив типа arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   containsAll(coll)" value="containsAll(coll);" description="содержатся ли все элементы из coll" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   addAll(coll)" value="addAll(coll);" description="добавим элементы в конец" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   add(obj)" value="add(obj);" description="добавим элементы в конец если объект уже есть то вернуть false" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   contains(obj)" value="contains(obj);" description="содержится ли элемент obj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   isEmpty()" value="isEmpty();" description="пусто ли" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   size()" value="size();" description="length" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   iterator()" value="iterator();" description="итератор" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   spliterator()" value="spliterator();" description="итератор (используя параллелизм)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   stream()" value="stream();" description="стрим" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   parallelStream()" value="parallelStream();" description="стрим (используя параллелизм)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dc   clear()" value="clear();" description="удалить все элементы" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dc   remove(obj)" value="remove(obj);" description="удалить конкретный объект" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dc   removeAll(coll)" value="removeAll(coll);" description="удалим элементы" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dc   retainAll(coll)" value="retainAll(coll);" description="удаляет все кроме элементов" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dc   removeIf(predicate)" value="removeIf(predicate);" description="удалить объекты удовлетворяющие условию" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccl  add(i,obj)" value="add(i,obj);" description="добавить объект по индексу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccl  addAll(i,coll)" value="addAll(i,coll);" description="добавим элементы из коллекции в список по индексу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  get(i)" value="get(i);" description="извлеч объект по индексу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  indexOf(obj)" value="indexOf(obj);" description="извлеч индекс объекта" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  lastIndexOf(obj)" value="lastIndexOf(obj);" description="извлеч индекс объекта, ищет с конца" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  subList[i1,i2)" value="subList[i1,i2);" description="выбрать интервал" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  listIterator()" value="listIterator();" description="итератор с доп возможностями" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  listIterator(i)" value="listIterator(i);" description="итератор, начинается с i-го элемента" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  set(i,obj)" value="set(i,obj);" description="обновить объект по индексу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  replaceAll(lambda)" value="replaceAll(lambda);" description="обновить каждый элемент" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  sort(comparator)" value="sort(comparator);" description="сортировать с помощью компаратора" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcl  remove(i)" value="remove(i);" description="удалить объект по индексу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn first()" value="first();" description="выбрать первый элемент" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn last()" value="last();" description="выбрать последний элемент" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn subSet(obj1,obj2)" value="subSet(obj1,obj2);" description="выбрать интервал [obj1..obj2)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn headSet(obj2)" value="headSet(obj2);" description="выбрать интервал [..obj2)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn comparator()" value="comparator();" description="компаратор отсортированного множества (null если естественное упорядочивание)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn ceiling(obj)" value="ceiling(obj);" description="следующий элемент за объектом &gt;=" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn higher(obj)" value="higher(obj);" description="следующий элемент за объектом &gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn floor(obj)" value="floor(obj);" description="предыдущий элемент перед объектом &lt;=" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn lower(obj)" value="lower(obj);" description="предыдущий элемент перед объектом &lt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn subSet(obj1,включительно,obj2,включительно)" value="subSet(obj1,включительно,obj2,включительно);" description="выбрать интервал  [obj1..obj2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn headSet(obj2,включительно)" value="headSet(obj2,включительно);" description="выбрать интервал [..obj2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn tailSet(obj1,включительно)" value="tailSet(obj1,включительно);" description="выбрать интервал [obj1..]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn descendingIterator()" value="descendingIterator();" description="итератор обратного порядка" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcsn descendingSet()" value="descendingSet();" description="вернуть множество отсортированное в обратном порядке" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcsn poolFirst()" value="poolFirst();" description="удалить и вернуть первый элемент" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcsn poolLast()" value="poolLast();" description="удалить и вернуть последний элемент" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccq offer(obj)" value="offer(obj);" description="добавить с головы" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcq  element()" value="element();" description="вернуть с головы или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcq  peek()" value="peek();" description="вернуть с головы или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcq  remove()" value="remove();" description="вернуть с головы и удалить или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcq  pool()" value="pool();" description="вернуть с головы и удалить или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccqd addFirst(obj)" value="addFirst(obj);" description="добавить с головы или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccqd push(obj)" value="push(obj);" description="добавить с головы или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccqd offerFirst(obj)" value="offerFirst(obj);" description="добавить с головы или false" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccqd addLast(obj)" value="addLast(obj);" description="добавить с конца или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccqd offerLast(obj)" value="offerLast(obj);" description="добавить с конца или false" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcqd peekFirst()" value="peekFirst();" description="вернуть с головы или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcqd peekLast()" value="peekLast();" description="вернуть с конца или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcqd descendingIterator()" value="descendingIterator();" description="итератор обратного порядка" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd poolFirst()" value="poolFirst();" description="вернуть с головы и удалить или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd pop()" value="pop();" description="вернуть с головы и удалить или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd removeFirst()" value="removeFirst();" description="вернуть с головы и удалить или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd removeLast()" value="removeLast();" description="вернуть с конца и удалить или exception" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd removeFirstOccurrence(obj)" value="removeFirstOccurrence(obj);" description="найти и удалить объект или false" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dcqd removeLastOccurrence(obj)" value="removeLastOccurrence(obj);" description="найти и удалить объект или false, ищет с конца" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cm   computeIfAbsent(key,lambda)" value="computeIfAbsent(key,lambda);" description="создать новый из лямбды или вернуть существующий кортеж (lambda=null ничего не делает) {текущее значение не заменяет }" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cm   putIfAbsent(key,value)" value="putIfAbsent(key,value);" description="создать новый {текущее значение не заменяет } {но если валуе кортежа было null то заменяет}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   get(key)" value="get(key);" description="извлеч значение по ключу или null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   getOrDefault(key,defaultValue)" value="getOrDefault(key,defaultValue);" description="извлеч значение по ключу или defaultValue" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   containsKey(key)" value="containsKey(key);" description="есть ли ключ key" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   containsValue(value)" value="containsValue(value);" description="есть ли валуе value" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   entrySet()" value="entrySet();" description="вернуть Set из кортежей Map.Entry" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   keySet()" value="keySet();" description="вернуть Set из ключей" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   values()" value="values();" description="вернуть Collection из значений" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   isEmpty()" value="isEmpty();" description="пусто ли" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm   size()" value="size();" description="length" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="um   computeIfPresent(key,lambda)" value="computeIfPresent(key,lambda);" description="заменить существующий кортеж на лямбду (lambda=null удаляет) {новый не вставляет}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="um   replace(key,newValue)" value="replace(key,newValue);" description="заменить у существующего кортежа только валуе (поиск по key)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="um   replace(key,value,newValue)" value="replace(key,value,newValue);" description="заменить у существующего кортежа только валуе (поиск по key-value)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="um   replaceAll(lambda)" value="replaceAll(lambda);" description="вызывает лямбду для каждого кортежа (удалять нельзя) и каждый элемент заменяет на лямбду" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dm   clear()" value="clear();" description="удалить все кортежи" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dm   remove(key)" value="remove(key);" description="удалить кортеж по ключу" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dm   remove(key,value)" value="remove(key,value);" description="удалить существующий кортеж" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mm   put(key,value)" value="put(key,value);" description="создать новый или заменить существующий кортеж" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mm   putAll(map)" value="putAll(map);" description="создать новые или заменить существующие кортежи" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mm   compute(key,lambda)" value="compute(key,lambda);" description="создать новый из лямбды или заменить существующий кортеж на лямбду (lambda=null удаляет)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mm   merge(key,value,lambda)" value="merge(key,value,lambda);" description="создать новый из параметров или заменить существующий кортеж на лямбду (lambda=null удаляет)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  firstKey()" value="firstKey();" description="выбрать первый ключ" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  lastKey()" value="lastKey();" description="выбрать последний ключ" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  subMap(key1,key2)" value="subMap(key1,key2);" description="выбрать кортежи по ключам [key1..key2)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  headMap(key2)" value="headMap(key2);" description="выбрать кортежи по ключам [..key2)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  tailMap(key1)" value="tailMap(key1);" description="выбрать кортежи по ключам (key1..]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  comparator()" value="comparator();" description="получить компаратор (null если естественное упорядочивание)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  navigableKeySet()" value="navigableKeySet();" description="вернуть NavigableSet из ключей" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  firstEntry()" value="firstEntry();" description="выбрать кортеж с первым ключем" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  lastEntry()" value="lastEntry();" description="выбрать кортеж с последним ключем" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  ceilingEntry(key)" value="ceilingEntry(key);" description="выбрать кортеж  (следующий ключ за key&gt;=result)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  ceilingKey(key)" value="ceilingKey(key);" description="выбрать  следующий ключ за key&gt;=result" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  higherEntry(key)" value="higherEntry(key);" description="выбрать кортеж  (следующий ключ за key&gt;result)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  higherKey(key)" value="higherKey(key);" description="выбрать  следующий ключ за key&gt;result" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  floorEntry(key)" value="floorEntry(key);" description="выбрать кортеж (предыдущий ключ перед result&lt;=key)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  floorKey(key)" value="floorKey(key);" description="выбрать предыдущий ключ перед  result&lt;=key" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  lowerKey(key)" value="lowerKey(key);" description="выбрать предыдущий ключ перед  result&lt;key" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  lowerEntry(key)" value="lowerEntry(key);" description="выбрать кортеж (предыдущий ключ перед result&lt;key)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  subMap(key1,включительно=true,key2,включительно=true)" value="subMap(key1,включительно=true,key2,включительно=true);" description="выбрать кортежи по ключам  [key1..key2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  headMap(key2,включительно=true)" value="headMap(key2,включительно=true);" description="выбрать кортежи по ключам [..key2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  tailMap(key1,включительно=true)" value="tailMap(key1,включительно=true);" description="выбрать кортежи по ключам [key1..]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  descendingIterator()" value="descendingIterator();" description="итератор обратного порядка" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  descendingKeySet()" value="descendingKeySet();" description="сет из ключей в обратном порядке" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rmn  descendingMap()" value="descendingMap();" description="мапа в обратном порядке" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dmn  poolFirstEntry()" value="poolFirstEntry();" description="удалить и вернуть первый кортеж" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dmn  poolLastEntry()" value="poolLastEntry();" description="удалить и вернуть последний кортеж" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.fill(arr,obj)" value="Arrays.fill(arr,obj);" description="заполняет весь массив значением obj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.fill(arr,i1,i2,obj)" value="Arrays.fill(arr,i1,i2,obj);" description="заполняет диапазон массива значением obj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.setAll(arr,lambda)" value="Arrays.setAll(arr,lambda);" description="заполняет весь массив значениями лямбды" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.parallelSetAll(arr,lambda)" value="Arrays.parallelSetAll(arr,lambda);" description="заполняет весь массив значениями лямбды (используя параллелизм)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.parallelPrefix(arr, lambda)" value="Arrays.parallelPrefix(arr, lambda);" description="заполняет весь массив значениями лямбды (накопительная функция)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ca   Arrays.parallelPrefix(arr,i1,i2, lambda)" value="Arrays.parallelPrefix(arr,i1,i2, lambda);" description="заполняет весь массив значениями лямбды (накопительная функция) (диапазон)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.binarySearch(arr,obj)" value="Arrays.binarySearch(arr,obj);" description="двоичный поиск индекса obj а отсортированном массиве arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.binarySearch(arr,i1,i2,obj)" value="Arrays.binarySearch(arr,i1,i2,obj);" description="двоичный поиск индекса obj а отсортированном массиве arr[i1,i2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.binarySearch(arr,obj,comparator)" value="Arrays.binarySearch(arr,obj,comparator);" description="двоичный поиск индекса obj а отсортированном массиве arr(&lt;&gt;версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.binarySearch(arr,i1,i2,obj,comparator)" value="Arrays.binarySearch(arr,i1,i2,obj,comparator);" description="двоичный поиск индекса obj а отсортированном массиве arr(&lt;&gt;версия с компаратором) на отрезке [i1,i2]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.copyOf(arr,length)" value="Arrays.copyOf(arr,length);" description="скопировать массив arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.copyOf(arr,length,newType)" value="Arrays.copyOf(arr,length,newType);" description="скопировать массив arr в массив поддтипа newType" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.copyOfRange(arr,i1,i2)" value="Arrays.copyOfRange(arr,i1,i2);" description="скопировать интервал [i1,i2) массива arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.copyOfRange(arr,i1,i2,newType)" value="Arrays.copyOfRange(arr,i1,i2,newType);" description="скопировать интервал [i1,i2) массива arr в массив оддтипа newType" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.equals(arr1,arr2)" value="Arrays.equals(arr1,arr2);" description="поверхностное сравнение =" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.equals(arr1,i1,i2,arr2,i1,i2)" value="Arrays.equals(arr1,i1,i2,arr2,i1,i2);" description="поверхностное сравнение = отрезка1 и отрезка2" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.equals(arr1,arr2,comparator)" value="Arrays.equals(arr1,arr2,comparator);" description="поверхностное сравнение = (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.equals(arr1,i1,i2,arr2,i1,i2,comparator)" value="Arrays.equals(arr1,i1,i2,arr2,i1,i2,comparator);" description="поверхностное сравнение = отрезка1 и отрезка2 (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.compare(arr1,arr2)" value="Arrays.compare(arr1,arr2);" description="поверхностное сравнение = &lt; &gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.compare(arr1,i1,i2,arr2,i1,i2)" value="Arrays.compare(arr1,i1,i2,arr2,i1,i2);" description="поверхностное сравнение = &lt; &gt; отрезка1 и отрезка2" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.compare(arr1,arr2,comparator)" value="Arrays.compare(arr1,arr2,comparator);" description="поверхностное сравнение = &lt; &gt; (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.compare(arr1,i1,i2,arr2,i1,i2,comparator)" value="Arrays.compare(arr1,i1,i2,arr2,i1,i2,comparator);" description="поверхностное сравнение = &lt; &gt; отрезка1 и отрезка2 (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.mismatch(arr1,arr2)" value="Arrays.mismatch(arr1,arr2);" description="индекс первого несовпадения при сравнении двух массивов" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.mismatch(arr1,i1,i2,arr2,i1,i2)" value="Arrays.mismatch(arr1,i1,i2,arr2,i1,i2);" description="индекс первого несовпадения при сравнении двух отрезков" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.mismatch(arr1,arr2,comparator)" value="Arrays.mismatch(arr1,arr2,comparator);" description="индекс первого несовпадения при сравнении двух массивов (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.mismatch(arr1,i1,i2,arr2,i1,i2,comparator)" value="Arrays.mismatch(arr1,i1,i2,arr2,i1,i2,comparator);" description="индекс первого несовпадения при сравнении двух отрезков (версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.deepEquals(arr1,arr2)" value="Arrays.deepEquals(arr1,arr2);" description="глубокое сравнение (проверяет также вложенные массивы)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.spliterator(arr)" value="Arrays.spliterator(arr);" description="получить сплитератор массива arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.splitrrator(arr,i1,i2)" value="Arrays.splitrrator(arr,i1,i2);" description="получить сплитератор массива arr (версия для выборки поддиапазона)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.stream(arr)" value="Arrays.stream(arr);" description="получить стрим массива arr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.stream(arr,i1,i2)" value="Arrays.stream(arr,i1,i2);" description="получить стрим массива arr (версия для выборки поддиапазона)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.deepToString()" value="Arrays.deepToString();" description="глубокая печать" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ra   Arrays.deepHashCode()" value="Arrays.deepHashCode();" description="глубокий хешкод" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.sort(arr)" value="Arrays.sort(arr);" description="сортирует массив по возрастанию" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.sort(arr, comparator)" value="Arrays.sort(arr, comparator);" description="сортирует массив по компаратору" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.sort(arr,i1,i2)" value="Arrays.sort(arr,i1,i2);" description="сортирует массив по возрастанию (поддиапазон)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.sort(arr, i1,i2,comparator)" value="Arrays.sort(arr, i1,i2,comparator);" description="сортирует массив по компаратору (поддиапазон)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.parallelSort(arr)" value="Arrays.parallelSort(arr);" description="сортирует массив по возрастанию (используя параллелизм)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.parallelSort(arr, comparator)" value="Arrays.parallelSort(arr, comparator);" description="сортирует массив по компаратору (используя параллелизм)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.parallelSort(arr,i1,i2)" value="Arrays.parallelSort(arr,i1,i2);" description="сортирует массив по возрастанию (используя параллелизм) (поддиапазон)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ua   Arrays.parallelSort(arr, i1,i2,comparator)" value="Arrays.parallelSort(arr, i1,i2,comparator);" description="сортирует массив по компаратору (используя параллелизм) (поддиапазон)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   Collections.addAll(coll,..)" value="Collections.addAll(coll,..);" description="добавить элементы из arr, vararg в coll" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   Collections.reverceOrder(comparator)" value="Collections.reverceOrder(comparator);" description="получить компаратор обратный из comparator" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   Collections.reverceOrder()" value="Collections.reverceOrder();" description="получить компаратор обратный" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cc   Collections.synchronizedCollection(coll)" value="Collections.synchronizedCollection(coll);" description="получить потокобезопасную коллекцию" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.disjoint(coll1,coll2)" value="Collections.disjoint(coll1,coll2);" description="false если у коллекций есть общие элементы" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.frequency(coll,obj)" value="Collections.frequency(coll,obj);" description="подсчитывает количество объектов obj в coll" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.max(coll,comparator)" value="Collections.max(coll,comparator);" description="найти максимальный элемент в coll по компаратору" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.max(coll)" value="Collections.max(coll);" description="найти максимальный элемент в отсортированной coll" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.min(coll,comparator)" value="Collections.min(coll,comparator);" description="найти минимальный элемент в coll по компаратору" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc   Collections.min(coll)" value="Collections.min(coll);" description="найти минимальный элемент в отсортированной coll" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccl  Collections.copy(listTo,listFrom)" value="Collections.copy(listTo,listFrom);" description="копирует из одного списка в другой" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccl  Collections.nCopies(n,obj)" value="Collections.nCopies(n,obj);" description="получить список состоящий из n элементов obj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccl  Collections.synchronizedList(list)" value="Collections.synchronizedList(list);" description="получить список (потокобезопасный)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  Collections.binarySearch(list,obj)" value="Collections.binarySearch(list,obj);" description="двоичный поиск индекса obj а отсортированном списке list" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  Collections.binarySearch(list,obj,comparator)" value="Collections.binarySearch(list,obj,comparator);" description="двоичный поиск индекса obj а отсортированном списке list(&lt;&gt;версия с компаратором)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  Collections.IndexOfSubList(list,sublist)" value="Collections.IndexOfSubList(list,sublist);" description="ищет индекс sublist внутри list" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcl  Collections.lastIndexOfSubList(list,sublist)" value="Collections.lastIndexOfSubList(list,sublist);" description="ищет индекс sublist внутри list, ищет с конца" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.replaceAll(list,obj,newobj)" value="Collections.replaceAll(list,obj,newobj);" description="заменить все вхождения obj на newobj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.reverce(list)" value="Collections.reverce(list);" description="заменить на обратный порядок элементов" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.rotate(list,n)" value="Collections.rotate(list,n);" description="сдвигает элементы циклически вправо n&gt;0 или влево n&lt;0" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.shuffle(list, random)" value="Collections.shuffle(list, random);" description="перемешивает элементы списка с помощью random" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.shuffle(list)" value="Collections.shuffle(list);" description="перемешивает элементы списка" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.sort(list,comparator)" value="Collections.sort(list,comparator);" description="сортирует список с помощью comparator" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.sort(list)" value="Collections.sort(list);" description="сортирует список (естественное упорядочивание)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.swap(list,i1,i2)" value="Collections.swap(list,i1,i2);" description="меняет элементы с индексами i1,i2 местами" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ucl  Collections.fill(list,obj)" value="Collections.fill(list,obj);" description="заполняет весь список значением obj" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccs  Collections.newSetFromMap(map)" value="Collections.newSetFromMap(map);" description="получить сет из мап" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccs  Collections.synchronizedSet(set)" value="Collections.synchronizedSet(set);" description="получить сет (потокобезопасный)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccs  Collections.synchronizedSortedSet(set)" value="Collections.synchronizedSortedSet(set);" description="получить сет (потокобезопасный) sorted" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccs  Collections.synchronizedNavigableSet(set)" value="Collections.synchronizedNavigableSet(set);" description="получить сет (потокобезопасный) navigable" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ccq  Collections.asLifoQieue(dequeue)" value="Collections.asLifoQieue(dequeue);" description="получить стек LIFO" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cm   Collections.synchronizedMap(map)" value="Collections.synchronizedMap(map);" description="получить мапу потокобезопасную" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cm   Collections.synchronizedNavigableMap(map)" value="Collections.synchronizedNavigableMap(map);" description="получить мапу потокобезопасную navigable" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cm   Collections.synchronizedSortedMap(map)" value="Collections.synchronizedSortedMap(map);" description="получить мапу потокобезопасную sorted" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

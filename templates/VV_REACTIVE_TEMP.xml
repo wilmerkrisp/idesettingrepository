@@ -1,0 +1,57 @@
+<templateSet group="VV_REACTIVE_TEMP">
+  <template name="rx2 default element ?" value="var o= just( &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot; ).filter( e-&gt;e.length()&gt;10 ).defaultIfEmpty( &quot;def_ault&quot; );&#10;o.subscribe(logConsumer( &quot;next(%s)&quot;),logConsumer( &quot;err(%s)&quot; ),logRunnable( &quot;complete()&quot; ) );&#10;" description="defaultIfEmpty( &quot;def_ault&quot; )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 log groupedObservable ?" value=".doOnNext( e -&gt;&#10; &#9;&#9;                     {&#10; &#9;&#9;                     logAtInfo( &quot;1&gt;&quot; + e.getKey() + &quot; &quot; + e );&#10; &#9;&#9;                     } )" description=".doOnNext( e.getKey()  )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 log" value=".doOnNext( logAtInfoConsumer(&quot;_&quot;) )" description=".doOnNext( logAtInfoConsumer(&quot;_&quot;) )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 simple thread" value="var o= just( 1,2,3,4,5,6,7,8,9,10 ).map(i-&gt;&quot;a&quot;+i).subscribeOn( Schedulers.newThread() );&#10;o.subscribe(System.out::println);&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 unsibscribe ?" value="var o = Observable.create( e -&gt;&#10;                           {&#10;                           e.onNext( &quot;_val1_&quot; );&#10;                           System.out.println( &quot;on next val&quot;+e );&#10;                           ThreadUtils.delay( 1 );&#10;                           e.setCancellable( () -&gt;&#10;                                             {&#10;                                             System.out.println( &quot;unsibscribed&quot; + e );&#10;                                             } );&#10;                           } );&#10;var d1 = o.subscribe( System.out::println );&#10;var d2 = o.subscribe( System.out::println );&#10;d1.dispose();&#10;d2.dispose();&#10;ThreadUtils.delay( 3 );" description="Observable.create" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 until observable2 alive ??" value="var d1 = o.subscribe( (s)-&gt;{System.out.println(&quot;one:&quot;+s );});&#10;var d2 = o.takeUntil( o2 ).subscribe( (s)-&gt;{System.out.println(&quot;two:&quot;+s );} );&#10;ThreadUtils.delay( 3 );" description="o.takeUntil( o2 )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rxJ2  import static" value="import static life.expert.common.reactivex.LogUtils.*;&#10;import static io.reactivex.Observable.*;&#10;import static io.reactivex.schedulers.Schedulers.*;" description="import static io.reactivex.Observable.*;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test  Post-Execution Assertions (Step verifier)" value="var p = Flux.just( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .skip( 1 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 9 )&#10;            .expectComplete()&#10;            .verifyThenAssertThat()&#10;            .hasDropped( 0 )&#10;            .tookLessThan( Duration.ofMillis( 1050 ) );" description="create my test Flux (and manualy generate events)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test  Post-Execution Assertions (PublisherProbe)" value="var p = Flux.just( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .skip( 1 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;&#10;var t  = PublisherProbe.of( p );&#10;var tf = t.flux();&#10;&#10;StepVerifier.create( tf )&#10;            .expectNextCount( 10 )&#10;            .verifyComplete();&#10;&#10;t.assertWasSubscribed();&#10;t.assertWasRequested();&#10;System.out.println( t.subscribeCount() );" description="wrap any additional flow" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test my operator" value="var t = TestPublisher.create();&#10;&#10;// insert tested function here&#10;var f=t.flux().map(i-&gt;&quot;a&quot;+i);&#10;&#10;StepVerifier.create( f )&#10;            .then( () -&gt; t.emit( &quot;1&quot; , &quot;2&quot; , &quot;3&quot; ) )/*так как поток горячий, то сделаем эмиссию здесь*/&#10;            .expectNext( &quot;a1&quot; , &quot;a2&quot; , &quot;a3&quot; )&#10;            .verifyComplete();" description="create my test Flux (and manualy generate events)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx2 pattern parallel2" value="var b = a.groupBy( e -&gt; e )&#10;          .flatMap( e -&gt; e.observeOn( io() )&#10;                          .map( delayFunction( &quot;GENERATE&quot; , e.getKey() , 3 ) )&#10;                          .onErrorReturnItem( -1 ) , true );" description="groupBy.flatMap(observeOn.map(TASK).onErrorReturnItem  ,delayError)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>

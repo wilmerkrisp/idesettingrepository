@@ -1,0 +1,127 @@
+<templateSet group="VV_REACTIVE">
+  <template name="rx simple" value="var o= Flux.just( 1,2,3,4,5,6,7,8,9,10 ).map(i-&gt;&quot;a&quot;+i);&#10;o.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtInfoConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description=".just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx subscribe" value="o.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtErrorConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern parallel2" value="var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;&#10;&#10;/*&#10;// v1&#10;var b = o.flatMap( e -&gt; fromSupplier( delaySupplierWithError( &quot;GENERATE&quot; , e , &quot;a2&quot; , 1 ) ).subscribeOn( elastic() )&#10;                                                                                           .onErrorReturn( &quot;!!!BIGERROR&quot; ) );&#10;//v2&#10;/var b = o.flatMap( e -&gt; fromSupplier( delaySupplierWithError( &quot;GENERATE&quot; , e , &quot;a2&quot; , 1 ) ).subscribeOn( elastic() ) )&#10;         .onErrorContinue( logAtErrorBiConsumer( &quot;CONTINUEE&quot; ) );&#10;&#10;//v3&#10;var b = o.flatMap( e -&gt; fromSupplier( () -&gt; Try( delaySupplierWithError( &quot;GENERATE&quot; , e , &quot;a2&quot; , 1 ) ) ).subscribeOn( elastic() )&#10;                                                                                                        .map( t -&gt; t.onFailure( logAtErrorConsumer( &quot;ERRR:&quot; + e ) ) )&#10;                                                                                                        .map( Try::getOrNull ) )&#10;         .onErrorContinue( logAtErrorBiConsumer( &quot;CONTINUEE&quot; ) );&#10;*/&#10;&#10;&#10;var b = o.flatMap( e -&gt; fromSupplier( delaySupplierWithError( &quot;GENERATE&quot; ,  e , &quot;a2&quot; , 1 ) ).subscribeOn( elastic() )&#10;                                                                                            .onErrorResume( logAtErrorFunction( &quot;ERRORR:&quot;+e ,  never() ) ) );&#10;//  .onErrorContinue !НЕ РАБОТАЕТ ТК применимо только к ограниченному набору операторов &#10;&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="flatMap( fromCallable(TASK).subscribeOn.onErrorReturnItem  ,delayError)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx subscriber" value="var s = new BaseSubscriber&lt;String&gt;()&#10;&#9;{&#10;&#9;@Override&#10;&#9;public void hookOnSubscribe( Subscription subscription )&#10;&#9;&#9;{&#10;&#9;&#9;logAtInfo( &quot;initial request for 1 element&quot; );&#10;&#9;&#9;request( 1 );&#10;&#9;&#9;//requestUnbounded();&#10;&#9;&#9;}&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;@Override&#10;&#9;public void hookOnNext( String value )&#10;&#9;&#9;{&#10;&#9;&#9;logAtInfo( value );&#10;&#9;&#9;request( 1 );&#10;&#9;&#9;//cancel();&#10;&#9;&#9;}&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;/*&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;@Override&#10;&#9;&#9;&#9;public void hookOnCancel()&#10;&#9;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;&#9;}&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;@Override&#10;&#9;&#9;&#9;public void hookOnError( Throwable throwable )&#10;&#9;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;&#9;}&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;@Override&#10;&#9;&#9;&#9;public void hookOnComplete()&#10;&#9;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;&#9;}&#10;&#9;&#9;&#9;*/&#10;&#9;&#9;&#10;&#9;};&#10;m.subscribe( s );" description="BaseSubscriber" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx flux-&gt;flux" value="Function&lt;Flux&lt;String&gt;,Flux&lt;String&gt;&gt; f = s -&gt; s.map( logAtInfoUnaryOperator(&quot;TRANSFORM&quot;) );" description="BaseSubscriber" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx context" value="var n = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( logAtInfo( i -&gt; &quot;&quot; + i ) );&#10;&#10;&#10;//(2) put value&#10;n = n.flatMap( i -&gt; Mono.subscriberContext()&#10;                        .map( k -&gt; k.get( &quot;a&quot; ) )&#10;                        .map( logAtInfoUnaryOperator( &quot;1)&quot; ) )&#10;                        .thenReturn( i ) );&#10;//some operators&#10;n = n.map( i -&gt; i );&#10;&#10;//(3) read values&#10;n = n.flatMap( i -&gt; Mono.subscriberContext()&#10;                        .map( k -&gt; ( (StringBuffer) k.get( &quot;a&quot; ) ).append( &quot;+&quot; ) )&#10;                        .map( logAtInfoUnaryOperator( &quot;2)&quot; ) )&#10;                        .thenReturn( i ) );&#10;&#10;//(1) create context&#10;n.subscriberContext( c -&gt; c.put( &quot;a&quot; , new StringBuffer( &quot;test1&quot; ) ) )&#10; .map( logAtInfoUnaryOperator( &quot;3)&quot; ) )&#10; .subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );&#10;&#9;&#9;&#9;" description="ntext feature" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx GRADLE CONFIG" value="&#10;plugins {&#10;&#10;id &quot;io.spring.dependency-management&quot; version &quot;1.0.7.RELEASE&quot;&#10;}&#10;&#10;dependencyManagement {&#10;imports {&#10;mavenBom &quot;io.projectreactor:reactor-bom:Californium-RELEASE&quot;&#10;}&#10;}&#10;implementation &quot;io.projectreactor:reactor-core&quot;&#10;testImplementation &quot;io.projectreactor:reactor-test&quot;&#10;implementation &quot;io.projectreactor.addons:reactor-extra&quot; //:3.2.2.RELEASE&#10;&#10;repositories {&#10;mavenCentral()&#10;mavenLocal()&#10;maven { url 'https://repo.spring.io/milestone' }&#10;}" description="spring dependency management" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx IMPORT STATIC" value="import static reactor.core.publisher.Mono.*;&#10;import static reactor.core.scheduler.Schedulers.*;&#10;import static life.expert.common.async.LogUtils.*;&#10;import reactor.core.publisher.Hooks;" description="import jars" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern concurrency" value="/**&#10; * при задании степени параллелизма будут выделены четыре потока&#10; * &#10; * */&#10;&#10;var c = Flux.range( 1 , 400 )&#10;            .map( logAtInfo( i -&gt; &quot;a&quot; + i ) )&#10;            //.subscribeOn( newElastic( &quot;src&quot; ) )&#10;            .publishOn( newParallel( &quot;my&quot; , 4 ) );&#10;&#10;c.subscribe( logAtInfoConsumer( &quot;aNEXT&quot; ) , logAtInfoConsumer( &quot;aERROR&quot; ) , logAtInfoRunnable( &quot;aCOMPLETE&quot; ) );&#10;c.subscribe( logAtInfoConsumer( &quot;   bNEXT&quot; ) , logAtInfoConsumer( &quot;   bERROR&quot; ) , logAtInfoRunnable( &quot;   bCOMPLETE&quot; ) );&#10;c.subscribe( logAtInfoConsumer( &quot;   cNEXT&quot; ) , logAtInfoConsumer( &quot;   cERROR&quot; ) , logAtInfoRunnable( &quot;   cCOMPLETE&quot; ) );&#10;c.subscribe( logAtInfoConsumer( &quot;   dNEXT&quot; ) , logAtInfoConsumer( &quot;   dERROR&quot; ) , logAtInfoRunnable( &quot;   dCOMPLETE&quot; ) );" description="flatMap( fromCallable(TASK).subscribeOn.onErrorReturnItem  ,delayError)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx publishOn io" value=".publishOn( newElastic( &quot;my&quot; , 1 , true ) )" description=".publishOn( newElastic( &quot;my&quot; , 1 , true ) )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test next" value="StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;var time =StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 3 )&#10;            .thenAwait( Duration.ofSeconds( 1 ) )&#10;            .expectComplete()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern tupple-&gt;new" value="o.map( TupleUtils.function( Customer::new ))." description="convert tupple to new Object" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test time" value="//!! do not test on infinite flows&#10;StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;var time = StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 3 )&#10;            .thenAwait( Duration.ofSeconds( 1 ) )&#10;            .expectComplete()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test initial delay" value="//!! do not test on infinite flows&#10;var time =StepVerifier.withVirtualTime( () -&gt; Mono.delay( Duration.ofDays( 1 ) ) )&#10;            .expectSubscription()&#10;            .expectNoEvent( Duration.ofDays( 1 ) )&#10;            .expectNext( 0L )&#10;            .verifyComplete();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test DEBUG mode" value="Hooks.onOperatorDebug();" description="Hooks.onOperatorDebug" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test DEBUG add test marker" value=".checkpoint(&quot;MYMARKER1&quot;)." description="checkpoint" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern parallel1" value="var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;&#10;&#10;var b = o.parallel()&#10;         .runOn( parallel() )&#10;         .map( delayUnaryOperatorWithError( &quot;TASKK&quot; , &quot;a2&quot; , 4 ) )&#10;         .sequential()&#10;         .onErrorContinue( logAtInfoBiConsumer( &quot;CONTINUEE&quot; ) );&#10;&#10;&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="parallel().runOn( parallel() ).map( TASK ).sequential()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern parallel3 grp" value="var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;&#10;&#10;&#10;var b = o.groupBy( e -&gt; e )&#10;         .flatMapDelayError( e -&gt; e.publishOn( elastic() )&#10;                                   .map( delayFunction( &quot;GENERATE&quot; , e.key() , 3 ) )&#10;                                   .onErrorReturn( &quot;-1&quot; ) , 4 , 10 );&#10;&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );&#10;&#10; &#10;ThreadUtils.delay( 10 );" description="groupBy.flatMap(observeOn.map(TASK).onErrorReturnItem  ,delayError)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern error1" value="/**&#10; * !! for production change to atError level  !!!&#10; * */&#10;&#10;Hooks.onNextDropped( logAtInfoConsumer( &quot;onNextDropped&quot; ) );&#10;Hooks.onOperatorError( logAtInfoBiFunction( &quot;onOperatorError&quot;,new IllegalStateException( &quot;onOperatorError&quot; ) ) );&#10;//Hooks.onEachOperator( logAtInfoUnaryOperator( &quot;onEachOperator___&quot; ) );" description="add error log (with Hooks) strategy" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx generate" value="BiFunction&lt;AtomicLong,SynchronousSink&lt;String&gt;,AtomicLong&gt; my_func = ( state , e ) -&gt;&#10;{&#10;long i = state.getAndIncrement();&#10;if( i &lt; 100 )&#10;&#9;{&#10;&#9;e.next( &quot;a&quot; + i );&#10;&#9;}&#10;else&#10;&#9;{&#10;&#9;e.complete();&#10;&#9;}&#10;return state;&#10;};&#10;var v = Flux.generate( AtomicLong::new , my_func , ( state ) -&gt; logAtInfo( &quot;after complete:&quot; + state ) );&#10;&#10;v.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="synchronous and one-by-one emissions / SynchronousSink" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx create" value="Consumer&lt;FluxSink&lt;String&gt;&gt; c = e -&gt;&#10;{&#10;ActionListener al = i -&gt; e.next( text.getText() );&#10;button.addActionListener( al );&#10;e.onDispose( ()-&gt;button.removeListener(al) )&#10;};&#10;var ff = Flux.create( c );" description="multi-threaded + Asynchronous(multiple emissions per round)  / FluxSink" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern error2" value="/**&#10; * doOnNext&#10; * filter&#10; * flatMap&#10; * ﬂatMapDelayError&#10; * handle&#10; * map&#10; */&#10;var o = Flux.just( 1 , 2 , 3 , 4 , 0 , 0 , 7 , 8 , 9 , 10 )&#10;            .map( logAtInfoFunctionWrapper( i -&gt; 10 / i ) );&#10;&#10;&#10;var b = o.onErrorContinue( logAtInfoBiConsumer( &quot;CONTINUEE&quot; ) );&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="add error log (with Hooks) strategy" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern multicast1" value="var o = Flux.defer( logAtInfoSupplierWrapper( () -&gt; just( &quot;ELEM&quot; ) ) )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;&#10;var b = o.publishNext();/* ==replay(1).autoConnect() */&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;aNEXT&quot; ) , logAtInfoConsumer( &quot;aERROR&quot; ) , logAtInfoRunnable( &quot;aCOMPLETE&quot; ) );&#10;ThreadUtils.delay( 6 );&#10;b.subscribe( logAtInfoConsumer( &quot;bNEXT&quot; ) , logAtInfoConsumer( &quot;bERROR&quot; ) , logAtInfoRunnable( &quot;bCOMPLETE&quot; ) );&#10;&#9;&#9;" description="single value" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx pattern queue1" value="var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i )&#10;            .doOnNext( logAtInfoConsumer( &quot;GENERATEE&quot; ) );&#10;&#10;&#10;var b = o.publishOn( parallel() )&#10;         .map( delayUnaryOperator( &quot;WORKK&quot; , 3 ) );&#10;&#10;b.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="publish on" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx subscribe Print" value="b.subscribe( printConsumer( &quot;NEXT&quot; ) , printConsumer( &quot;ERROR&quot; ) , printRunnable( &quot;COMPLETE&quot; ) );" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,213 @@
+<templateSet group="VV_FUNCTIONAL_PROGRAMMING">
+  <template name="fx functions composition" value="//java.util.function.&#10;Function&lt;Integer,Integer&gt; a1 = a -&gt; a * 3;&#10;Function&lt;Integer,Integer&gt; a2 = a -&gt; a * a;&#10;//a1(a2(3)) &#10;a1.compose( a2 ).apply( 3 ) ;" description="a1(a2(3))   == a1.compose( a2 ).apply( 3 )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx import" value="import java.util.function.*;                            //producer supplier&#10;//import static cyclops.function.Memoize.*;               //memoizeSupplier&#10;import static java.util.stream.Collectors.*;            //toList streamAPI&#10;import static java.util.function.Predicate.*;           //isEqual streamAPI&#10;&#10;import java.util.Optional;&#10;import static life.expert.common.async.LogUtils.*;&#10;&#10;&#10;import io.vavr.collection.List;&#10;import static io.vavr.API.*;&#10;import static io.vavr.Predicates.*;&#10;&#10;/*&#10;        implementation 'life.expert:himalaya:1.0.18'&#10;        implementation 'ch.qos.logback:logback-classic:1.3.0-alpha4'&#10;        &#10;         implementation 'com.oath.cyclops:cyclops:10.3.0'&#10;    implementation 'com.oath.cyclops:cyclops-reactive-collections:10.3.0'&#10;* */" description="a1(a2(3))   == a1.compose( a2 ).apply( 3 )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx functions currying var1" value="//Integer -&gt; (Integer-&gt;Integer)&#10;Function&lt;Integer,Function&lt;Integer,Integer&gt;&gt; f     = k -&gt; x -&gt; x * k;&#10;var                                         curry = f.apply( 12 );&#10;System.out.println( curry.apply( 12 ) );&#10;&#10;//применить только к второму параметру&#10;var curry = k-&gt;f.apply(k).apply(12); " description="f (k) (x)   ==       k -&gt; x -&gt; x * k; AS PROPERTY" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx functions currying MINI" value="public static final Function&lt;Integer, Integer&gt; mult(int k)&#10;{&#10;return  x -&gt; x * k;&#10;}" description="f (x)   ==        x -&gt; x * k;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx functions currying var2" value="//VARIANT1&#10;//      func(  &quot;A&quot; , &quot;B&quot; , &quot;C&quot; , &quot;D&quot; )&#10;public static &lt;A, B, C, D&gt; String func( A a ,&#10;                                        B b ,&#10;                                        C c ,&#10;                                        D d )&#10;{&#10;return String.format( &quot;%s, %s, %s, %s&quot; , a , b , c , d );&#10;}&#10;&#10;&#10;//VARIANT2&#10;//      f() .apply( &quot;A&quot; ) .apply( &quot;B&quot; ) .apply( &quot;C&quot; ) .apply( &quot;D&quot; ) &#10;public static &lt;A, B, C, D&gt; Function&lt;A,Function&lt;B,Function&lt;C,Function&lt;D,String&gt;&gt;&gt;&gt; f()&#10;{&#10;return a -&gt; ( b -&gt; ( c -&gt; ( d -&gt; String.format( &quot;%s, %s, %s, %s&quot;, a , b , c , d )  ) ) );&#10;}&#10;&#10;//VARIANT3&#10;//      g.apply( &quot;A&quot; , &quot;B&quot; , &quot;C&quot; , &quot;D&quot; )  )&#10;Function4&lt;? super Object,? super Object,? super Object,? super Object,String&gt;  ff= (a,b,c,d)-&gt; String.format( &quot;%s, %s, %s, %s&quot;, a , b , c , d );&#10;&#10; &#10; &#10;  &#10;      &#10;" description="f (k) (x)   ==       k -&gt; x -&gt; x * k;   AS METHOD" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx function / declare self referenced function in variable" value="public static final Function&lt;Integer,Integer&gt; factorial = i-&gt;(i&lt;=1)?1:$class$.factorial.apply(i-1)*i;" description="var+static initializer" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch 1" value="&#10;String i   = &quot;john.doe@acme.com&quot;;&#10;//@formatter:off&#10;String rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                  &quot;one&quot; ) ,&#10;                            Case( $( String::isBlank ) ,&#10;                                  &quot;two&quot; ) ,&#10;                            Case( $( is( &quot;test&quot; ) ) ,&#10;                                  &quot;test&quot; ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );&#10;//@formatter:on&#10;" description="VAVR fx pattern matching" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="OLD fx switch 3" value="Consumer&lt;String&gt; do1 = ( s ) -&gt; System.out.println( &quot;VOVAsuccess &quot; + s );&#10;Consumer&lt;String&gt; do2 = ( s ) -&gt; System.out.println( &quot;VOVAerror &quot; + s );&#10;&#10;//Matching.w&#10;String i = &quot;john.doe@acme.com&quot;;&#10;//@formatter:off&#10;Result&lt;String&gt; rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                           Result.error( &quot;must not be null&quot; ) ) ,&#10;                                     Case( $( String::isBlank ) ,&#10;                                           Result.error( &quot;must not be blank&quot; ) ) ,&#10;                                     Case( $( is( &quot;test&quot; ) ) ,&#10;                                           Result.error( &quot;must not be test&quot; ) ) ,&#10;                                     Case( $() ,&#10;                                           Result.success( &quot;all is success&quot; ) ) );&#10;//@formatter:on&#10;rez.onSuccess( do1 ).onError( do2 );" description="VAVR fx pattern matching / RETURN result.success result.error" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch 2 RUNNABLE" value="&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; yes = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Function&lt;String,Function&lt;String,Void&gt;&gt; no  = x -&gt; o -&gt; run( () -&gt; System.out.println(x) );&#10;Predicate&lt;String&gt; checkNoEmail = e -&gt; !emailPattern.matcher( e ).matches();&#10;&#10;//@formatter:off&#10;java.util.function.Consumer&lt;String&gt; emailChecker = ( e ) -&gt; Match( e ).of( Case( $( isNull() ) ,&#10;                                                                                 no.apply( &quot;email must not be null.&quot; ) ) ,&#10;                                                                           Case( $( String::isBlank ) ,&#10;                                                                                 no.apply( &quot;email must not be empty.&quot; ) ) ,&#10;                                                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                                                 no.apply( &quot;must not be test&quot; ) ) ,&#10;                                                                           Case( $( checkNoEmail ) ,&#10;                                                                                 no.apply( &quot;email &quot; + e + &quot; is invalid.&quot; ) ) ,&#10;                                                                           Case( $() ,&#10;                                                                                 yes.apply( e ) )) ;&#10;//@formatter:on" description="VAVR fx pattern matching / RUN" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx if check and return" value="return Optional.ofNullable(monetaryRoundingsSingletonSpi())&#10;&#9;        .orElseThrow( () -&gt; new MonetaryException(&quot;No MonetaryRoundingsSpi loaded, query functionality is not available.&quot;))&#10;                .getDefaultRounding();" description="fx pattern matching" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx functions currying MINI  Function1=Function2" value="// Создаем базовую функцию&#10;Function2&lt;String, String, String&gt; combineName =&#10;&#9;(lastName, firstName) -&gt; firstName + &quot; &quot; + lastName;&#10;&#10;//вариант1) curring  /  на выходе получается Function&lt;x, Function&gt;&#10;var makeGriffinName = combineName&#10;&#9;                                            .curried()&#10;&#9;                                            .apply(&quot;Griffin&quot;);&#10;//вариант2) Partial application / на выходе получается Function2..&#10;var         add2 = combineName.apply( &quot;Griffin&quot; );&#10;&#10;// Работаем как с полноценной функцией&#10;System.out.println(makeGriffinName.apply(&quot;Peter&quot;)); // Peter Griffin&#10;System.out.println(makeGriffinName.apply(&quot;Lois&quot;)); // Lois Griffin" description="VAVR Partial application&amp;currying" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx coll queue" value="System.out.println(queue); // Queue(1, 2, 3, 4, 5)&#10;Tuple2&lt;Integer, Queue&lt;Integer&gt;&gt; tuple2 = queue.dequeue();&#10;System.out.println(tuple2._1); // 1&#10;System.out.println(tuple2._2); // Queue(2, 3, 4, 5)" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx function0 memoized" value="//var hashCache = Function0.of(Math::random).memoized();&#10;var hashCache = Function(Math::random).memoized();&#10;double randomValue1 = hashCache.apply();" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-exc checked-&gt;checked" value="//CheckedFunction1&lt;Integer, Integer&gt; f = i -&gt; readFromFile(i);&#10;var f = CheckedFunction(i -&gt; readFromFile(i));&#10;" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx function from method reference" value="//var sum = Function2.of( Math::pow );&#10;var sum = Function( Math::pow );&#10;Double summed = sum.apply(5.0, 6.0);" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try Failure-&gt;Success" value="         .onFailure( System.out::println )&#10;         .onSuccess( System.out::println )&#10;         .recover( ArithmeticException.class  , -1 ); //Success с дефолтным значением -1&#10;         //.recover( r -&gt; Match( r ).of( Case( $(instanceOf( ArithmeticException.class )) , -1  ) )); //Success с дефолтным значением -1&#10;&#10; " description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try THROW&amp;GET" value=".getOrElseThrow(err -&gt; { throw new RuntimeException(err); });&#10;//.getOrElseThrow( (Function&lt;Throwable,RuntimeException&gt;) RuntimeException::new );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx coll vavr-&gt;java (convert with iterate)" value=" .toJavaList()" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx coll vavr-&gt;java (mutable view)" value=" .asJava()" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx coll vavr-&gt;java (immutable view)" value=" .asJavaImmutable()" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try THROW" value=".onFailure( err -&gt; { throw new RuntimeException(err); })" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx if check and return ELSEIF" value="return Try.of(() -&gt; getFromGoogle(searchString))&#10;          .recover(NoSuchElementException.class, emptyList())&#10;          .recover(NSAForbiddenException.class, emptyList())&#10;          .orElse(() -&gt; Try.of(() -&gt; getFromDuckDuckGo(searchString)));" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try +err" value=".flatMap(x -&gt; Try(x::openStream))" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try SWITCH" value="//@formatter:off&#10;var c = Match( v ).of( Case( $Success($()) ,&#10;                             &quot;OK&quot; ) ,&#10;                       Case( $Failure($()) ,&#10;                             &quot;ERR&quot; ) );&#10;//@formatter:on" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch 3 Optional" value="int i = 10;&#10;//@formatter:off&#10;Option&lt;String&gt; s = Match(i) .option(Case($(0), &quot;zero&quot;));&#10;//@formatter:on" description="VAVR тк Optional то можно не предоставлять все пространство вариантов" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch AND" value="Case($(allOf(isNotNull(),isIn(1,2,3,null))), &quot;Number found&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch OR" value="Case($(anyOf(isIn(1990, 1991, 1992), is(1986))), &quot;Age match&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch NONEOF" value="Case($(noneOf(isIn(1990, 1991, 1992), is(1986))), &quot;Age match&quot;)," description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch PATTERN MATCHING" value="/*&#10;&#10;$()     *&#10;$_      не смотрим вообще&#10;&#10; */&#10;&#10;var m = Man.of( &quot;vova&quot; ,&#10;                &quot;12&quot; );&#10;&#10;//@formatter:off&#10;String rez = Match( m ).of( Case( $Man( $( &quot;vova&quot; ) ,&#10;                                        $() ) ,&#10;                                  ( x , y ) -&gt; &quot;man &quot; + x + y ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;//@formatter:on&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-exc checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;//var rez_=CheckedFunction( ( x , y ) -&gt;&quot;&quot;+x+y ).unchecked().apply( 12,13 );&#10;var rez_=  unchecked(( x , y ) -&gt;&quot;&quot;+x+y ).apply( 12,13 );" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try supplier-&gt;try" value="//var try_=Try.of( () -&gt; 4 / 0 )&#10;var try_=Try( () -&gt; 4 / 0 )" description="VAVR supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try funciton-&gt;try" value="var try_=       Function2.liftTry( ( x , y ) -&gt;&quot;&quot;+x+y       ).apply( 12,13 );&#10;var try_=CheckedFunction2.liftTry( ( x , y ) -&gt;&quot;io exc&quot;+x+y ).apply( 12,13 );" description="VAVR funciton-&gt;try" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-opt function-&gt;optional" value="var opt_=       Function2.lift( ( x , y ) -&gt;&quot;&quot;+x+y       ).apply( 12,13 );&#10;var opt_=CheckedFunction2.lift( ( x , y ) -&gt;&quot;io exc&quot;+x+y ).apply( 12,13 );" description="VAVR function-&gt;optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new tuple" value="var t= Tuple($END$);" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch 3 Either" value="&#10;&#10;Consumer&lt;String&gt; do1 = ( s ) -&gt; System.out.println( &quot;VOVAsuccess &quot; + s );&#10;Consumer&lt;String&gt; do2 = ( s ) -&gt; System.out.println( &quot;VOVAerror &quot; + s );&#10;&#10;//Matching.w&#10;String i = &quot;john.doe@acme.com&quot;;&#10;//@formatter:off&#10;Either&lt;String,String&gt; rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                                 Left( &quot;must not be null&quot; ) ) ,&#10;                                           Case( $( String::isBlank ) ,&#10;                                                 Left( &quot;must not be blank&quot; ) ) ,&#10;                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                 Left( &quot;must not be test&quot; ) ) ,&#10;                                           Case( $() ,&#10;                                                 Right( &quot;Good&quot; ) ) );&#10;//@formatter:on&#10;//rez.onSuccess( do1 ).onError( do2 );&#10;rez.peek( do1 ).peekLeft( do2 );" description="VAVR fx pattern matching / RETURN result.success result.error" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new try failure" value="Failure( new RuntimeException( $END$ ) )" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new try success" value="Success( $END$ )" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new either left" value="Left( $END$ )" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new either right" value="Right( $END$ )" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new option" value="Option( $END$ )" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-opt function-&gt;optional StreamAPI" value="List&lt;Integer&gt; integers = List.of( 3 ,&#10;                                  9 ,&#10;                                  7 ,&#10;                                  0 ,&#10;                                  10 ,&#10;                                  20 );&#10;integers.stream().map( CheckedFunction1.lift( App::readFromFile )).map( o-&gt;o.getOrElse( -1 ) ).forEach( System.out::println );&#10;&#9;&#9;" description="VAVR проглатывает ошибку" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx err-try funciton-&gt;try StreamAPI" value="List&lt;Integer&gt; integers = List.of( 3 ,&#10;                                  9 ,&#10;                                  7 ,&#10;                                  0 ,&#10;                                  10 ,&#10;                                  20 );&#10;&#10;integers.stream()&#10;        .map( CheckedFunction1.liftTry( App::readFromFile ) )&#10;        .map( o -&gt; o.recover( logAtInfoFunction( -1 ) ) )&#10;        .forEach( System.out::println );" description="VAVR логгирует ошибку" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>

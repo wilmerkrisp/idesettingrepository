@@ -1,0 +1,86 @@
+<templateSet group="VV_optional">
+  <template name="optional new from object" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;- альтернатива Optional это аннотация @Nullabble&#10;- запускает обработку на null значениях, классика nullable, те я потом должен буду проверить на null&#10;- если вдруг переменная =null то get вернет иксепшен&#10;&#10;.ifPresent( System.out::println );&#10;.map( (z) -&gt; { System.out.println( z ); return z; } &#10;&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;Optional&lt;$classname$&gt; $var$ = Optional.ofNullable(new $classname$());&#10;&#10;//var1&#10;if ($var$.isPresent())&#10;&#9;System.out.println( $var$.get() );&#10;//var2&#10;var $var$_result = $var$.orElse(&quot;default value&quot;);&#10;&#9;&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional new from var /FULL" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10;&#10;- запакуется значение переменной или дефолтное значение&#10;- запускает продолжение обработки на дефолтных значениях, те я потом уже НЕ должен буду проверить на null&#10;&#10;.ifPresent( System.out::println );&#10;.map( (z) -&gt; { System.out.println( z ); return z; } &#10;&#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;//var1&#10;var $var$ = Optional&lt;$classname$&gt;.ofNullable($somevar$).orElse(new $classname$());&#10;//var2&#10;var $var$2 = Optional&lt;$classname$&gt;.ofNullable($somevar$).orElseGet(()-&gt;new $classname$());&#10;&#10;var $var$_result = $var$.get();&#10;&#9;&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="somevar" expression="suggestFirstVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional new from var" value="var $var$ = Optional&lt;$classname$&gt;.ofNullable($somevar$);&#10;$END$" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="classNameComplete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="somevar" expression="suggestFirstVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional StreamApi" value="Stream&lt;Optional&lt;String&gt;&gt; stream = ...&#10;&#10;Set&lt;String&gt; result = stream.filter(Optional::isPresent) .map(Optional::get) .collect(toSet());" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional combine" value="person.flatMap(p -&gt; car.map(c -&gt; findCheapestInsurance(p, c)));" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional filter" value="person.filter(p -&gt; p.getAge() &gt;= minAge) .flatMap(Person::getCar) .flatMap(Car::getInsurance) .map(Insurance::getName) .orElse(&quot;Unknown&quot;);" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional if" value="public int readDuration(Properties props, String name) &#10;{&#10;return Optional.ofNullable(props.getProperty(name)) .flatMap(OptionalUtility::stringToInt) .filter(i -&gt; i &gt; 0) .orElse(0); &#10;}" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional README" value="of&#9;&#9;&#9;Returns an Optional wrapping the given value or throws a NullPointerException if this value is null&#10;ofNullable&#9;&#9;Returns an Optional wrapping the given value or the empty Optional if this value is null&#10;empty &#9;&#9;&#9;Returns an empty Optional instance&#10;filter&#9;&#9;&#9;If the value is present and matches the given predicate, returns this Optional; otherwise, returns the empty one&#10;map&#9;&#9;&#9;If a value is present, applies the provided mapping function to it&#10;flatMap&#9;&#9;&#9;If a value is present, returns the Optional resulting from the application of the provided mapping function to it; otherwise, returns the empty Optional&#10;get&#9;&#9;&#9;Returns the value wrapped by this Optional if present; otherwise, throws a NoSuchElementException&#10;ifPresent&#9;&#9;If a value is present, invokes the specified consumer with the value; otherwise, does nothing&#10;ifPresentOrElse&#9;&#9;If a value is present, performs an action with the value as input; otherwise, performs a different action with no input&#10;isPresent&#9;&#9;Returns true if a value is present; otherwise, returns false&#10;or&#9;&#9;&#9;If the value is present, returns the same Optional; otherwise, returns another Optional produced by the supplying function&#10;orElse&#9;&#9;&#9;Returns the value if present; otherwise, returns the given default value&#10;orElseGet&#9;&#9;Returns the value if present; otherwise, returns the one provided by the given Supplier&#10;orElseThrow&#9;&#9;Returns the value if present; otherwise, throws the exception created by the given Supplier&#10;stream&#9;&#9;&#9;If a value is present, returns a Stream containing only it; otherwise, returns an empty Stream" description="new object / optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="optional method Optional+try" value="public Optional&lt;String&gt; $method$( final String string )&#10;{&#10;return Optional.ofNullable( string )&#10;               .filter( StringUtils::isNotBlank )&#10;               //.onEmpty( logAtWarningRunnable( &quot;$class$.$method$(empty argument)&quot; ) )&#10;               .map( logAtDebugUnaryOperator( &quot;$class$.$method$&quot; ) )&#10;               .map( CheckedFunction1.liftTry( this::$method$_ ) )&#10;               .map( t -&gt; t.onFailure( logAtErrorConsumer( &quot;$class$.$method$&quot; ) ) )&#10;               .flatMap( t -&gt; Optional.ofNullable( t.getOrNull() ) );&#10;}&#10;&#10;&#10;&#10;public String $method$_( final String string )&#10;{&#10;//throw new RuntimeException( &quot; cause &quot; );&#10;return &quot;otvet+&quot; + string;&#10;}&#10;" description="supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="COMPLETION" value="false" />
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_STRING" value="false" />
+    </context>
+  </template>
+  <template name="optional method Optional" value="public Optional&lt;String&gt; $method$( final String string )&#10;&#9;{&#10;&#9;return Optional.ofNullable( string )&#10;&#9;               .filter( StringUtils::isNotBlank )&#10;&#9;               //.onEmpty( logAtWarningRunnable( &quot;$class$.$method$(empty argument)&quot; ) )&#10;&#9;               .map( logAtDebugUnaryOperator( &quot;$class$.$method$&quot; ) )&#10;&#9;               .flatMap( this::$method$_ );&#10;&#9;}&#10;&#10;&#10;&#10;public Optional&lt;String&gt; $method$_( final String string )&#10;&#9;{&#10;&#9;return Optional.ofNullable( &quot;otvet+&quot; + string );&#10;&#9;}" description="supplier-&gt;try" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="COMPLETION" value="false" />
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_STRING" value="false" />
+    </context>
+  </template>
+  <template name="option паттерн обработки null" value="/*&#10;  Option.of( &quot;a&quot; ).map( a -&gt; null ) - в итоге будет Some(null) А НЕ NONE!!&#10;Optional.of( &quot;a&quot; ).map( a -&gt; null ) - в итоге будет Option.none&#10; */&#10;.flatMap(s -&gt; Optional.ofNullable( s ) )" description="new -&gt;func-&gt;null-&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
