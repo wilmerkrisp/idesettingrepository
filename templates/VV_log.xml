@@ -119,7 +119,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="exception1" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* exception&#10; &#10;stacktrace attached to new exception&#10;for runtime exception you NO need  THROWS or NO need outer try-catch  block&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;throw new VX_exception( &quot; cause $END$&quot;);" description="throw generate exception RUNTIME" toReformat="false" toShortenFQNames="true">
+  <template name="exception1" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/* exception&#10; &#10;stacktrace attached to new exception&#10;for runtime exception you NO need  THROWS or NO need outer try-catch  block&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;throw new IllegalStateException( &quot;marker&quot; );" description="throw new IllegalStateException( &quot;marker&quot; );" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
