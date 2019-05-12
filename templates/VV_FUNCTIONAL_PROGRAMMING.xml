@@ -175,7 +175,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx new try failure" value="Failure( new RuntimeException( $END$ ) )" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx new try failure" value="Failure( new RuntimeException( $END$ ) )&#10;&#9;" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -210,7 +210,22 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx switch 3 Try" value="&#10;&#10;Consumer&lt;String&gt; do1 = ( s ) -&gt; System.out.println( &quot;VOVAsuccess &quot; + s );&#10;Consumer&lt;String&gt; do2 = ( s ) -&gt; System.out.println( &quot;VOVAerror &quot; + s );&#10;&#10;//Matching.w&#10;String i = &quot;john.doe@acme.com&quot;;&#10;//@formatter:off&#10;Either&lt;String,String&gt; rez = Match( i ).of( Case( $( isNull() ) ,&#10;                                                 Failure( &quot;must not be null&quot; ) ) ,&#10;                                           Case( $( String::isBlank ) ,&#10;                                                 Failure( &quot;must not be blank&quot; ) ) ,&#10;                                           Case( $( is( &quot;test&quot; ) ) ,&#10;                                                 Failure( &quot;must not be test&quot; ) ) ,&#10;                                           Case( $() ,&#10;                                                  Success( &quot;Good&quot; ) ) );&#10;//@formatter:on&#10;//rez.onSuccess( do1 ).onError( do2 );&#10;rez.peek( do1 ).peekLeft( do2 );" description="VAVR fx pattern matching / RETURN try.success try.failure" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch 3 Try" value="var string=&quot;&quot;;&#10;//@formatter:off&#10;Try&lt;NonBlankString&gt; try_ = Match( string ).of( Case( $( isNull() ) ,&#10;                         nullPointerFailure ( &quot;string is marked non-null but is null&quot; ) ) ,&#10;                   Case( $( String::isBlank ) ,&#10;                         illegalArgumentFailure( &quot;string is marked non-blank but is blunk&quot; )) ,&#10;                   Case( $() ,&#10;                          Success(  new NonBlankString( string ) ) ) );&#10; //@formatter:on&#10;var string2= try_.get();" description="VAVR fx pattern matching / RETURN try.success try.failure" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new try failure illegalArgumentFailure" value="illegalArgumentFailure( &quot;string is marked non-blank but is blunk&quot; )&#10;&#9;" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new try failure nullPointerFailure" value="nullPointerFailure ( &quot;string is marked non-null but is null&quot; )&#10;&#9;" description="VAVR" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx new try failure illegalStateFailure" value="illegalStateFailure ( &quot;object is inconsistent&quot; )&#10;&#9;" description="VAVR" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
