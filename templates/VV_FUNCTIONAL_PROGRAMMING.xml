@@ -230,4 +230,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx switch 3 Optional JAVA" value=" &#10;var x = Optional.ofNullable(expresssion1)&#10;.or( () -&gt; Optional.ofNullable(expression2))&#10;.or( () -&gt; Optional.ofNullable(expression3))&#10;.or( () -&gt; Optional.ofNullable(expression4))&#10;.orElse(default expression that does not throw exception);&#10; " description="java optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
