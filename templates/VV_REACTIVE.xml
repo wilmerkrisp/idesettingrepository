@@ -124,4 +124,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="rx pattern concat2" value="@Value&#10;class Person { String name; String surname; }&#10;&#10;&#10;var o = Flux.just( 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .map( i -&gt; &quot;a&quot; + i )&#10;            .buffer( 2 )&#10;            .map( l -&gt; (Tuple2&lt;String,String&gt;)Tuples.fromArray( l.toArray() ) )&#10;            .map( TupleUtils.function( Person::new ) );&#10;o.subscribe( logAtInfoConsumer( &quot;NEXT&quot; ) , logAtInfoConsumer( &quot;ERROR&quot; ) , logAtInfoRunnable( &quot;COMPLETE&quot; ) );" description="buffer.map(list-&gt;tuple).map(tuple-&gt;new)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
