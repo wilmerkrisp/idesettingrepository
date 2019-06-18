@@ -149,7 +149,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="newlist . immut-&gt;mut" value="var $v_col1$ = new ArrayList&lt;$String$&gt;($coll$ );&#10;$END$" description="ArrayList(coll)     new array list / List" toReformat="false" toShortenFQNames="true">
+  <template name="newlist . immut-&gt;mut" value="var $v_col1$ = new ArrayList&lt;$String$&gt;($coll$ );&#10;$END$" description="ArrayList(coll)     new array list / List   | SHALLOWCOPY" toReformat="false" toShortenFQNames="true">
     <variable name="coll" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="String" expression="iterableComponentType(coll)" defaultValue="" alwaysStopAt="false" />
@@ -268,7 +268,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="newlist . mut-&gt;immut" value="var $v_col1$ = List.&lt;$String$&gt;copyOf( $v_arr$ );&#10;$END$" description="List.of(arr)  получить список (немутабельный) из coll" toReformat="false" toShortenFQNames="true">
+  <template name="newlist . mut-&gt;immut" value="var $v_col1$ = List.&lt;$String$&gt;copyOf( $v_arr$ );&#10;$END$" description="List.of(arr)  получить список (немутабельный) из coll | SHALLOWCOPY" toReformat="false" toShortenFQNames="true">
     <variable name="v_arr" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="v_col1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="String" expression="iterableComponentType(v_arr)" defaultValue="" alwaysStopAt="false" />
