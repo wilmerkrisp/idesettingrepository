@@ -44,4 +44,9 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="pd_iterator (get VIEW list ONE type from list ANOTHER type)" value="import com.google.common.collect.AbstractIterator;&#10;&#10;Collection&lt;Integer&gt; someList;&#10;&#10;Collection&lt;String&gt; getListWithoutCreation()&#10;{&#10;return new AbstractCollection&lt;String&gt;()&#10;&#9;{&#10;&#9;@Override&#10;&#9;public Iterator&lt;String&gt; iterator()&#10;&#9;&#9;{&#10;&#9;&#9;/**com.google.common.collect.AbstractIterator*/&#10;&#9;&#9;return new AbstractIterator&lt;String&gt;()&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;@Override&#10;&#9;&#9;&#9;protected String computeNext()&#10;&#9;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;&#9;return &quot;&quot; + someList.iterator()&#10;&#9;&#9;&#9;&#9;                    .next();&#10;&#9;&#9;&#9;&#9;}&#10;&#9;&#9;&#9;};&#10;&#9;&#9;}&#10;&#9;&#10;&#9;@Override&#10;&#9;public int size()&#10;&#9;&#9;{&#10;&#9;&#9;return someList.size();&#10;&#9;&#9;}&#10;&#9;&#10;&#9;//необязательный метод&#10;&#9;@Override&#10;&#9;public boolean remove( Object o )&#10;&#9;&#9;{&#10;&#9;&#9;throw new UnsupportedOperationException();&#10;&#9;&#9;}&#10;&#9;};&#10;}" description="pattern design collection from abstract ITERATOR inner" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
