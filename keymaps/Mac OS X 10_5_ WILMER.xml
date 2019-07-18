@@ -203,6 +203,9 @@
   <action id="NewFromTemplate">
     <keyboard-shortcut first-keystroke="meta m" />
   </action>
+  <action id="NewModulesDiagram">
+    <keyboard-shortcut first-keystroke="meta escape" />
+  </action>
   <action id="NextDiff" />
   <action id="NextOccurence" />
   <action id="NextProjectWindow" />
