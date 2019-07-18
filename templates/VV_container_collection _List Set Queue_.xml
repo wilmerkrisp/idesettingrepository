@@ -1,5 +1,5 @@
 <templateSet group="VV_container_collection (List Set Queue)">
-  <template name="forcoll2" value="for(var v_iterator = $COLLECTION$.iterator(); v_iterator.hasNext(); /*($CAST$ v_iterator.next()).method()*/ ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*  $ITER_TYPE$  $ELEMENT_TYPE$&#10;&#9; if($i$ == 10) break continue&#10;&#9; log_.debug( &quot;for: &quot;+ v_next);&#10;&#9; v_iterator.remove();          // MODIFY&#10;&#9; &#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;&#10;        var v_next =$CAST$ v_iterator.next();&#10;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9;$END$&#10;&#9;}" description="loop for  ITERATOR java.util.Collection MODIFY" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll2" value="for(var v_iterator = $COLLECTION$.iterator(); v_iterator.hasNext(); /*($CAST$ v_iterator.next()).method()*/ ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/*  $ITER_TYPE$  $ELEMENT_TYPE$&#10;&#9; if($i$ == 10) break continue&#10;&#9; log_.debug( &quot;for: &quot;+ v_next);&#10;&#9; v_iterator.remove();          // MODIFY&#10;&#9; &#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;&#9;&#10;        var v_next =$CAST$ v_iterator.next();&#10;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9;$END$&#10;&#9;}" description="for(ITERATOR java.util.Collection)  MODIFY" toReformat="false" toShortenFQNames="true">
     <variable name="COLLECTION" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="&quot;collection&quot;" alwaysStopAt="true" />
     <variable name="ELEMENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
     <variable name="ITER_TYPE" expression="rightSideType()" defaultValue="&quot;java.util.Iterator&quot;" alwaysStopAt="false" />
@@ -42,7 +42,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll1" value="for(var $i$:$arr$)&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* $string$&#10;&#9;if($i$ == 10) break continue&#10;&#9;log_.debug   (&quot;$class$ $method$ for: &quot;+$i$);&#9; &#10;&#9; &#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#10;&#9;&#10;&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;$SELECTION$&#10;&#9;}" description="loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll1" value="for(var $i$:$arr$)&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* $string$&#10;&#9;if($i$ == 10) break continue&#10;&#9;log_.debug   (&quot;$class$ $method$ for: &quot;+$i$);&#9; &#10;&#9; &#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#10;&#9;&#10;&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;$SELECTION$&#10;&#9;}" description="forEach(:) ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <variable name="i" expression="suggestIndexName()" defaultValue="i" alwaysStopAt="true" />
     <variable name="string" expression="iterableComponentType(arr)" defaultValue="" alwaysStopAt="false" />
@@ -53,7 +53,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll6 list" value="for (var v_i = 0; v_i &lt; $LIST$.size(); v_i++) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* &#10;&#9; if(v_i == 10) break continue&#10;&#9; log_.debug   (&quot;$class$ $method$ for: &quot;+v_i+&quot;=&quot;+v_j);&#10;&#9; &#10;         C     &#10;&#9; R      $ELEMENT_TYPE$   &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;        var v_j = $CAST$ $LIST$.get(v_i);&#10;&#9;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9; $END$&#10;&#9;}&#10;&#10;&#10;" description="loop for list" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll6 list" value="for (var v_i = 0; v_i &lt; $LIST$.size(); v_i++) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* &#10;&#9; if(v_i == 10) break continue&#10;&#9; log_.debug   (&quot;$class$ $method$ for: &quot;+v_i+&quot;=&quot;+v_j);&#10;&#9; &#10;         C     &#10;&#9; R      $ELEMENT_TYPE$   &#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#9;&#10;        var v_j = $CAST$ $LIST$.get(v_i);&#10;&#9;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9; $END$&#10;&#9;}&#10;&#10;&#10;" description="for(;;)" toReformat="false" toShortenFQNames="true">
     <variable name="LIST" expression="variableOfType(&quot;java.util.List&quot;)" defaultValue="&quot;list&quot;" alwaysStopAt="true" />
     <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
@@ -64,7 +64,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll7 listIterator" value="for( var v_iterator = $COLLECTION$.listIterator( ) ; v_iterator.hasNext( ) /*hasPrevious()*/; /*($CAST$ v_iterator.next()).method()*/ ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* ListIterator&lt;$ELEMENT_TYPE$&gt;&#10;&#9;&#10;&#9;if($i$ == 10) break continue&#10;&#9;v_iterator.nextIndex()&#10;&#9;v_iterator.previousIndex()&#10;&#9;v_iterator.remove()&#10;&#9;v_iterator.set(E e);&#10;&#9;v_iterator.add(E e); &#10;&#9; &#10;&#9;log_.debug( &quot;for: &quot;+ v_next);&#10;&#9; &#10;&#9; C     &#10;&#9; R    $ELEMENT_TYPE$  v_next&#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;        var v_next =$CAST$ v_iterator.next() /*previous()*/;&#10;&#9;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9; $END$&#10;&#9;}" description="loop for  ITERATOR java.util.List" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll7 listIterator" value="for( var v_iterator = $COLLECTION$.listIterator( ) ; v_iterator.hasNext( ) /*hasPrevious()*/; /*($CAST$ v_iterator.next()).method()*/ ) &#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* ListIterator&lt;$ELEMENT_TYPE$&gt;&#10;&#9;&#10;&#9;if($i$ == 10) break continue&#10;&#9;v_iterator.nextIndex()&#10;&#9;v_iterator.previousIndex()&#10;&#9;v_iterator.remove()&#10;&#9;v_iterator.set(E e);&#10;&#9;v_iterator.add(E e); &#10;&#9; &#10;&#9;log_.debug( &quot;for: &quot;+ v_next);&#10;&#9; &#10;&#9; C     &#10;&#9; R    $ELEMENT_TYPE$  v_next&#10;&#9; U     &#10;&#9; D&#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;        var v_next =$CAST$ v_iterator.next() /*previous()*/;&#10;&#9;&#10;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#9;&#10;&#10;&#9; $END$&#10;&#9;}" description="for(listIterator;;)  ITERATOR java.util.List" toReformat="false" toShortenFQNames="true">
     <variable name="COLLECTION" expression="variableOfType(&quot;java.util.List&quot;)" defaultValue="&quot;collection&quot;" alwaysStopAt="true" />
     <variable name="ELEMENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
     <variable name="CAST" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
@@ -74,7 +74,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll3" value="for(var v_i: new $ArrayList$&lt;$string$&gt;($arr$) )&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* $string$&#10;&#9;if(v_i == 10) break continue&#10;&#9;log_.debug   (&quot;$class$ $method$ for: &quot;+v_i);&#10;&#9;&#10;&#9;$arr$.remove( v_i ); // MODIFY&#10;&#9;$arr$.add( v_i );    // MODIFY&#9; &#10;&#9; &#10;&#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#10;&#10;&#9;}" description="loop forEach collection MODIFY" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll3" value="for(var v_i: new $ArrayList$&lt;$string$&gt;($arr$) )&#10;&#9;{&#10;&#9;//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;&#9;/* $string$&#10;&#9;if(v_i == 10) break continue&#10;&#9;log_.debug   (&quot;$class$ $method$ for: &quot;+v_i);&#10;&#9;&#10;&#9;$arr$.remove( v_i ); // MODIFY&#10;&#9;$arr$.add( v_i );    // MODIFY&#9; &#10;&#9; &#10;&#10;&#9; C     &#10;&#9; R     &#10;&#9; U     &#10;&#9; D&#9; &#10;&#9; */&#10;&#9;//&lt;/editor-fold&gt;&#10;&#9;&#10;&#9;&#10;&#10;&#9;$END$&#10;&#9;&#9;&#10;&#9;$SELECTION$&#10;&#9;&#10;&#10;&#9;}" description="forEach(:new arr) collection MODIFY" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="arr" alwaysStopAt="true" />
     <variable name="ArrayList" expression="typeOfVariable(arr)" defaultValue="" alwaysStopAt="false" />
     <variable name="string" expression="guessElementType(arr)" defaultValue="" alwaysStopAt="false" />
@@ -239,14 +239,14 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll4" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.forEach( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );" description="LAMBDA / loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll4" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.forEach( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );" description="iterable.forEach(Л) ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll5" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.iterator().forEachRemaining( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );" description="LAMBDA2 / loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll5" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.iterator().forEachRemaining( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );" description="iterable.iterator.forEachRemaining(Л)   ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
@@ -318,7 +318,7 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcoll1 optimized" value="$arr$.forEach( System.out::println);&#10;$END$" description="loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll1 optimized" value="$arr$.forEach( System.out::println);&#10;$END$" description="iterable.forEach(Л) ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
@@ -369,21 +369,21 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcolambda1 simple" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.stream().forEach( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );&#10;" description="LAMBDA / loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcolambda1 simple" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;&#10;$arr$.stream().forEach( (p_1)-&gt;{  $END$System.out.println(p_1);$SELECTION$ } );&#10;" description="iterable.stream().forEach(Л_print) ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcollambda2 guava indexed" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;Streams.mapWithIndex( $arr$.stream() , ( o , i ) -&gt; Map.entry( i , o ) )&#10;       .forEach( e -&gt;&#10;                 {$END$ System.out.println( e.getValue() ); $SELECTION$ } );" description="LAMBDA / loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcollambda2 guava indexed" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;Streams.mapWithIndex( $arr$.stream() , ( o , i ) -&gt; Map.entry( i , o ) )&#10;       .forEach( e -&gt;&#10;                 {$END$ System.out.println( e.getValue() ); $SELECTION$ } );" description="Stream.forEach(indexed) ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="forcollambda3 vavr indexed" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;$arr$&#10;var s = io.vavr.collection.List.&lt; String &gt; of( &quot;11&quot; , &quot;22&quot; , &quot;33&quot; );&#10;s.toStream()&#10; .zipWithIndex()&#10; .forEach( ( e ) -&gt;&#10;           {&#10;           System.out.println( e._2 + &quot; &quot; + e._1 );&#10;           } );&#10;&#10;" description="LAMBDA / loop forEach ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+  <template name="forcollambda3 vavr indexed" value="//&lt;editor-fold desc=&quot;.&quot;&gt;&#10;/*&#10; &#10; NOT DELETE ITERABLE ELEMENTS&#10; &#10; */&#10;//&lt;/editor-fold&gt;&#10;&#10;$arr$&#10;var s = io.vavr.collection.List.&lt; String &gt; of( &quot;11&quot; , &quot;22&quot; , &quot;33&quot; );&#10;s.toStream()&#10; .zipWithIndex()&#10; .forEach( ( e ) -&gt;&#10;           {&#10;           System.out.println( e._2 + &quot; &quot; + e._1 );&#10;           } );&#10;&#10;" description="vavr_coll.toStream.forEach(indexed)    ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
     <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
