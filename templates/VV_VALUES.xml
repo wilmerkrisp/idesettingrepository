@@ -1,10 +1,10 @@
 <templateSet group="VV_VALUES">
-  <template name="newtuple" value="/*import reactor.util.function.Tuple2;&#10;import reactor.util.function.Tuples;*/&#10;public Tuple2&lt;Integer,Integer&gt; canvasSize = Tuples.of( MIN_SCREEN_SIZE + 1 , MAX_SCREEN_SIZE - 1 );" toReformat="false" toShortenFQNames="true">
+  <template name="newtuple" value="/*import reactor.util.function.Tuple2;&#10;import reactor.util.function.Tuples;*/&#10;public Tuple2&lt;Integer,Integer&gt; canvasSize = Tuples.of( MIN_SCREEN_SIZE + 1 , MAX_SCREEN_SIZE - 1 );" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="newrange" value="//import com.google.common.collect.Range;&#10;Range&lt;Integer&gt; point1 = Range.open( upperLeftCornerX , upperLeftCornerY );" toReformat="false" toShortenFQNames="true">
+  <template name="newrange" value="//import com.google.common.collect.Range;&#10;Range&lt;Integer&gt; point1 = Range.open( upperLeftCornerX , upperLeftCornerY );" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
