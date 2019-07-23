@@ -127,4 +127,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="new obj random string" value="int length = 10;&#10;boolean useLetters = true;&#10;boolean useNumbers = false;&#10;String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);" description="apache commons  random string" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
