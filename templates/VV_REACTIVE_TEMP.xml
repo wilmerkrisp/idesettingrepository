@@ -34,7 +34,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rx test  Post-Execution Assertions (Step verifier)" value="var p = Flux.just( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .skip( 1 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 9 )&#10;            .expectComplete()&#10;            .verifyThenAssertThat()&#10;            .hasDropped( 0 )&#10;            .tookLessThan( Duration.ofMillis( 1050 ) );" description="create my test Flux (and manualy generate events)" toReformat="false" toShortenFQNames="true">
+  <template name="rx test  Post-Execution Assertions (Step verifier)" value="//StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;var p = Flux.just( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )&#10;            .skip( 1 )&#10;            .map( i -&gt; &quot;a&quot; + i );&#10;StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 9 )&#10;            .expectComplete()&#10;            .verifyThenAssertThat()&#10;            .hasDropped( 0 )&#10;            .tookLessThan( Duration.ofMillis( 1050 ) );" description="USETHIS create my test Flux (and manualy generate events)" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
