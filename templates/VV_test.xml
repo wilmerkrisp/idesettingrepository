@@ -10,4 +10,9 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="test assert that" value="assertThat(  ,is(3) );" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
