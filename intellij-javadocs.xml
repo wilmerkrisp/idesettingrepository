@@ -6,8 +6,8 @@
       <SPLITTED_CLASS_NAME>true</SPLITTED_CLASS_NAME>
       <LEVELS>
         <LEVEL>TYPE</LEVEL>
-        <LEVEL>FIELD</LEVEL>
         <LEVEL>METHOD</LEVEL>
+        <LEVEL>FIELD</LEVEL>
       </LEVELS>
       <VISIBILITIES>
         <VISIBILITY>PUBLIC</VISIBILITY>
@@ -36,7 +36,17 @@
         <CLASS>
           <KEY>^.*(public|protected|private)*.+class\s+\w+.*</KEY>
           <VALUE>/**\n
- * The type ${name}.\n
+* The type ${name}.\n
+*\n
+* Preconditions: 	none\n
+* Postconditions:	none\n
+* Side effects:		none\n
+* Tread safety:		Not thread-safe\n
+Immutable\n
+Unconditionally thread-safe\n
+Conditionally thread-safe\n
+Not thread-safe\n
+\n
 &lt;#if element.typeParameters?has_content&gt;        * \n
 &lt;/#if&gt;
 &lt;#list element.typeParameters as typeParameter&gt;
