@@ -277,9 +277,9 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="check disable warnings" value="@SuppressWarnings(&quot;unchecked&quot;)" description="@SuppressWarnings(&quot;unchecked&quot;)" toReformat="false" toShortenFQNames="true">
+  <template name="err SuppressWarnings" value="@SuppressWarnings(&quot;unchecked&quot;)" description="@SuppressWarnings(&quot;unchecked&quot;)" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_CODE" value="true" />
     </context>
   </template>
   <template name="check argument /mutable/object" value="/**&#10; @throws NullPointerException if argument nullable&#10; @throws IllegalStateException if some object's property null or empty&#10; */&#10;1) @NonNull   от LOMBOK&#10;2) nonNull($VAR$)&#10;&#10;checkConsistency()&#10;" description="notBlank + checkConsistency_" toReformat="false" toShortenFQNames="true">

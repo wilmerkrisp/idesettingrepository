@@ -500,10 +500,10 @@
     <option name="excludeClassNames" value="" />
     <option name="excludeException" value="true" />
     <option name="excludeDeprecated" value="true" />
-    <option name="excludeEnum" value="false" />
-    <option name="excludeAbstract" value="false" />
-    <option name="excludeTestCode" value="false" />
-    <option name="excludeInnerClasses" value="false" />
+    <option name="excludeEnum" value="true" />
+    <option name="excludeAbstract" value="true" />
+    <option name="excludeTestCode" value="true" />
+    <option name="excludeInnerClasses" value="true" />
   </inspection_tool>
   <inspection_tool class="ClassInDefaultPackage" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="ClassIndependentOfModule" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
@@ -821,7 +821,7 @@
       <option name="m_minLength" value="4" />
       <option name="m_maxLength" value="32" />
     </extension>
-    <extension name="ConstantWithMutableFieldTypeNamingConvention" enabled="true">
+    <extension name="ConstantWithMutableFieldTypeNamingConvention" enabled="false">
       <option name="m_regex" value="[A-Z][A-Z_\d]*" />
       <option name="m_minLength" value="4" />
       <option name="m_maxLength" value="32" />
@@ -965,7 +965,7 @@
   <inspection_tool class="GwtUiHandlerErrors" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="GwtUiXmlReferences" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="HamlNestedTagContent" enabled="false" level="WARNING" enabled_by_default="false" />
-  <inspection_tool class="HardCodedStringLiteral" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+  <inspection_tool class="HardCodedStringLiteral" enabled="false" level="WEAK WARNING" enabled_by_default="false">
     <option name="ignoreForAssertStatements" value="true" />
     <option name="ignoreForExceptionConstructors" value="true" />
     <option name="ignoreForSpecifiedExceptionConstructors" value="" />
@@ -973,9 +973,10 @@
     <option name="ignoreForClassReferences" value="true" />
     <option name="ignoreForPropertyKeyReferences" value="true" />
     <option name="ignoreForNonAlpha" value="true" />
-    <option name="ignoreAssignedToConstants" value="false" />
-    <option name="ignoreToString" value="false" />
+    <option name="ignoreAssignedToConstants" value="true" />
+    <option name="ignoreToString" value="true" />
     <option name="nonNlsCommentPattern" value="NON-NLS" />
+    <option name="ignoreForEnumConstant" value="true" />
   </inspection_tool>
   <inspection_tool class="HardcodedActionUrl" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="HardcodedFileSeparators" enabled="true" level="WEAK WARNING" enabled_by_default="true">
@@ -1402,7 +1403,7 @@
     <extension name="JUnitTestClassNamingConvention" enabled="true" />
     <extension name="TestSuiteNamingConvention" enabled="true" />
     <extension name="TypeParameterNamingConvention" enabled="true">
-      <option name="m_regex" value="[TEV][A-Za-z\d]*" />
+      <option name="m_regex" value="[A-Z]*" />
       <option name="m_minLength" value="1" />
       <option name="m_maxLength" value="2" />
     </extension>
