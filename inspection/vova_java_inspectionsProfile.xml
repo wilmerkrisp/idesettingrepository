@@ -649,7 +649,9 @@
   <inspection_tool class="InstanceVariableInitialization" enabled="true" level="INFORMATION" enabled_by_default="true">
     <option name="m_ignorePrimitives" value="false" />
   </inspection_tool>
-  <inspection_tool class="InstanceVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="InstanceVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="true">
+    <scope name="Tests" level="WARNING" enabled="false" />
+  </inspection_tool>
   <inspection_tool class="InstanceVariableUninitializedUse" enabled="true" level="WEAK WARNING" enabled_by_default="true">
     <option name="m_ignorePrimitives" value="false" />
     <option name="annotationNamesString" value="" />
@@ -799,7 +801,9 @@
   <inspection_tool class="LoopToCallChain" enabled="false" level="INFORMATION" enabled_by_default="false" />
   <inspection_tool class="LoopWithImplicitTerminationCondition" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="MagicCharacter" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
-  <inspection_tool class="MagicNumber" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="MagicNumber" enabled="true" level="WARNING" enabled_by_default="true">
+    <scope name="Tests" level="WARNING" enabled="false" />
+  </inspection_tool>
   <inspection_tool class="ManualArrayCopy" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="MapReplaceableByEnumMap" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="MarkdownUnresolvedFileReference" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -872,7 +876,9 @@
     <option name="m_ignoreNegatedZeroComparison" value="false" />
   </inspection_tool>
   <inspection_tool class="NegativelyNamedBooleanVariable" enabled="true" level="WARNING" enabled_by_default="true" />
-  <inspection_tool class="NestedAssignment" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="NestedAssignment" enabled="true" level="WARNING" enabled_by_default="true">
+    <scope name="Tests" level="WARNING" enabled="false" />
+  </inspection_tool>
   <inspection_tool class="NestedConditionalExpression" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="NestedSwitchStatement" enabled="true" level="INFORMATION" enabled_by_default="true" />
   <inspection_tool class="NestedTryStatement" enabled="true" level="INFORMATION" enabled_by_default="true" />

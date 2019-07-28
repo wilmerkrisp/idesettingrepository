@@ -19,6 +19,7 @@
     <keyboard-shortcut first-keystroke="meta alt left" />
     <mouse-shortcut keystroke="button4" />
   </action>
+  <action id="ChangeSignature" />
   <action id="ChangesView.Rename">
     <keyboard-shortcut first-keystroke="shift f6" />
   </action>
@@ -77,6 +78,7 @@
     <keyboard-shortcut first-keystroke="ctrl d" />
     <keyboard-shortcut first-keystroke="meta alt c" />
     <keyboard-shortcut first-keystroke="meta 4" />
+    <keyboard-shortcut first-keystroke="meta f6" />
   </action>
   <action id="Debugger.EditArrayFilter" />
   <action id="Debugger.EditFrameSource" />
@@ -132,6 +134,7 @@
     <mouse-shortcut keystroke="control alt button1" />
     <keyboard-shortcut first-keystroke="f5" />
   </action>
+  <action id="FindUsagesInFile" />
   <action id="Forward">
     <keyboard-shortcut first-keystroke="meta alt right" />
     <mouse-shortcut keystroke="button5" />
@@ -175,6 +178,7 @@
     <keyboard-shortcut first-keystroke="meta alt z" />
     <keyboard-shortcut first-keystroke="meta 2" />
     <keyboard-shortcut first-keystroke="meta up" />
+    <keyboard-shortcut first-keystroke="meta f4" />
   </action>
   <action id="IntroduceConstant" />
   <action id="JProfiler.ShowJProfiler" />
@@ -190,9 +194,7 @@
   <action id="MethodOverloadSwitchDown" />
   <action id="MethodOverloadSwitchUp" />
   <action id="MinimizeCurrentWindow" />
-  <action id="ModifyObject">
-    <keyboard-shortcut first-keystroke="meta f6" />
-  </action>
+  <action id="ModifyObject" />
   <action id="Move" />
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="meta n" />
@@ -253,6 +255,7 @@
     <keyboard-shortcut first-keystroke="meta alt x" />
     <keyboard-shortcut first-keystroke="meta 3" />
     <keyboard-shortcut first-keystroke="meta down" />
+    <keyboard-shortcut first-keystroke="meta f5" />
   </action>
   <action id="RunClass">
     <keyboard-shortcut first-keystroke="shift ctrl r" />
@@ -262,6 +265,7 @@
   <action id="RunToCursor">
     <keyboard-shortcut first-keystroke="alt f9" />
     <keyboard-shortcut first-keystroke="meta 7" />
+    <keyboard-shortcut first-keystroke="meta f7" />
   </action>
   <action id="Scala.ShowImplicits">
     <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
