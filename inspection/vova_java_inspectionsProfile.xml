@@ -833,12 +833,12 @@
     </extension>
     <extension name="InstanceVariableNamingConvention" enabled="true">
       <option name="m_regex" value="[a-z][A-Za-z\d]*[_]?" />
-      <option name="m_minLength" value="5" />
+      <option name="m_minLength" value="4" />
       <option name="m_maxLength" value="32" />
     </extension>
     <extension name="StaticVariableNamingConvention" enabled="true">
       <option name="m_regex" value="[A-Z][A-Z_\d]*[_]?" />
-      <option name="m_minLength" value="5" />
+      <option name="m_minLength" value="4" />
       <option name="m_maxLength" value="32" />
     </extension>
   </inspection_tool>
