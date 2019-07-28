@@ -196,19 +196,13 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="for lambda simple" value="LongStream.range( 0 , 1_0 )&#10;&#9;          .forEach( ( l ) -&gt;&#10;&#9;                    { System.out.println( Long.toString( l ) )$END$; $SELECTION$ } );&#10;&#10;     &#10;        &#10;&#9;&#9;&#10;&#9;&#9;&#10;   " description="Stream.range.forEach" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="JAVA_EXPRESSION" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
   <template name="if ?" value="true == null? &quot;&quot;: &quot;no&quot;&#10;" description="operator ?" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="for stack" value="var stack = new ArrayDeque&lt;Integer&gt;();&#10;for( var $point$ = 1 ;&#10;     $point$ != null ;&#10;     $point$ = stack.poll() )&#10;&#9;{&#10;&#9;stack.offer( 1 );&#10;     &#10;        $SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#9;&#10;        }" description="or( var a = 1 ;      a != null ;      a = stack.poll() )" toReformat="false" toShortenFQNames="true">
+  <template name="forcoll stack" value="var stack = new ArrayDeque&lt;Integer&gt;();&#10;for( var $point$ = 1 ;&#10;     $point$ != null ;&#10;     $point$ = stack.poll() )&#10;&#9;{&#10;&#9;stack.offer( 1 );&#10;     &#10;        $SELECTION$&#10;&#9;&#9;&#10;&#9;$END$&#9;&#10;        }" description="or( var a = 1 ;      a != null ;      a = stack.poll() )" toReformat="false" toShortenFQNames="true">
     <variable name="point" expression="suggestIndexName" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
