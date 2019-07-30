@@ -35,7 +35,7 @@
         </CLASS>
         <CLASS>
           <KEY>^.*(public|protected|private)*.+class\s+\w+.*</KEY>
-          <VALUE>/**\n
+          <VALUE>/**&lt;pre&gt;
 * The type ${name}.\n
 *\n
 * Preconditions: 	none\n
@@ -46,6 +46,7 @@ Immutable\n
 Unconditionally thread-safe\n
 Conditionally thread-safe\n
 Not thread-safe\n
+&lt;/pre&gt;
 \n
 &lt;#if element.typeParameters?has_content&gt;        * \n
 &lt;/#if&gt;
