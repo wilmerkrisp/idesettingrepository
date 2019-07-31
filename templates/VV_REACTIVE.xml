@@ -141,4 +141,9 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="rx tuple-&gt;new" value="var tuple=Tuple.of(1,2,3,4)&#10;var obj=TupleUtils.function( LineTest::fakeString ).apply( tuple );" description="BaseSubscriber" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
