@@ -1706,6 +1706,12 @@
   <inspection_tool class="ResultSetIndexZero" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="ReturnFromFinallyBlockJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="ReturnNull" enabled="true" level="ERROR" enabled_by_default="true">
+    <scope name="Tests" level="ERROR" enabled="false">
+      <option name="m_reportObjectMethods" value="true" />
+      <option name="m_reportArrayMethods" value="true" />
+      <option name="m_reportCollectionMethods" value="true" />
+      <option name="m_ignorePrivateMethods" value="false" />
+    </scope>
     <option name="m_reportObjectMethods" value="true" />
     <option name="m_reportArrayMethods" value="true" />
     <option name="m_reportCollectionMethods" value="true" />
