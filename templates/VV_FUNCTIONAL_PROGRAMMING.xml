@@ -140,7 +140,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx switch PATTERN MATCHING" value="/*&#10;&#10;$()     *   можем смотреть как 1-ый параметр x в предикате (x,y)-&gt;z&#10;$_      не смотрим вообще&#10;&#10; */&#10;&#10;var m = Man.of( &quot;vova&quot; ,&#10;                &quot;12&quot; );&#10;&#10;//@formatter:off&#10;String rez = Match( m ).of( Case( $Man( $( &quot;vova&quot; ) , $() ) ,&#10;                                  ( x , y ) -&gt; &quot;man &quot; + x + y ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;//@formatter:on&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="VAVR" toReformat="false" toShortenFQNames="true">
+  <template name="fx switch PATTERN MATCHING" value="/*&#10;&#10;$()     *   можем смотреть как 1-ый параметр x в предикате (x,y)-&gt;z&#10;$_      не смотрим вообще&#10;&#10; */&#10;&#10;var m = Man.of( &quot;vova&quot; ,&#10;                &quot;12&quot; );&#10;&#10;//@formatter:off&#10;String rez = Match( m ).of( Case( $Man( $( &quot;vova&quot; ) , $() ) ,&#10;                                  ( x , y ) -&gt; &quot;man &quot; + x + y ) ,&#10;                            Case( $() ,&#10;                                  &quot;defaultt&quot; ) );&#10;//@formatter:on&#10;System.out.println( &quot;CaseTest vtorori &quot; + rez );" description="object inside analyze example" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -231,6 +231,16 @@
     </context>
   </template>
   <template name="fx switch 3 Optional JAVA" value=" &#10;var x = Optional.ofNullable(expresssion1)&#10;.or( () -&gt; Optional.ofNullable(expression2))&#10;.or( () -&gt; Optional.ofNullable(expression3))&#10;.or( () -&gt; Optional.ofNullable(expression4))&#10;.orElse(default expression that does not throw exception);&#10; " description="java optional" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch PATTERN MATCHING 2" value="var in=Try.success( &quot;str&quot; );&#10;//@formatter:off&#10;String&#9;r= Match(in ).of(&#10;                   Case(  $Success( $() ),&#10;                         (a)-&gt; &quot;@@ &quot;+a  )  ,&#10;                   Case( $() ,&#10;                            (&quot;other result&quot;)) );&#10;//@formatter:on&#10; " description="Try.Success analyze example" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="fx switch PATTERN MATCHING 3" value="var in = Tuple.of( x0 , y0 );&#10;//@formatter:off&#10;String&#9;r= Match(in ).of(&#10;                   Case(  $Tuple2( $(),$() ),&#10;                         (a,b)-&gt; &quot;@@ &quot;+a+b  )  ,&#10;                   Case( $() ,&#10;                            (&quot;other result&quot;)) );&#10; //@formatter:on&#10;&#10;log( &quot;RESULT::&quot; + r );" description="Tuple2 analyze example" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
