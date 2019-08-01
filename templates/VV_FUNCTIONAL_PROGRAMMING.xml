@@ -145,7 +145,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="fx err-exc checked-&gt;unchecked" value="//обертка, которая checked-&gt;unchecked&#10;//var rez_=CheckedFunction( ( x , y ) -&gt;&quot;&quot;+x+y ).unchecked().apply( 12,13 );&#10;var rez_=  unchecked(( x , y ) -&gt;&quot;&quot;+x+y ).apply( 12,13 );" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
+  <template name="fx err-exc checked-&gt;unchecked" value="import static io.vavr.API.*;                              //switch&#10;//обертка, которая checked-&gt;unchecked&#10;//var rez_=CheckedFunction( ( x , y ) -&gt;&quot;&quot;+x+y ).unchecked().apply( 12,13 );&#10;var rez_=  unchecked(( x , y ) -&gt;&quot;&quot;+x+y ).apply( 12,13 );" description="VAVR lambdas throws checked exceptions" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
