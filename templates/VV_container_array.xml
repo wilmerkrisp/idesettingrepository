@@ -54,7 +54,15 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="newarr7" value="var $v_arr$ = $COLLECTION$.toArray(new $COMPONENT_TYPE$[$COLLECTION$.size()]);&#10;$END$" description="array from collection" toReformat="false" toShortenFQNames="true">
+  <template name="newarr7OLD" value="var $v_arr$ = $COLLECTION$.toArray(new $COMPONENT_TYPE$[$COLLECTION$.size()]);&#10;$END$" description="array from collection" toReformat="false" toShortenFQNames="true">
+    <variable name="COLLECTION" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="collection" alwaysStopAt="true" />
+    <variable name="v_arr" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPONENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="newarr7" value="var $v_arr$ = $COLLECTION$.toArray($COMPONENT_TYPE$[]::new);&#10;//String[] strings_fun = list.toArray(String[]::new);&#10;$END$" description="array from collection" toReformat="false" toShortenFQNames="true">
     <variable name="COLLECTION" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="collection" alwaysStopAt="true" />
     <variable name="v_arr" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="COMPONENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />

@@ -221,4 +221,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="string not blank" value="Stream&#10;&#9;.of(&quot;a&quot;, &quot;b&quot;, &quot;&quot;, &quot;c&quot;)&#10;&#9;// статически импортированный `java.util.function.Predicate.not`&#10;&#9;.filter(not(String::isBlank))&#10;&#9;.forEach(System.out::println);" description="string operations" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>

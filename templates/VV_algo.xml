@@ -15,4 +15,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="regexp2" value="/**&#10; * asPredicate проверяет что строка или часть строки соответствует шаблону (работает как s -&gt; this.matcher(s).find())&#10; * asMatchPredicate проверяет что вся строка соответствует шаблону (работает как s -&gt; this.matcher(s).matches())&#10; * */&#10;Pattern nonWordCharacter = Pattern.compile(&quot;\\W&quot;);&#10;Stream&#10;&#9;.of(&quot;Metallica&quot;, &quot;Motörhead&quot;)&#10;&#9;.filter(nonWordCharacter.asPredicate())&#10;&#9;.forEach(System.out::println);" description="method regexp find in string" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
