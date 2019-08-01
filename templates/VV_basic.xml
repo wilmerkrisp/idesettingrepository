@@ -209,4 +209,16 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="string-&gt;lines" value="var multiline = &quot;Это\r\nваша\r\nмногострочная\r\nстрока&quot;;&#10;multiline&#10;&#9;.lines() //Stream&lt;String&gt;&#10;&#9;.map(line -&gt; &quot;// &quot; + line)&#10;&#9;.forEach(System.out::println);" description="java11" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="string strip spaces" value="String::strip" description="java11" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
