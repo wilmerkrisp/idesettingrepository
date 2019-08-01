@@ -265,4 +265,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="fx switch PATTERN MATCHING 7" value="//@formatter:off&#10;return Match(string).of(&#10;&#9;&#9;Case( $(isNull()) ,&#10;&#9;&#9;      illegalArgumentFailure( &quot;String must not be null.&quot; )),&#10;&#9;&#9;Case( $( String::isBlank ) ,&#10;&#9;&#9;      illegalArgumentFailure( &quot;String must not be blank.&quot; )) ,&#10;&#9;&#9;Case( $() ,&#10;&#9;&#9;      s-&gt;Success( new NonBlankString(s.strip())) )&#10;               );&#10;//@formatter:on" description="ValueObject constructor example 3 SHORT one paramenter" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
