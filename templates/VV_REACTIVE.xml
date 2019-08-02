@@ -146,4 +146,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="forrange 1..3" value="Flux.range( 1 , 10 )&#10;    .subscribe( i -&gt;&#10;                {&#10;                $END$; $SELECTION$;&#10;                } );&#10;" description="Flux.range( 0 , 1_0 )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
