@@ -146,12 +146,12 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="forrange 1..3" value="Flux.range( 1 , 10/**!count not last*/ )&#10;    .subscribe( i -&gt;&#10;                {&#10;                $END$; $SELECTION$;&#10;                } );&#10;" description="Flux.range( 0 , 1_0 )" toReformat="false" toShortenFQNames="true">
+  <template name="forrange 1..3" value="range( 1 , 10  )&#10;    .subscribe( i -&gt;&#10;                {&#10;                $END$; $SELECTION$;&#10;                } );&#10;" description="Flux.range( 0 , 1_0 )" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="forgenerate 1..3" value="Flux.generate( () -&gt; 0 , ( i , f ) -&gt;&#10;{&#10;f.next( i );&#10;if( i == 10 )&#10;&#9;{&#10;&#9;f.complete();&#10;&#9;}&#10;return i + 1;&#10;} )&#10;    .subscribe( printConsumer( &quot;testt&quot; ) );" description="Flux.generate general example" toReformat="false" toShortenFQNames="true">
+  <template name="forrange 1..3 forrange 1..3" value="For( range( 1 , 3 ) , range( 1 , 3 ) ).yield( logAtInfoBiFunction(&quot;&quot;) )&#10;                                      .subscribe();" description="Flux For comprehension" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
