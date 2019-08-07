@@ -156,4 +156,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="forrange blocking" value="var s= range( 0 , 3).flatMap( row -&gt; range( 0 , 3 ).map( col -&gt; this.screen[row][col] )&#10;                                                                               .concatWithValues( '\n' ) )&#10;                                   .collect( StringBuilder::new , StringBuilder::append )&#10;                                   .blockOptional()&#10;                                   .orElse( new StringBuilder() )&#10;                                   .toString();&#10;" description="Flux.range( 0 , 1_0 )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
