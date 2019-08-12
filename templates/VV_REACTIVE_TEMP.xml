@@ -59,4 +59,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="rx log1" value=".log(&quot;debug&quot; , Level.FINE , SignalType.ON_NEXT )" description=".log(&quot;debug&quot; , Level.FINE , SignalType.ON_NEXT )" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
