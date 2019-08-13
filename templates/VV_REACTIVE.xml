@@ -181,4 +181,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="rx global error handler" value="&#9;&#9;/*Spring Reactor global error log handler*/&#10;&#9;&#9;Hooks.onOperatorError( ( err , data ) -&gt;&#10;&#9;&#9;                       {&#10;&#9;&#9;                       String s = ( data == null ) ? &quot;No additional data&quot; : &quot;Additional data&quot; + data.toString();&#10;&#9;&#9;                       logger_.error( s , err );&#10;&#9;&#9;                       return err;&#10;&#9;&#9;                       } );" description="tuples from react" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
