@@ -28,4 +28,14 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="class value" value="/*&#10;    @Value означает&#10;        @ToString &#10;        @EqualsAndHashCode &#10;        @AllArgsConstructor&#10;        @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE) &#10;        @Getter&#10;* */&#10;@Value&#10;@AllArgsConstructor( access = AccessLevel.PRIVATE )&#10;@Patterns /*pattern matching in vavr*/&#10;@Slf4j" description="lombok value annotation" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="class mutable" value="/*&#10;@Data означает&#10;    @ToString, &#10;    @EqualsAndHashCode,&#10;    @Getter&#10;    @Setter &#10;    @RequiredArgsConstructor&#10;* */&#10;@Data&#10;@Slf4j&#10;@NoArgsConstructor&#10;@AllArgsConstructor" description="lombok value annotation" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
