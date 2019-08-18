@@ -57,4 +57,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="rx test FluxRepositoryMock" value="@MockBean&#10;private CoffeeRepository repo;&#10;&#10;private Coffee coffee1, coffee2;&#10;&#10;@Before&#10;public void setup() {&#10;coffee1 = new Coffee(&quot;1&quot;, &quot;Tester's Choice&quot;);&#10;coffee2 = new Coffee(&quot;2&quot;, &quot;Maxfail House&quot;);&#10;&#10;Mockito.when(repo.findAll()).thenReturn(Flux.just(coffee1, coffee2));&#10;Mockito.when(repo.findById(coffee1.getId())).thenReturn(Mono.just(coffee1));&#10;Mockito.when(repo.findById(coffee2.getId())).thenReturn(Mono.just(coffee2));&#10;}&#10;&#10;@Test&#10;public void getAllCoffees() {&#10;StepVerifier.create(service.getAllCoffees())&#10;            .expectNext(coffee1)&#10;            .expectNext(coffee2)&#10;            .verifyComplete();&#10;}" description="Mockito.when(repo.findAll()).thenReturn(Flux.just(coffee1, coffee2));" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
