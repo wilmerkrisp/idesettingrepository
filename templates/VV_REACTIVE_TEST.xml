@@ -1,0 +1,60 @@
+<templateSet group="VV_REACTIVE_TEST">
+  <template name="rx test DEBUG add test marker" value=".checkpoint(&quot;MYMARKER1&quot;)." description="checkpoint" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test ERROR" value="StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;StepVerifier.create( b1 )&#10;            .expectError()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rx test initial delay" value="//!! do not test on infinite flows&#10;var time =StepVerifier.withVirtualTime( () -&gt; Mono.delay( Duration.ofDays( 1 ) ) )&#10;            .expectSubscription()&#10;            .expectNoEvent( Duration.ofDays( 1 ) )&#10;            .expectNext( 0L )&#10;            .verifyComplete();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test next" value="StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;var time =StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 3 )&#10;            .thenAwait( Duration.ofSeconds( 1 ) )&#10;            .expectComplete()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test SUBSCR" value="StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;StepVerifier.create( b )&#10;            .expectSubscription()&#10;            .expectNext( &quot;otvet+onetwothree&quot; )&#10;            .expectComplete()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rx test time" value="//!! do not test on infinite flows&#10;StepVerifier.setDefaultTimeout( Duration.ofSeconds( 1 ) );&#10;var time = StepVerifier.create( p )&#10;            .expectNext( &quot;a1&quot; )&#10;            .expectNextCount( 3 )&#10;            .thenAwait( Duration.ofSeconds( 1 ) )&#10;            .expectComplete()&#10;            .verify();" description="StepVerifier" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx global DEBUG mode" value="Hooks.onOperatorDebug();" description="Hooks.onOperatorDebug" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rg global lolevel exception wrapper" value="@Getter( AccessLevel.NONE ) Function&lt;Mono&lt;Canvas&gt;,Publisher&lt;Canvas&gt;&gt; LOWLEVEL_EXCEPTION_WRAPPER = s -&gt; s.onErrorMap( not( err -&gt; err.getClass()&#10;                                                                                                                                    .equals( IllegalArgumentException.class ) ) , err -&gt; new RuntimeException( &quot;We are sorry, an unexpected error has occurred&quot; , err ) );&#10;&#9;&#10;&#10;&#10;.transform( LOWLEVEL_EXCEPTION_WRAPPER );" description="lowlevel-&gt;bussinesslevel exception converter" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx global error handler 1" value="&#9;&#9;/*Spring Reactor global error log handler*/&#10;&#9;&#9;Hooks.onOperatorError( ( err , data ) -&gt;&#10;&#9;&#9;                       {&#10;&#9;&#9;                       String s = ( data == null ) ? &quot;No additional data&quot; : &quot;Additional data&quot; + data.toString();&#10;&#9;&#9;                       logger_.error( s , err );&#10;&#9;&#9;                       return err;&#10;&#9;&#9;                       } );" description="tuples from react" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx global error handler 2" value="/**&#10; * !! for production change to atError level  !!!&#10; * */&#10;&#10;Hooks.onNextDropped( logAtInfoConsumer( &quot;onNextDropped&quot; ) );&#10;Hooks.onOperatorError( logAtInfoBiFunction( &quot;onOperatorError&quot;,new IllegalStateException( &quot;onOperatorError&quot; ) ) );&#10;//Hooks.onEachOperator( logAtInfoUnaryOperator( &quot;onEachOperator___&quot; ) );" description="add error log (with Hooks) strategy" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rx test add Verifier to existing Flux" value=".as( StepVerifier::create )&#10;&#9; .expectNextCount( 1 )&#10;&#9; .verifyComplete();&#10;" description=".as( StepVerifier::create ) &#9; .expectNextCount( 1 ) &#9; .verifyComplete();" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
