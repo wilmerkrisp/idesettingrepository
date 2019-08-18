@@ -302,4 +302,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="asserj" value="import static org.assertj.core.api.Assertions.*;&#10;import static org.junit.Assume.*;&#10; &#10;assertThat(repository.findById(user.getId())).contains(user);&#10;assertThat(repository.findUserByIdIn(1000)).isNull();&#10;assertThat(repository.findUserByIdIn(42)).isEqualTo(user);" description="assert !=null  !isEmpty()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
