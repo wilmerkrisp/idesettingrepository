@@ -28,6 +28,7 @@
       <template name="_tuple 9 MUtable LOMBOK.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 MUtable LOMBOK REACTIVE ENTITY.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 REACTIVE REPOSITORY.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 REACTIVE REPOSITORY TEST.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple interface immutable.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple interface mutable.java" reformat="true" live-template-enabled="true" />
       <template name="_VTEST_class_TEST.java" reformat="true" live-template-enabled="true" />
