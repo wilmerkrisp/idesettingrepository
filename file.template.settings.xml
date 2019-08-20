@@ -26,9 +26,6 @@
       <template name="_tuple 9 IMmutable&lt;&gt; LOMBOK.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 MUtable LOMBOK.java" reformat="true" live-template-enabled="true" />
-      <template name="_tuple 9 MUtable LOMBOK REACTIVE ENTITY.java" reformat="true" live-template-enabled="true" />
-      <template name="_tuple 9 REACTIVE REPOSITORY.java" reformat="true" live-template-enabled="true" />
-      <template name="_tuple 9 REACTIVE REPOSITORY TEST.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple interface immutable.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple interface mutable.java" reformat="true" live-template-enabled="true" />
       <template name="_VTEST_class_TEST.java" reformat="true" live-template-enabled="true" />
@@ -59,6 +56,10 @@
       <template name="pattern design proxy (reflection java api  dynamic proxy).java" reformat="true" live-template-enabled="true" />
       <template name="pattern design singleton VC_singleton.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design template method VI_interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB ENTITY.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY TEST1.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY TEST2.java" reformat="true" live-template-enabled="true" />
       <template name="Thread1.java" reformat="true" live-template-enabled="true" />
       <template name="Thread2.java" reformat="true" live-template-enabled="true" />
       <template name="v1 collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
