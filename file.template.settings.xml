@@ -58,10 +58,11 @@
       <template name="pattern design singleton VC_singleton.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design template method VI_interface.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB ENTITY.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY FORWARDING.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST1.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST2.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY1.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY2 FORWARDING.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY3 FROM FORWARDING.java" reformat="true" live-template-enabled="true" />
       <template name="Thread1.java" reformat="true" live-template-enabled="true" />
       <template name="Thread2.java" reformat="true" live-template-enabled="true" />
       <template name="v1 collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
