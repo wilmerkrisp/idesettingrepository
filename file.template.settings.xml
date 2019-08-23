@@ -47,6 +47,7 @@
       <template name="OLD_VV_class_nonmutable.java" reformat="true" live-template-enabled="true" />
       <template name="OLD_VV_class_nonmutableAUTOCLOSE [FULL].java" reformat="true" live-template-enabled="true" />
       <template name="OLD_VVG_class_nonmutable_GENERIC.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern bloch FORWARDING.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from abstract ITERATOR anonym.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from abstract ITERATOR inner.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from interface.java" reformat="true" live-template-enabled="true" />
@@ -58,6 +59,7 @@
       <template name="pattern design template method VI_interface.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB ENTITY.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB REPOSITORY FORWARDING.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST1.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST2.java" reformat="true" live-template-enabled="true" />
       <template name="Thread1.java" reformat="true" live-template-enabled="true" />
