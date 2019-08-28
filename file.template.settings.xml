@@ -65,8 +65,8 @@
       <template name="REACTIVE DB r3 MyRepositoryAdapter  imp to intface.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB r4 DefaultMyRepository  implementation.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB r5 MergeableSimpleR2dbcRepository common helper.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY TEST1.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY TEST2.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB test1 MyRepositoryTest.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB test2 old.java" reformat="true" live-template-enabled="true" />
       <template name="Thread1.java" reformat="true" live-template-enabled="true" />
       <template name="Thread2.java" reformat="true" live-template-enabled="true" />
       <template name="v1 collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
