@@ -57,12 +57,16 @@
       <template name="pattern design proxy (reflection java api  dynamic proxy).java" reformat="true" live-template-enabled="true" />
       <template name="pattern design singleton VC_singleton.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design template method VI_interface.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB ENTITY.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e1  Entity helper class.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e2 My  entity interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e3 DefaultMy  entity implementation.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r1 MyRepository interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r2 ForwardingReactiveCrudRepository common helper class.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r3 MyRepositoryAdapter  imp to intface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r4 DefaultMyRepository  implementation.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r5 MergeableSimpleR2dbcRepository common helper.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST1.java" reformat="true" live-template-enabled="true" />
       <template name="REACTIVE DB REPOSITORY TEST2.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY1.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY2 FORWARDING.java" reformat="true" live-template-enabled="true" />
-      <template name="REACTIVE DB REPOSITORY3 FROM FORWARDING.java" reformat="true" live-template-enabled="true" />
       <template name="Thread1.java" reformat="true" live-template-enabled="true" />
       <template name="Thread2.java" reformat="true" live-template-enabled="true" />
       <template name="v1 collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
