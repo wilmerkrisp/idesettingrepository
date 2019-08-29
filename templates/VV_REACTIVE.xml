@@ -4,7 +4,8 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rxsubscribe" value="o.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtErrorConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+  <template name="rxsubscribe" value="$o$.subscribe( logAtInfoConsumer(&quot;NEXT&quot;) , logAtErrorConsumer(&quot;ERROR&quot;) , logAtInfoRunnable(&quot;COMPLETE&quot;) );&#10;" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <variable name="o" expression="variableOfType(&quot;org.reactivestreams.Publisher&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -89,7 +90,8 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rxsubscribe Print" value="b.subscribe( printConsumer( &quot;NEXT&quot; ) , printConsumer( &quot;ERROR&quot; ) , printRunnable( &quot;COMPLETE&quot; ) );" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+  <template name="rxsubscribe Print" value="$b$.subscribe( printConsumer( &quot;NEXT&quot; ) , printConsumer( &quot;ERROR&quot; ) , printRunnable( &quot;COMPLETE&quot; ) );" description="Observable.just( &quot;a&quot;,&quot;b&quot;,&quot;c&quot; )" toReformat="false" toShortenFQNames="true">
+    <variable name="b" expression="variableOfType(&quot;org.reactivestreams.Publisher&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
