@@ -35,4 +35,9 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="fabric object deep copy Spring" value="BeanUtils.copyProperties( bookingVO , booking );" description="BeanUtils.copyProperties( bookingVO , booking );" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
