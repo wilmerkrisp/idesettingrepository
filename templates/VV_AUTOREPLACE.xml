@@ -1,0 +1,7 @@
+<templateSet group="VV_AUTOREPLACE">
+  <template name="-&gt;" value="-&gt;" description="arrow" toReformat="false" toShortenFQNames="true" deactivated="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
