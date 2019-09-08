@@ -24,7 +24,9 @@
     <keyboard-shortcut first-keystroke="shift f6" />
   </action>
   <action id="ChangesView.Revert" />
-  <action id="CheckinProject" />
+  <action id="CheckinProject">
+    <keyboard-shortcut first-keystroke="meta f11" />
+  </action>
   <action id="ChooseRunConfiguration" />
   <action id="CodeCompletion">
     <keyboard-shortcut first-keystroke="ctrl space" />
