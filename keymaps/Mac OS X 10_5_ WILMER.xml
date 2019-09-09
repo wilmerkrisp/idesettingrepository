@@ -58,6 +58,7 @@
     <keyboard-shortcut first-keystroke="meta 9" />
     <keyboard-shortcut first-keystroke="f10" />
   </action>
+  <action id="CompileDirty" />
   <action id="Console.Oracle.DbmsOutput" />
   <action id="Console.TableResult.ColumnsList" />
   <action id="Console.TableResult.EditValue">
@@ -159,6 +160,9 @@
   <action id="Git.Commit.And.Push.Executor">
     <keyboard-shortcut first-keystroke="meta alt k" />
     <keyboard-shortcut first-keystroke="meta f12" />
+  </action>
+  <action id="Git.CreateNewBranch">
+    <keyboard-shortcut first-keystroke="meta f9" />
   </action>
   <action id="Git.Reword.Commit">
     <keyboard-shortcut first-keystroke="shift f6" />
