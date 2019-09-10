@@ -25,15 +25,10 @@
   </action>
   <action id="ChangesView.Revert" />
   <action id="ChangesView.ShelveSilently">
-    <keyboard-shortcut first-keystroke="shift meta h" />
-    <keyboard-shortcut first-keystroke="meta f8" />
-    <keyboard-shortcut first-keystroke="alt f8" />
-    <keyboard-shortcut first-keystroke="shift f8" />
+    <keyboard-shortcut first-keystroke="meta minus" />
   </action>
   <action id="ChangesView.UnshelveSilently">
-    <keyboard-shortcut first-keystroke="meta alt u" />
-    <keyboard-shortcut first-keystroke="meta f9" />
-    <keyboard-shortcut first-keystroke="alt f9" />
+    <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="CheckinProject">
     <keyboard-shortcut first-keystroke="meta f11" />
@@ -209,7 +204,6 @@
   <action id="Jdbc.OpenEditor" />
   <action id="JindentComponent.formatEditor">
     <keyboard-shortcut first-keystroke="meta alt k" />
-    <keyboard-shortcut first-keystroke="meta minus" />
   </action>
   <action id="JumpToLastWindow" />
   <action id="Maven.ExpandAll">
@@ -354,11 +348,7 @@
   <action id="codeNavigator.zoomOut" />
   <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnEditor">
     <keyboard-shortcut first-keystroke="shift meta alt g" />
-    <keyboard-shortcut first-keystroke="meta minus" />
     <keyboard-shortcut first-keystroke="f9" />
-  </action>
-  <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnProject">
-    <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="me.scana.okgradle.ok">
     <keyboard-shortcut first-keystroke="meta k" />
