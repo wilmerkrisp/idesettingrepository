@@ -27,10 +27,13 @@
   <action id="ChangesView.ShelveSilently">
     <keyboard-shortcut first-keystroke="shift meta h" />
     <keyboard-shortcut first-keystroke="meta f8" />
+    <keyboard-shortcut first-keystroke="alt f8" />
+    <keyboard-shortcut first-keystroke="shift f8" />
   </action>
   <action id="ChangesView.UnshelveSilently">
     <keyboard-shortcut first-keystroke="meta alt u" />
     <keyboard-shortcut first-keystroke="meta f9" />
+    <keyboard-shortcut first-keystroke="alt f9" />
   </action>
   <action id="CheckinProject">
     <keyboard-shortcut first-keystroke="meta f11" />
@@ -101,6 +104,7 @@
   <action id="EditSource" />
   <action id="EditorSelectWord" />
   <action id="EditorUnSelectWord" />
+  <action id="EvaluateExpression" />
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
@@ -279,7 +283,6 @@
   </action>
   <action id="RunDashboard.EditConfiguration" />
   <action id="RunToCursor">
-    <keyboard-shortcut first-keystroke="alt f9" />
     <keyboard-shortcut first-keystroke="meta 7" />
     <keyboard-shortcut first-keystroke="meta f7" />
   </action>
@@ -323,6 +326,7 @@
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="meta 6" />
   </action>
+  <action id="StepOut" />
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="meta 5" />
   </action>
