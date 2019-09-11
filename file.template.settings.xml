@@ -21,8 +21,8 @@
       <template name="_static class (SERVICE).java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 IMmutable GOOGLE.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 IMmutable LOMBOK.java" reformat="true" live-template-enabled="true" />
-      <template name="_tuple 9 IMmutable MONO1purelazy.java" reformat="true" live-template-enabled="true" />
-      <template name="_tuple 9 IMmutable MONO2bad.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable MONO1 purelazy.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable MONO2 bad.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 IMmutable&lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 IMmutable&lt;&gt; LOMBOK.java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
