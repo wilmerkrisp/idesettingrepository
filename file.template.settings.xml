@@ -49,6 +49,7 @@
       <template name="OLD_VV_class_nonmutableAUTOCLOSE [FULL].java" reformat="true" live-template-enabled="true" />
       <template name="OLD_VVG_class_nonmutable_GENERIC.java" reformat="true" live-template-enabled="true" />
       <template name="pattern bloch FORWARDING.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design builder.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from abstract ITERATOR anonym.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from abstract ITERATOR inner.java" reformat="true" live-template-enabled="true" />
       <template name="pattern design collection from interface.java" reformat="true" live-template-enabled="true" />
