@@ -1,0 +1,117 @@
+<application>
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="_annotation.java" reformat="true" live-template-enabled="true" />
+      <template name="_collection interface (mutable&amp;immutable).java" reformat="true" live-template-enabled="true" />
+      <template name="_collection MAP IMmutable &lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collection MAP IMmutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collection MAP mutable &lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collection MAP mutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collectionn IMmutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collectionn IMmutable&lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collectionn MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_collectionn MUtable&lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_enum1.java" reformat="true" live-template-enabled="true" />
+      <template name="_enum2.java" reformat="true" live-template-enabled="true" />
+      <template name="_interface.java" reformat="true" live-template-enabled="true" />
+      <template name="_interface&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="_lambda.java" reformat="true" live-template-enabled="true" />
+      <template name="_lambda&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="_static class.java" reformat="true" live-template-enabled="true" />
+      <template name="_static class (SERVICE).java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable LOMBOK.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable MONO1 purelazy.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable MONO2 bad.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable&lt;&gt; GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 IMmutable&lt;&gt; LOMBOK.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple 9 MUtable LOMBOK DTO.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple interface immutable.java" reformat="true" live-template-enabled="true" />
+      <template name="_tuple interface mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="_VTEST_class_TEST.java" reformat="true" live-template-enabled="true" />
+      <template name="experimental_collectionn MUtable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="helper class.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VA_class_abstract.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VC_class_mutable [FULL].java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VC_class_mutable [SHORT].java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VCG_class_mutableGENERIC.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VE_enum.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VE_enumSet.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VI_interface [FULL].java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VI_interface [SHORT].java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VIG_interfaceGENERIC.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VIL_interface_lambda.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VILG_interface_LAMBDA_GENERIC.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VIS_interface_static (SERVICE).java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VS_class_static.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VV_class_nonmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VV_class_nonmutableAUTOCLOSE [FULL].java" reformat="true" live-template-enabled="true" />
+      <template name="OLD_VVG_class_nonmutable_GENERIC.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern bloch FORWARDING.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design builder.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design collection from abstract ITERATOR anonym.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design collection from abstract ITERATOR inner.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design collection from interface.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design factory BASE INTERFACE &quot;Factory&quot;.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design factory VC_class VI_class_FACTORY .java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design map from abstract ITERATOR inner.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design proxy (reflection java api  dynamic proxy).java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design singleton VC_singleton.java" reformat="true" live-template-enabled="true" />
+      <template name="pattern design template method VI_interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e1  Entity helper class.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e2 My  entity interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB e3 DefaultMy  entity implementation.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r1 MyRepository interface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r2 ForwardingReactiveCrudRepository common helper class.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r3 MyRepositoryAdapter  imp to intface.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r4 DefaultMyRepository  implementation.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB r5 MergeableSimpleR2dbcRepository common helper.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB test1 MyRepositoryTest.java" reformat="true" live-template-enabled="true" />
+      <template name="REACTIVE DB test2 old.java" reformat="true" live-template-enabled="true" />
+      <template name="Thread1.java" reformat="true" live-template-enabled="true" />
+      <template name="Thread2.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection LIST IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection LIST mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection LIST mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection MAP IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection MAP IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection MAP mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection MAP mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection SET IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection SET IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection SET mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v1 collection SET mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 class mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 class mutable&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 tuple 1 IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 tuple 1 IMmutable&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 tuple 1 mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 tuple 9 IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2 tuple 9 IMmutable&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST IMmutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection LIST mutable GOOGLE.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection MAP IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection MAP IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection MAP mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection MAP mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection SET IMmutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection SET IMmutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection SET mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_collection SET mutable &lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_tuple 9 mutable.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_tuple 9 MUtable for inheritance.java" reformat="true" live-template-enabled="true" />
+      <template name="v2_tuple 9 mutable&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="VX_exception_BASECLASS.java" reformat="true" live-template-enabled="true" />
+      <template name="VX_exception_child.java" reformat="true" live-template-enabled="true" />
+    </default_templates>
+    <includes_templates>
+      <template name="ActionScript File Header.as" reformat="true" live-template-enabled="false" enabled="false" />
+    </includes_templates>
+  </component>
+</application>
