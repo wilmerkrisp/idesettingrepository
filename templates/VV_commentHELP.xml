@@ -1,10 +1,10 @@
 <templateSet group="VV_commentHELP">
-  <template name="comment1" value="/**&#10;       !CHANGE_ME_DESCRIPTION!&#10; &#10;&lt;pre&gt;{@code&#10;&#10; example1&#10;&#10; }&lt;/pre&gt;&#10; &#10;   @param p_1 parameter&#10;   @throws NullPointerException if argument nullable&#10;!? @throws IllegalArgumentException if argument empty&#10;!? @return empty value if argument empty&#10;&#10;               ПОМНИ СГЕНЕРИТЬ JAVADOC MAC8+fixDocComment И УБРАТЬ ЭТОТ ТЕКСТ&#10;*/" description="OLD javadoc comment" toReformat="false" toShortenFQNames="true">
+  <template name="comment1" value="/**&lt;pre&gt;&#10;       !CHANGE_ME_DESCRIPTION!&#10; &#10;{@code&#10;&#10; example1&#10;&#10; }&#10; &lt;/pre&gt;&#10;   @param p_1 parameter&#10;   @throws NullPointerException if argument nullable&#10;!? @throws IllegalArgumentException if argument empty&#10;!? @return empty value if argument empty&#10;&#10;               ПОМНИ СГЕНЕРИТЬ JAVADOC MAC8+fixDocComment И УБРАТЬ ЭТОТ ТЕКСТ&#10;*/" description="OLD javadoc comment" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="comment2" value="/**&#10; *      !CHANGE_ME_DESCRIPTION!&#10; *      &#10;* &lt;pre&gt;&#10;* {@code&#10;* //example1&#10;* &#10;* &#10;* //example2&#10;* &#10;* }&#10;* &lt;/pre&gt;                 ПОМНИ СГЕНЕРИТЬ JAVADOC MAC8+fixDocComment И УБРАТЬ ЭТОТ ТЕКСТ&#10;*/ " description="javadoc comment add code example" toReformat="false" toShortenFQNames="true">
+  <template name="comment2" value="/**&lt;pre&gt;&#10; *      !CHANGE_ME_DESCRIPTION!&#10; *      &#10;* &#10;* {@code&#10;* //example1&#10;* &#10;* &#10;* //example2&#10;* }&#10;* &lt;/pre&gt;                 ПОМНИ СГЕНЕРИТЬ JAVADOC MAC8+fixDocComment И УБРАТЬ ЭТОТ ТЕКСТ&#10;*/ " description="javadoc comment add code example" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
