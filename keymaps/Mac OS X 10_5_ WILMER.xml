@@ -299,6 +299,9 @@
   <action id="ShelvedChanges.Rename">
     <keyboard-shortcut first-keystroke="shift f6" />
   </action>
+  <action id="ShowBlankDiffWindow">
+    <keyboard-shortcut first-keystroke="meta f8" />
+  </action>
   <action id="ShowIntentionActions">
     <keyboard-shortcut first-keystroke="alt enter" />
     <keyboard-shortcut first-keystroke="alt altGraph enter" />
