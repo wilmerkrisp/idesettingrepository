@@ -38,14 +38,14 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="rx postcondition mono1" value=".single() /*verify postcondition*/&#10;          .checkpoint( &quot;$classname$.$methodname$.$END$ &quot; )&#10;" description=".single().checkpoint()" toReformat="false" toShortenFQNames="true">
+  <template name="rx postcondition mono1old" value=".single() /*verify postcondition*/&#10;          .checkpoint( &quot;$classname$.$methodname$.$END$ &quot; )&#10;" description=".single().checkpoint()" toReformat="false" toShortenFQNames="true">
     <variable name="classname" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
     <variable name="methodname" expression="methodName()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rx postcondition mono2" value=".filter( not( String::isBlank ) )/*verify postcondition*/&#10;.single()&#10;          .checkpoint( &quot;$classname$.$methodname$.$END$ &quot; )&#10;" description=".filter().single().checkpoint()" toReformat="false" toShortenFQNames="true">
+  <template name="rx postcondition mono2old" value=".filter( not( String::isBlank ) )/*verify postcondition*/&#10;.single()&#10;          .checkpoint( &quot;$classname$.$methodname$.$END$ &quot; )&#10;" description=".filter().single().checkpoint()" toReformat="false" toShortenFQNames="true">
     <variable name="classname" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
     <variable name="methodname" expression="methodName()" defaultValue="" alwaysStopAt="false" />
     <context>
