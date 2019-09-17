@@ -36,7 +36,7 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="rg global lolevel exception wrapper" value="@Getter( AccessLevel.NONE ) Function&lt;Mono&lt;Canvas&gt;,Publisher&lt;Canvas&gt;&gt; LOWLEVEL_EXCEPTION_WRAPPER = s -&gt; s.onErrorMap( not( err -&gt; err.getClass()&#10;                                                                                                                                    .equals( IllegalArgumentException.class ) ) , err -&gt; new RuntimeException( &quot;We are sorry, an unexpected error has occurred&quot; , err ) );&#10;&#9;&#10;&#10;&#10;.transform( LOWLEVEL_EXCEPTION_WRAPPER );" description="lowlevel-&gt;bussinesslevel exception converter" toReformat="false" toShortenFQNames="true">
+  <template name="rx global lolevel exception wrapper" value="@Getter( AccessLevel.NONE ) Function&lt;Mono&lt;Canvas&gt;,Publisher&lt;Canvas&gt;&gt; LOWLEVEL_EXCEPTION_WRAPPER = s -&gt; s.onErrorMap( not( err -&gt; err.getClass()&#10;                                                                                                                                    .equals( IllegalArgumentException.class ) ) , err -&gt; new RuntimeException( &quot;We are sorry, an unexpected error has occurred&quot; , err ) );&#10;&#9;&#10;&#10;&#10;.transform( LOWLEVEL_EXCEPTION_WRAPPER );" description="lowlevel-&gt;bussinesslevel exception converter" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
@@ -61,6 +61,13 @@
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rx global lolevel exception wrapper WITH POSTCONDITIONS CHECK" value="@Getter( AccessLevel.NONE ) Function&lt;Mono&lt;ResultDataTransferObject&gt;,Publisher&lt;ResultDataTransferObject&gt;&gt; LOWLEVEL_EXCEPTION_WRAPPER = s -&gt; s.filter( r -&gt; !r.getCanvasId()&#10;                                                                                                                                                            .isBlank() )&#10;                                                                                                                                            .filter( r -&gt; !r.getScreen()&#10;                                                                                                                                                            .isBlank() )&#10;                                                                                                                                            .onErrorMap( not( err -&gt; err.getClass()&#10;                                                                                                                                                                        .equals( IllegalArgumentException.class ) ) , err -&gt; new RuntimeException( &quot;We are sorry, an unexpected error has occurred&quot; , err ) );&#10;&#10;.transform( LOWLEVEL_EXCEPTION_WRAPPER );&#10;.switchIfEmpty( illegalStateMonoError( &quot;$classname$.$methodname$.$END$ &quot; ) );&#10;" description="lowlevel-&gt;bussinesslevel exception converter + CHECK" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="methodname" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
 </templateSet>
