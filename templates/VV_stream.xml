@@ -64,4 +64,11 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="forcoll filter" value="var l1 = $arr$.stream()&#10;             .filter( i -&gt; i &lt; 3 )&#10;             .collect( toList() );&#10;&#10;l1.forEach( System.out::println );&#9;&#10;&#9;&#10;$END$" description=".stream().filter()   ANY ITERABLE TYPE array,collection" toReformat="false" toShortenFQNames="true">
+    <variable name="arr" expression="iterableVariable()" defaultValue="arr" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
