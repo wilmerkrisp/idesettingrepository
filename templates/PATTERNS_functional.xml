@@ -26,4 +26,9 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="trampoline" value="import cyclops.control.Trampoline;&#10;import static cyclops.control.Trampoline.done;&#10;import static cyclops.control.Trampoline.more;&#10;&#10;&#10;public Trampoline&lt;Integer&gt; fibonachiTrampoline( int n )&#10;{&#10;//printStackTrace();&#10;&#10;if( n &lt;= 1 )&#10;&#9;return done( 1 );&#10;else&#10;&#9;{&#10;&#9;var t1 = more( () -&gt; fibonachiTrampoline( n - 1 ) );&#10;&#9;var t2 = more( () -&gt; fibonachiTrampoline( n - 2 ) );&#10;&#9;var z  = more( () -&gt; t1.zip( t2 , ( a , b ) -&gt; a + b ) );&#10;&#9;&#10;&#9;return z;&#10;&#9;}&#10;&#9;&#10;}&#10;&#10;@Test&#10;void fibonachiRecursionTrampolineTest()&#10;{&#10;System.out.println( &quot;trampolined fibonachi&quot; );&#10;&#10;IntStream.range( 0 , 10 )&#10;         .forEach( ( i ) -&gt;&#10;                   {&#10;                   System.out.println( fibonachiTrampoline( i ).get() );&#10;                   } );&#10;&#9;&#10;}" description="cyclops more done" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
