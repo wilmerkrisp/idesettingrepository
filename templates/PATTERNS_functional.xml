@@ -33,7 +33,7 @@
   </template>
   <template name="memoize" value="Map&lt;Integer,Integer&gt; cache =new HashMap&lt;&gt;(  );&#10; &#10;//return do(i)&#10;return cache.computeIfAbsent(n, i-&gt;do(i) );" description="based on HashMap" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_CODE" value="true" />
     </context>
   </template>
 </templateSet>
