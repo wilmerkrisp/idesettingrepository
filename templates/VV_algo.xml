@@ -38,4 +38,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="algo max by comparator" value="//@formatter:off&#10;&#9;&#9;&#9;var station_cover_towns_immutable = Map.&lt;String,Set&lt;String&gt;&gt;of(&#10;&#9;&#9;&#9;&#9;&quot;one&quot; , Set.&lt;String&gt;of( &quot;Moscow&quot; , &quot;London&quot; , &quot;Singapoor&quot; ) ,&#10;&#9;&#9;&#9;&#9;&quot;two&quot; , Set.&lt;String&gt;of( &quot;CyberJay&quot; , &quot;NewYork&quot; , &quot;SanFrancisco&quot; ) );&#10;&#9;&#9;&#9;//@formatter:on&#10;var station_cover_towns = new HashMap&lt;&gt;( station_cover_towns_immutable );&#10;var neddable            = Set.&lt;String&gt;of( &quot;NewYork1&quot; );&#10;&#10; &#10;&#10;Optional&lt;Map.Entry&lt;String,Set&lt;String&gt;&gt;&gt; max = Optional.empty();&#10; &#10;&#10;var comparator1 = new Comparator&lt;Map.Entry&lt;String,Set&lt;String&gt;&gt;&gt;()&#10;&#9;{&#10;&#9;@Override&#10;&#9;public int compare( final Map.Entry&lt;String,Set&lt;String&gt;&gt; o1 ,&#10;&#9;                    final Map.Entry&lt;String,Set&lt;String&gt;&gt; o2 )&#10;&#9;&#9;{&#10;&#9;&#9;return 0;&#10;&#9;&#9;}&#10;&#9;};&#10;&#10;Comparator&lt;Map.Entry&lt;String,Set&lt;String&gt;&gt;&gt; comparator2 = Comparator.comparing( p -&gt; SetUtils.intersection( p.getValue() , neddable )&#10;                                                                                           .size() );&#10;&#10;max = station_cover_towns.entrySet()&#10;                         .stream()&#10;                         .collect( maxBy( comparator2 ) );&#10; &#10;&#10;System.out.println( &quot;Result &quot; + max );" description="stream().collect( minBy( Comparator.naturalOrder() ) );" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
