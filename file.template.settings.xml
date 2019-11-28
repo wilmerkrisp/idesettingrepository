@@ -14,9 +14,9 @@
       <template name="_enum1.java" reformat="true" live-template-enabled="true" />
       <template name="_enum2.java" reformat="true" live-template-enabled="true" />
       <template name="_interface.java" reformat="true" live-template-enabled="true" />
-      <template name="_interface&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="_interface GENERIC.java" reformat="true" live-template-enabled="true" />
       <template name="_lambda.java" reformat="true" live-template-enabled="true" />
-      <template name="_lambda&lt;&gt;.java" reformat="true" live-template-enabled="true" />
+      <template name="_lambda GENERIC.java" reformat="true" live-template-enabled="true" />
       <template name="_static class.java" reformat="true" live-template-enabled="true" />
       <template name="_static class (SERVICE).java" reformat="true" live-template-enabled="true" />
       <template name="_tuple 9 IMmutable GENERIC GOOGLE.java" reformat="true" live-template-enabled="true" />
