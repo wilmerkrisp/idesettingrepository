@@ -39,7 +39,7 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="folding format off" value="//@formatter:off&#10;$END$&#10;$SELECTION$&#10;//@formatter:on&#10;&#10;&#10;" description="disable autoformat for code block" toReformat="false" toShortenFQNames="true">
+  <template name="comment folding format off" value="//@formatter:off&#10;$END$&#10;$SELECTION$&#10;//@formatter:on&#10;&#10;&#10;" description="disable autoformat for code block" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
