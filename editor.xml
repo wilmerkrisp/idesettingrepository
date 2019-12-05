@@ -1,4 +1,16 @@
 <application>
+  <component name="CodeFoldingSettings">
+    <option name="COLLAPSE_DOC_COMMENTS" value="true" />
+    <option name="COLLAPSE_CUSTOM_FOLDING_REGIONS" value="true" />
+  </component>
+  <component name="CodeInsightSettings">
+    <option name="USE_INSTANCEOF_ON_EQUALS_PARAMETER" value="true" />
+    <option name="USE_ACCESSORS_IN_EQUALS_HASHCODE" value="true" />
+    <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
+  </component>
+  <component name="DaemonCodeAnalyzerSettings" profile="vova_java_inspectionsProfile">
+    <option name="SHOW_METHOD_SEPARATORS" value="true" />
+  </component>
   <component name="DefaultFont">
     <option name="FONT_SIZE" value="13" />
     <option name="FONT_FAMILY" value="Pragmata Pro" />
@@ -16,6 +28,10 @@
     <option name="ARE_LINE_NUMBERS_SHOWN" value="false" />
     <option name="SHOW_BREADCRUMBS_ABOVE" value="true" />
     <option name="KEEP_TRAILING_SPACE_ON_CARET_LINE" value="false" />
+  </component>
+  <component name="JavaCodeFoldingSettings">
+    <option name="collapseAnnotations" value="true" />
+    <option name="collapseEndOfLineComments" value="true" />
   </component>
   <component name="TodoConfiguration">
     <pattern case-sensitive="true" pattern="\b(todo|fixme)\b.*" />

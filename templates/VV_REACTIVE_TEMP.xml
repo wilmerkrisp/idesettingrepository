@@ -64,4 +64,9 @@
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="rx log print" value=".doOnEach( x -&gt; System.out.println( &quot;++ITOGO++++ &quot; + x ) )" description=".doOnEach( x -&gt; System.out.println" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>

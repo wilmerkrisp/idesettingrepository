@@ -26,4 +26,24 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="trampoline" value="import cyclops.control.Trampoline;&#10;import static cyclops.control.Trampoline.done;&#10;import static cyclops.control.Trampoline.more;&#10;&#10;&#10;public Trampoline&lt;Integer&gt; fibonachiTrampoline( int n )&#10;{&#10;//printStackTrace();&#10;&#10;if( n &lt;= 1 )&#10;&#9;return done( 1 );&#10;else&#10;&#9;{&#10;&#9;var t1 = more( () -&gt; fibonachiTrampoline( n - 1 ) );&#10;&#9;var t2 = more( () -&gt; fibonachiTrampoline( n - 2 ) );&#10;&#9;var z  = more( () -&gt; t1.zip( t2 , ( a , b ) -&gt; a + b ) );&#10;&#9;&#10;&#9;return z;&#10;&#9;}&#10;&#9;&#10;}&#10;&#10;@Test&#10;void fibonachiRecursionTrampolineTest()&#10;{&#10;System.out.println( &quot;trampolined fibonachi&quot; );&#10;&#10;IntStream.range( 0 , 10 )&#10;         .forEach( ( i ) -&gt;&#10;                   {&#10;                   System.out.println( fibonachiTrampoline( i ).get() );&#10;                   } );&#10;&#9;&#10;}" description="cyclops more done" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="memoize" value="Map&lt;Integer,Integer&gt; cache =new HashMap&lt;&gt;(  );&#10; &#10;//return do(i)&#10;return cache.computeIfAbsent(n, i-&gt;do(i) );" description="based on HashMap" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="memoizer_trampoline" value="//import life.expert.common.async.memoizer.MemoizedConcurrently;&#10;&#10;&#10;&#9;private static final CompletableFuture&lt;Long&gt; ONE = CompletableFuture.completedFuture( 1L );&#10;&#9;&#10;&#9;private final Function&lt;Long,CompletableFuture&lt;Long&gt;&gt; memoized = MemoizedConcurrently.of( this::fib );&#10;&#9;&#10;&#9;&#10;&#9;public CompletableFuture&lt;Long&gt; fib( Long n )&#10;&#9;&#9;{&#10;&#9;&#9;if( n &lt;= 2 )&#10;&#9;&#9;&#9;return ONE;&#10;&#9;&#9;return memoized.apply( n - 1 )&#10;&#9;&#9;             .thenCompose( x -&gt; memoized.apply( n - 2 )&#10;&#9;&#9;                                      .thenApply( y -&gt; x + y ) );&#10;&#9;&#9;}&#10;&#10;&#10;@Test&#10;void fibonachiMemoized5Test()&#10;{&#10;&#10;//&#9;&#9;System.out.println( new Fibonacci().fib( 50L )&#10;//&#9;&#9;                                   .join() ); //20365011074&#10;long l=new Fibonacci().fib( 50L )&#10;                      .join();&#10;assertEquals( l ,12586269025L );&#10;}" description="for multiple recursion" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="memoize for recursion" value="Map&lt;Integer,Integer&gt; cache =new HashMap&lt;&gt;(  );&#10;&#10;if( cache.containsKey( n ) )&#10;&#9;return cache.get( n );&#10;else&#10;&#9;{&#10;&#9;var r = fibonachiMemoized( n - 2 ) + fibonachiMemoized( n - 1 );&#10;&#9;cache.put( n , r );&#10;&#9;return r;&#10;&#9;}" description="based on HashMap" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>

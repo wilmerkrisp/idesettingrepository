@@ -15,4 +15,10 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="method test2 short" value="//&lt;editor-fold desc=&quot;$methodname$&quot;&gt;&#10;@Test&#10;void $methodname$Test()&#10;&#9;{&#10;&#9;System.out.println( $methodname$( 10 ) );&#10;&#9;}&#10;&#10;int $methodname$( int a)&#10;&#9;{&#10;&#9;return 1;&#9;&#10;&#9;}&#10;//&lt;/editor-fold&gt;" description="class method FOR TESTING" toReformat="false" toShortenFQNames="true">
+    <variable name="methodname" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
