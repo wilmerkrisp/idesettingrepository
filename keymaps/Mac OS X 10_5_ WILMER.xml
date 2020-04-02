@@ -19,23 +19,11 @@
     <keyboard-shortcut first-keystroke="meta alt left" />
     <mouse-shortcut keystroke="button4" />
   </action>
-  <action id="ChangeSignature" />
   <action id="ChangesView.Rename">
     <keyboard-shortcut first-keystroke="shift f6" />
   </action>
   <action id="ChangesView.Revert" />
-  <action id="ChangesView.ShelveSilently">
-    <keyboard-shortcut first-keystroke="meta minus" />
-  </action>
-  <action id="ChangesView.UnshelveSilently">
-    <keyboard-shortcut first-keystroke="meta equals" />
-  </action>
-  <action id="CheckStyleProjectFilesAction">
-    <keyboard-shortcut first-keystroke="meta f5" />
-  </action>
-  <action id="CheckinProject">
-    <keyboard-shortcut first-keystroke="meta f11" />
-  </action>
+  <action id="CheckinProject" />
   <action id="ChooseRunConfiguration" />
   <action id="CodeCompletion">
     <keyboard-shortcut first-keystroke="ctrl space" />
@@ -67,12 +55,6 @@
     <keyboard-shortcut first-keystroke="meta 9" />
     <keyboard-shortcut first-keystroke="f10" />
   </action>
-  <action id="CompareFileWithEditor">
-    <keyboard-shortcut first-keystroke="meta f7" />
-  </action>
-  <action id="CompileDirty" />
-  <action id="Console.Oracle.DbmsOutput" />
-  <action id="Console.TableResult.ColumnsList" />
   <action id="Console.TableResult.EditValue">
     <keyboard-shortcut first-keystroke="enter" />
     <keyboard-shortcut first-keystroke="alt enter" />
@@ -83,7 +65,6 @@
     <mouse-shortcut keystroke="control alt button1" />
     <keyboard-shortcut first-keystroke="f5" />
   </action>
-  <action id="Console.TableResult.NextPage" />
   <action id="CopyElement" />
   <action id="DSM.OpenInEditor" />
   <action id="DSM.ZoomIn">
@@ -104,7 +85,6 @@
   <action id="EditSource" />
   <action id="EditorSelectWord" />
   <action id="EditorUnSelectWord" />
-  <action id="EvaluateExpression" />
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
@@ -135,13 +115,9 @@
   <action id="ExternalSystem_b9a2d073graphb9a2d073graph [run]">
     <keyboard-shortcut first-keystroke="meta back_quote" />
   </action>
-  <action id="ExternalSystem_c6da815experiment2c6da815RUNN">
-    <keyboard-shortcut first-keystroke="meta back_quote" />
-  </action>
   <action id="FileChooser.GotoHome" />
   <action id="FileChooser.GotoModule" />
   <action id="FileChooser.GotoProject" />
-  <action id="FileStructurePopup" />
   <action id="FindInPath">
     <keyboard-shortcut first-keystroke="shift meta f" />
     <keyboard-shortcut first-keystroke="f6" />
@@ -151,7 +127,6 @@
     <mouse-shortcut keystroke="control alt button1" />
     <keyboard-shortcut first-keystroke="f5" />
   </action>
-  <action id="FindUsagesInFile" />
   <action id="Forward">
     <keyboard-shortcut first-keystroke="meta alt right" />
     <mouse-shortcut keystroke="button5" />
@@ -165,16 +140,6 @@
     <keyboard-shortcut first-keystroke="ctrl enter" />
     <keyboard-shortcut first-keystroke="alt altGraph 1" />
     <keyboard-shortcut first-keystroke="meta #10000a7" />
-  </action>
-  <action id="Git.Branches">
-    <keyboard-shortcut first-keystroke="meta f10" />
-  </action>
-  <action id="Git.Commit.And.Push.Executor">
-    <keyboard-shortcut first-keystroke="meta alt k" />
-    <keyboard-shortcut first-keystroke="meta f12" />
-  </action>
-  <action id="Git.Merge">
-    <keyboard-shortcut first-keystroke="meta alt f10" />
   </action>
   <action id="Git.Reword.Commit">
     <keyboard-shortcut first-keystroke="shift f6" />
@@ -204,14 +169,13 @@
   <action id="InspectCode">
     <keyboard-shortcut first-keystroke="meta alt z" />
     <keyboard-shortcut first-keystroke="meta 2" />
-    <keyboard-shortcut first-keystroke="meta up" />
-    <keyboard-shortcut first-keystroke="meta f4" />
   </action>
   <action id="IntroduceConstant" />
   <action id="JProfiler.ShowJProfiler" />
   <action id="Jdbc.OpenEditor" />
   <action id="JindentComponent.formatEditor">
     <keyboard-shortcut first-keystroke="meta alt k" />
+    <keyboard-shortcut first-keystroke="meta minus" />
   </action>
   <action id="JumpToLastWindow" />
   <action id="Maven.ExpandAll">
@@ -220,7 +184,9 @@
   <action id="MethodOverloadSwitchDown" />
   <action id="MethodOverloadSwitchUp" />
   <action id="MinimizeCurrentWindow" />
-  <action id="ModifyObject" />
+  <action id="ModifyObject">
+    <keyboard-shortcut first-keystroke="meta f6" />
+  </action>
   <action id="Move" />
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="meta n" />
@@ -231,14 +197,9 @@
   <action id="NewFromTemplate">
     <keyboard-shortcut first-keystroke="meta m" />
   </action>
-  <action id="NewModulesDiagram">
-    <keyboard-shortcut first-keystroke="meta escape" />
-  </action>
   <action id="NextDiff" />
-  <action id="NextOccurence" />
   <action id="NextProjectWindow" />
   <action id="OpenModuleSettings" />
-  <action id="ProjectViewChangeView" />
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="ctrl j" />
     <mouse-shortcut keystroke="control button2" />
@@ -276,14 +237,10 @@
     <keyboard-shortcut first-keystroke="ctrl r" />
     <keyboard-shortcut first-keystroke="meta alt x" />
     <keyboard-shortcut first-keystroke="meta 3" />
-    <keyboard-shortcut first-keystroke="meta down" />
-  </action>
-  <action id="RunClass">
-    <keyboard-shortcut first-keystroke="shift ctrl r" />
-    <keyboard-shortcut first-keystroke="meta alt down" />
   </action>
   <action id="RunDashboard.EditConfiguration" />
   <action id="RunToCursor">
+    <keyboard-shortcut first-keystroke="alt f9" />
     <keyboard-shortcut first-keystroke="meta 7" />
   </action>
   <action id="Scala.ShowImplicits">
@@ -296,7 +253,6 @@
   <action id="SearchEverywhere.NavigateToPrevGroup">
     <keyboard-shortcut first-keystroke="page_up" />
   </action>
-  <action id="SelectIn" />
   <action id="SetShortcutAction">
     <keyboard-shortcut first-keystroke="alt enter" />
     <keyboard-shortcut first-keystroke="alt altGraph enter" />
@@ -304,9 +260,6 @@
   </action>
   <action id="ShelvedChanges.Rename">
     <keyboard-shortcut first-keystroke="shift f6" />
-  </action>
-  <action id="ShowBlankDiffWindow">
-    <keyboard-shortcut first-keystroke="meta f6" />
   </action>
   <action id="ShowIntentionActions">
     <keyboard-shortcut first-keystroke="alt enter" />
@@ -329,21 +282,16 @@
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="meta 6" />
   </action>
-  <action id="StepOut" />
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="meta 5" />
   </action>
   <action id="SurroundWithLiveTemplate">
     <keyboard-shortcut first-keystroke="meta alt j" />
     <keyboard-shortcut first-keystroke="meta alt 1" />
-    <keyboard-shortcut first-keystroke="alt f1" />
   </action>
   <action id="TableResult.GrowSelection" />
   <action id="ToggleBookmark" />
-  <action id="ToggleLineBreakpoint" />
   <action id="UML.ApplyCurrentLayout" />
-  <action id="UML.ShowStructure" />
-  <action id="UpdateRunningApplication" />
   <action id="Vcs.EditSource" />
   <action id="Vcs.RollbackChangedLines" />
   <action id="XDebugger.EditWatch" />
@@ -352,18 +300,16 @@
   <action id="XPathView.Actions.Evaluate" />
   <action id="XPathView.Actions.FindByExpression" />
   <action id="XPathView.Actions.ShowPath" />
-  <action id="android.deploy.ApplyChanges">
-    <keyboard-shortcut first-keystroke="ctrl meta r" />
-  </action>
-  <action id="android.deploy.CodeSwap">
-    <keyboard-shortcut first-keystroke="shift ctrl meta r" />
-  </action>
   <action id="codeNavigator.classCloud.zoomOut" />
   <action id="codeNavigator.uml.diagramZoomOut" />
   <action id="codeNavigator.zoomOut" />
   <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnEditor">
     <keyboard-shortcut first-keystroke="shift meta alt g" />
+    <keyboard-shortcut first-keystroke="meta minus" />
     <keyboard-shortcut first-keystroke="f9" />
+  </action>
+  <action id="com.github.setial.intellijjavadocs.action.JavaDocsGenerateActionOnProject">
+    <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="me.scana.okgradle.ok">
     <keyboard-shortcut first-keystroke="meta k" />
